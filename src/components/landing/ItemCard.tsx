@@ -1,5 +1,3 @@
-import { ShoppingBag } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import type { Item } from "@/hooks/useItems";
 
 interface ItemCardProps {
@@ -8,40 +6,45 @@ interface ItemCardProps {
 }
 
 const statusColors: Record<string, string> = {
-  trending: "bg-accent/10 text-accent border-accent/20",
-  available: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
-  sourced: "bg-muted text-muted-foreground border-border",
+  trending: "bg-accent/10 text-accent",
+  available: "bg-secondary text-foreground/70",
+  sourced: "bg-muted text-muted-foreground",
 };
 
 const statusLabels: Record<string, string> = {
   trending: "Trending",
   available: "Available",
-  sourced: "Sourced",
+  sourced: "Recently Sourced",
 };
 
 export function ItemCard({ item, onEnquire }: ItemCardProps) {
   return (
-    <div className="group bg-card rounded-lg border border-border overflow-hidden luxury-shadow hover:luxury-shadow-lg transition-all duration-300">
+    <div className="group bg-card border border-border/50 overflow-hidden hover-lift luxury-shadow hover:luxury-shadow-lg">
       {/* Image */}
-      <div className="aspect-square bg-secondary/50 relative overflow-hidden">
+      <div className="aspect-[4/5] bg-secondary/50 relative overflow-hidden">
         {item.hero_image_url ? (
           <img
             src={item.hero_image_url}
             alt={`${item.brand} ${item.item_name}`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground/40">
-            <ShoppingBag className="h-12 w-12 mb-2" strokeWidth={1} />
-            <span className="text-xs tracking-widest uppercase">{item.brand}</span>
+          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-secondary to-muted">
+            {/* Monogram placeholder */}
+            <span className="font-serif text-4xl text-muted-foreground/20 tracking-luxury uppercase">
+              {item.brand.charAt(0)}
+            </span>
+            <span className="text-[10px] tracking-luxury uppercase text-muted-foreground/30 mt-2">
+              {item.brand}
+            </span>
           </div>
         )}
         
         {/* Status Badge */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-4 left-4">
           <span
-            className={`inline-block px-3 py-1 text-xs font-medium tracking-wide rounded-full border ${
+            className={`inline-block px-3 py-1.5 text-[10px] font-medium tracking-editorial uppercase ${
               statusColors[item.availability_status] || statusColors.available
             }`}
           >
@@ -51,31 +54,35 @@ export function ItemCard({ item, onEnquire }: ItemCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <div className="text-xs text-accent font-medium tracking-widest uppercase mb-1">
+      <div className="p-5 md:p-6">
+        {/* Brand */}
+        <div className="text-[10px] text-accent font-medium tracking-luxury uppercase mb-2">
           {item.brand}
         </div>
-        <h3 className="font-serif text-lg font-medium text-foreground mb-1 line-clamp-1">
+        
+        {/* Item name */}
+        <h3 className="font-serif text-lg md:text-xl text-foreground mb-1 line-clamp-1">
           {item.item_name}
         </h3>
+        
+        {/* Category */}
         <p className="text-xs text-muted-foreground uppercase tracking-wide mb-4">
           {item.category}
         </p>
 
         {item.price_hint && (
-          <p className="text-sm text-muted-foreground mb-4">
+          <p className="text-sm text-muted-foreground mb-4 italic">
             {item.price_hint}
           </p>
         )}
 
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full border-foreground/10 hover:bg-foreground hover:text-background transition-all"
+        {/* Enquire button - minimal text style */}
+        <button
           onClick={() => onEnquire(item)}
+          className="text-sm text-foreground font-medium tracking-wide hover:text-accent transition-colors duration-300 underline underline-offset-4 decoration-border hover:decoration-accent"
         >
           Enquire
-        </Button>
+        </button>
       </div>
     </div>
   );

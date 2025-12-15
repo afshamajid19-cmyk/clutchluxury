@@ -39,26 +39,26 @@ export function TrendingItems({ onEnquire }: TrendingItemsProps) {
   });
 
   return (
-    <section id="trending" className="py-20 md:py-28">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-            Trending & Available
+    <section id="trending" className="py-24 md:py-32">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+            Curated Selection
           </h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Explore our curated selection of sought-after pieces
+          <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto">
+            Explore our collection of sought-after pieces
           </p>
         </div>
 
         {/* Filters */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <Select value={availabilityFilter} onValueChange={setAvailabilityFilter}>
-            <SelectTrigger className="w-full sm:w-[180px] bg-background">
+            <SelectTrigger className="w-full sm:w-[180px] bg-transparent border-border/50 focus:ring-accent text-sm">
               <SelectValue placeholder="Filter by status" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-card border-border">
               {availabilityOptions.map((option) => (
-                <SelectItem key={option.value} value={option.value}>
+                <SelectItem key={option.value} value={option.value} className="text-sm">
                   {option.label}
                 </SelectItem>
               ))}
@@ -66,12 +66,12 @@ export function TrendingItems({ onEnquire }: TrendingItemsProps) {
           </Select>
 
           <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-            <SelectTrigger className="w-full sm:w-[180px] bg-background">
+            <SelectTrigger className="w-full sm:w-[180px] bg-transparent border-border/50 focus:ring-accent text-sm">
               <SelectValue placeholder="Filter by category" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-card border-border">
               {categoryOptions.map((option) => (
-                <SelectItem key={option.value} value={option.value}>
+                <SelectItem key={option.value} value={option.value} className="text-sm">
                   {option.label}
                 </SelectItem>
               ))}
@@ -81,23 +81,23 @@ export function TrendingItems({ onEnquire }: TrendingItemsProps) {
 
         {/* Grid */}
         {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
-                className="aspect-square bg-secondary/50 rounded-lg animate-pulse"
+                className="aspect-[4/5] bg-secondary/30 animate-pulse"
               />
             ))}
           </div>
         ) : items && items.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {items.map((item) => (
               <ItemCard key={item.id} item={item} onEnquire={onEnquire} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-16 text-muted-foreground">
-            <p>No items match your current filters.</p>
+          <div className="text-center py-20">
+            <p className="text-muted-foreground text-sm">No items match your current filters.</p>
           </div>
         )}
       </div>
