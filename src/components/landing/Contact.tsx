@@ -18,44 +18,50 @@ export function Contact() {
   const { data: settings } = useSettings();
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+    <section id="contact" className="py-24 md:py-32 bg-secondary/40">
+      <div className="container mx-auto px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
             Get in Touch
           </h2>
-          <p className="text-muted-foreground mb-10">
-            Reach out through your preferred channel. We typically respond
-            within a few hours.
+          <p className="text-muted-foreground mb-4">
+            Reach out through your preferred channel.
+          </p>
+          <p className="text-xs text-muted-foreground/60 tracking-wide mb-12">
+            We typically respond within a few hours.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <a
               href={settings?.whatsapp_link || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-3 bg-background border border-border rounded-lg hover:border-accent transition-colors luxury-shadow"
+              className="group flex flex-col items-center gap-3 p-6 bg-card border border-border/50 hover:border-accent transition-all duration-300 luxury-shadow hover-lift"
             >
-              <MessageCircle className="h-5 w-5" />
-              <span className="text-sm font-medium">WhatsApp</span>
+              <MessageCircle className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+              <span className="text-sm font-medium tracking-wide">WhatsApp</span>
             </a>
+            
             <a
               href={settings?.instagram_url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-3 bg-background border border-border rounded-lg hover:border-accent transition-colors luxury-shadow"
+              className="group flex flex-col items-center gap-3 p-6 bg-card border border-border/50 hover:border-accent transition-all duration-300 luxury-shadow hover-lift"
             >
-              <Instagram className="h-5 w-5" />
-              <span className="text-sm font-medium">Instagram</span>
+              <Instagram className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+              <span className="text-sm font-medium tracking-wide">Instagram</span>
             </a>
+            
             <a
               href={settings?.threads_url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-3 bg-background border border-border rounded-lg hover:border-accent transition-colors luxury-shadow"
+              className="group flex flex-col items-center gap-3 p-6 bg-card border border-border/50 hover:border-accent transition-all duration-300 luxury-shadow hover-lift"
             >
-              <ThreadsIcon />
-              <span className="text-sm font-medium">Threads</span>
+              <div className="text-muted-foreground group-hover:text-accent transition-colors duration-300">
+                <ThreadsIcon />
+              </div>
+              <span className="text-sm font-medium tracking-wide">Threads</span>
             </a>
           </div>
 
@@ -64,7 +70,7 @@ export function Contact() {
               href={settings.linktree_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-6 text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+              className="inline-block mt-8 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 underline underline-offset-4"
             >
               View all links
             </a>

@@ -45,7 +45,7 @@ const formSchema = z.object({
   consent: z.boolean().refine((val) => val === true, {
     message: "You must consent to be contacted",
   }),
-  company: z.string().max(0).optional(), // Honeypot
+  company: z.string().max(0).optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -109,14 +109,12 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
     },
   });
 
-  // Handle prefill from item enquiry
   useEffect(() => {
     if (prefilledItem) {
       form.setValue("brand", prefilledItem.brand);
       form.setValue("item_name", prefilledItem.item_name);
       form.setValue("category", prefilledItem.category);
       
-      // Scroll to form
       setTimeout(() => {
         formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 100);
@@ -124,7 +122,6 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   }, [prefilledItem, form]);
 
   const onSubmit = async (data: FormData) => {
-    // Rate limiting - prevent submissions within 10 seconds
     const now = Date.now();
     if (now - lastSubmitTime < 10000) {
       toast({
@@ -135,9 +132,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
       return;
     }
 
-    // Honeypot check
     if (data.company) {
-      // Silently fail for bots
       setIsSuccess(true);
       return;
     }
@@ -190,35 +185,40 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
   if (isSuccess) {
     return (
-      <section id="request" className="py-20 md:py-28" ref={formRef}>
-        <div className="container mx-auto px-4">
+      <section id="request" className="py-24 md:py-32" ref={formRef}>
+        <div className="container mx-auto px-6">
           <div className="max-w-lg mx-auto text-center">
-            <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="h-8 w-8 text-accent" />
+            {/* Success icon */}
+            <div className="w-16 h-16 border border-accent rounded-full flex items-center justify-center mx-auto mb-8">
+              <Check className="h-6 w-6 text-accent" />
             </div>
-            <h2 className="font-serif text-2xl md:text-3xl font-medium text-foreground mb-4">
+            
+            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
               Request Received
             </h2>
-            <p className="text-muted-foreground mb-6">
-              Our team will respond shortly.
+            <p className="text-muted-foreground mb-8">
+              Our concierge will respond shortly.
             </p>
 
             {submittedData && (
-              <div className="bg-secondary/50 rounded-lg p-4 mb-8 text-left text-sm">
-                <p className="text-muted-foreground">
-                  <span className="font-medium text-foreground">Item:</span>{" "}
-                  {submittedData.brand} – {submittedData.item_name}
-                </p>
-                <p className="text-muted-foreground">
-                  <span className="font-medium text-foreground">Timeline:</span>{" "}
-                  {submittedData.urgency}
-                </p>
+              <div className="bg-secondary/50 border border-border/50 p-6 mb-10 text-left text-sm">
+                <div className="space-y-2">
+                  <p className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Item:</span>{" "}
+                    {submittedData.brand} — {submittedData.item_name}
+                  </p>
+                  <p className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Timeline:</span>{" "}
+                    {submittedData.urgency}
+                  </p>
+                </div>
               </div>
             )}
 
             <Button
+              variant="premium"
               size="lg"
-              className="bg-emerald-600 hover:bg-emerald-700 text-background"
+              className="mb-4"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -226,20 +226,21 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               }}
             >
               <MessageCircle className="mr-2 h-4 w-4" />
-              Message us on WhatsApp (fastest)
+              Message Us on WhatsApp (Fastest)
             </Button>
 
-            <Button
-              variant="ghost"
-              className="mt-4 text-muted-foreground"
-              onClick={() => {
-                setIsSuccess(false);
-                setSubmittedData(null);
-                form.reset();
-              }}
-            >
-              Submit another request
-            </Button>
+            <div>
+              <button
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+                onClick={() => {
+                  setIsSuccess(false);
+                  setSubmittedData(null);
+                  form.reset();
+                }}
+              >
+                Submit another request
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -247,25 +248,24 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   }
 
   return (
-    <section id="request" className="py-20 md:py-28" ref={formRef}>
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-              Request an Item
+    <section id="request" className="py-24 md:py-32" ref={formRef}>
+      <div className="container mx-auto px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+              Private Client Request
             </h2>
-            <p className="text-muted-foreground">
-              Tell us what you're looking for and we'll get back to you with
-              options.
+            <p className="text-muted-foreground text-sm md:text-base">
+              Share your wishlist and our concierge will respond with options.
             </p>
           </div>
 
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-6 bg-card border border-border rounded-lg p-6 md:p-8 luxury-shadow"
+              className="bg-card border border-border/50 p-8 md:p-10 luxury-shadow"
             >
-              {/* Honeypot field - hidden from users */}
+              {/* Honeypot field */}
               <input
                 type="text"
                 name="company"
@@ -275,296 +275,315 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                 {...form.register("company")}
               />
 
-              {/* Contact Info */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="full_name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name *</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+              {/* Contact Info - Two columns on desktop */}
+              <div className="mb-8">
+                <h3 className="text-xs text-muted-foreground tracking-editorial uppercase mb-6">
+                  Contact Information
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <FormField
+                    control={form.control}
+                    name="full_name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Full Name *</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Your name" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="whatsapp"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>WhatsApp Number *</FormLabel>
-                      <FormControl>
-                        <Input placeholder="+971 50 123 4567" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
+                  <FormField
+                    control={form.control}
+                    name="whatsapp"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">WhatsApp *</FormLabel>
+                        <FormControl>
+                          <Input placeholder="+971 50 123 4567" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email (optional)</FormLabel>
-                      <FormControl>
-                        <Input placeholder="your@email.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Email (optional)</FormLabel>
+                        <FormControl>
+                          <Input placeholder="your@email.com" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="location"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Location (City/Country) *</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Dubai, UAE" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    control={form.control}
+                    name="location"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Location *</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Dubai, UAE" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
               </div>
 
               {/* Request Details */}
-              <div className="pt-4 border-t border-border">
-                <FormField
-                  control={form.control}
-                  name="request_type"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Request Type *</FormLabel>
-                      <Select onValueChange={field.onChange} value={field.value}>
+              <div className="mb-8 pt-8 border-t border-border/50">
+                <h3 className="text-xs text-muted-foreground tracking-editorial uppercase mb-6">
+                  Request Details
+                </h3>
+                
+                <div className="space-y-5">
+                  <FormField
+                    control={form.control}
+                    name="request_type"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Request Type *</FormLabel>
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                              <SelectValue placeholder="Select type" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-card border-border">
+                            {requestTypes.map((type) => (
+                              <SelectItem key={type} value={type}>
+                                {type}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <FormField
+                      control={form.control}
+                      name="brand"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-xs font-medium tracking-wide">Brand *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="e.g. Hermès" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          </FormControl>
+                          <FormMessage className="text-xs" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="item_name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-xs font-medium tracking-wide">Item / Model *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="e.g. Birkin 25" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          </FormControl>
+                          <FormMessage className="text-xs" />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <FormField
+                      control={form.control}
+                      name="category"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-xs font-medium tracking-wide">Category *</FormLabel>
+                          <Select onValueChange={field.onChange} value={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                                <SelectValue placeholder="Select category" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent className="bg-card border-border">
+                              {categories.map((cat) => (
+                                <SelectItem key={cat} value={cat}>
+                                  {cat}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage className="text-xs" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="urgency"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-xs font-medium tracking-wide">Timeline *</FormLabel>
+                          <Select onValueChange={field.onChange} value={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                                <SelectValue placeholder="Select timeline" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent className="bg-card border-border">
+                              {urgencyOptions.map((opt) => (
+                                <SelectItem key={opt.value} value={opt.value}>
+                                  {opt.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage className="text-xs" />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <FormField
+                    control={form.control}
+                    name="specs"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Specifications (optional)</FormLabel>
                         <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select type" />
-                          </SelectTrigger>
+                          <Textarea
+                            placeholder="Size, colour, hardware, material..."
+                            className="bg-transparent border-border/50 focus-visible:ring-accent resize-none min-h-[100px]"
+                            {...field}
+                          />
                         </FormControl>
-                        <SelectContent>
-                          {requestTypes.map((type) => (
-                            <SelectItem key={type} value={type}>
-                              {type}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="brand"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Brand *</FormLabel>
-                      <FormControl>
-                        <Input placeholder="e.g. Hermès" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="item_name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Item Name / Model *</FormLabel>
-                      <FormControl>
-                        <Input placeholder="e.g. Birkin 25" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="category"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Category *</FormLabel>
-                      <Select onValueChange={field.onChange} value={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select category" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {categories.map((cat) => (
-                            <SelectItem key={cat} value={cat}>
-                              {cat}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="urgency"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Timeline *</FormLabel>
-                      <Select onValueChange={field.onChange} value={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select timeline" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {urgencyOptions.map((opt) => (
-                            <SelectItem key={opt.value} value={opt.value}>
-                              {opt.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <FormField
-                control={form.control}
-                name="specs"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Specifications (optional)</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Size, colour, hardware, material..."
-                        className="resize-none"
-                        rows={3}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
 
               {/* Budget */}
-              <div className="grid grid-cols-3 gap-4">
-                <FormField
-                  control={form.control}
-                  name="budget_min"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Budget Min</FormLabel>
-                      <FormControl>
-                        <Input type="number" placeholder="0" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="budget_max"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Budget Max</FormLabel>
-                      <FormControl>
-                        <Input type="number" placeholder="0" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="currency"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Currency</FormLabel>
-                      <Select onValueChange={field.onChange} value={field.value}>
+              <div className="mb-8 pt-8 border-t border-border/50">
+                <h3 className="text-xs text-muted-foreground tracking-editorial uppercase mb-6">
+                  Budget (optional)
+                </h3>
+                <div className="grid grid-cols-3 gap-5">
+                  <FormField
+                    control={form.control}
+                    name="budget_min"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Min</FormLabel>
                         <FormControl>
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
+                          <Input type="number" placeholder="0" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
                         </FormControl>
-                        <SelectContent>
-                          <SelectItem value="AED">AED</SelectItem>
-                          <SelectItem value="USD">USD</SelectItem>
-                          <SelectItem value="EUR">EUR</SelectItem>
-                          <SelectItem value="GBP">GBP</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="budget_max"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Max</FormLabel>
+                        <FormControl>
+                          <Input type="number" placeholder="0" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="currency"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs font-medium tracking-wide">Currency</FormLabel>
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                              <SelectValue />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-card border-border">
+                            <SelectItem value="AED">AED</SelectItem>
+                            <SelectItem value="USD">USD</SelectItem>
+                            <SelectItem value="EUR">EUR</SelectItem>
+                            <SelectItem value="GBP">GBP</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+
+              {/* Reference links */}
+              <div className="mb-8">
+                <FormField
+                  control={form.control}
+                  name="reference_links"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-xs font-medium tracking-wide">Reference Links (optional)</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Paste URLs, one per line"
+                          className="bg-transparent border-border/50 focus-visible:ring-accent resize-none min-h-[80px]"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="text-xs" />
                     </FormItem>
                   )}
                 />
               </div>
 
-              <FormField
-                control={form.control}
-                name="reference_links"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Reference Links (optional)</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Paste URLs, one per line"
-                        className="resize-none"
-                        rows={2}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
               {/* Consent */}
-              <FormField
-                control={form.control}
-                name="consent"
-                render={({ field }) => (
-                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                    <div className="space-y-1 leading-none">
-                      <FormLabel className="text-sm font-normal text-muted-foreground">
-                        I consent to be contacted by Clutch regarding my request.
-                      </FormLabel>
-                      <FormMessage />
-                    </div>
-                  </FormItem>
-                )}
-              />
+              <div className="mb-8 pt-8 border-t border-border/50">
+                <FormField
+                  control={form.control}
+                  name="consent"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          className="border-border/50 data-[state=checked]:bg-foreground data-[state=checked]:border-foreground"
+                        />
+                      </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel className="text-sm font-normal text-muted-foreground">
+                          I consent to be contacted by Clutch regarding my request.
+                        </FormLabel>
+                        <FormMessage className="text-xs" />
+                      </div>
+                    </FormItem>
+                  )}
+                />
+              </div>
 
               <Button
                 type="submit"
-                size="lg"
-                className="w-full bg-foreground text-background hover:bg-foreground/90"
+                variant="premium"
+                size="xl"
+                className="w-full"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit Request"}

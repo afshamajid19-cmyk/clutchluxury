@@ -20,6 +20,9 @@ export default {
         serif: ["'Playfair Display'", "serif"],
         sans: ["'DM Sans'", "system-ui", "sans-serif"],
       },
+      spacing: {
+        '13': '3.25rem',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
