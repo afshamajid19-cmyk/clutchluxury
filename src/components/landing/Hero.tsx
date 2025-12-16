@@ -18,18 +18,18 @@ export function Hero() {
       className="min-h-screen flex flex-col justify-center pt-20 md:pt-24 relative texture-grain"
     >
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-transparent pointer-events-none" />
-      
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-transparent to-transparent pointer-events-none" />
+
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight text-foreground mb-8 animate-fade-up">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground mb-8 animate-fade-up tracking-tight">
             Attaining the Unattainable.
           </h1>
 
           {/* Subheadline */}
           <p
-            className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto animate-fade-up leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground mb-4 max-w-xl mx-auto animate-fade-up leading-relaxed"
             style={{ animationDelay: "0.1s" }}
           >
             Luxury personal shopping & discreet sourcing. Dubai-based. Worldwide delivery.
@@ -37,7 +37,7 @@ export function Hero() {
 
           {/* Supporting line */}
           <p
-            className="text-sm text-muted-foreground/70 mb-12 max-w-md mx-auto animate-fade-up tracking-wide"
+            className="text-sm text-muted-foreground/60 mb-14 max-w-md mx-auto animate-fade-up tracking-wide"
             style={{ animationDelay: "0.15s" }}
           >
             For clients who value discretion, speed, and access.
@@ -45,21 +45,20 @@ export function Hero() {
 
           {/* CTAs */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
             <Button
-              variant="premium"
-              size="xl"
-              className="w-full sm:w-auto min-w-[220px]"
+              size="lg"
+              className="w-full sm:w-auto min-w-[200px] h-13 text-sm tracking-wide"
               onClick={scrollToRequest}
             >
               Request an Item
             </Button>
             <Button
-              variant="premium-outline"
-              size="xl"
-              className="w-full sm:w-auto min-w-[220px]"
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto min-w-[200px] h-13 text-sm tracking-wide border-border hover:bg-secondary"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -72,7 +71,7 @@ export function Hero() {
           </div>
 
           {/* Divider */}
-          <div 
+          <div
             className="w-16 h-px bg-border mx-auto mb-8 animate-fade-up"
             style={{ animationDelay: "0.25s" }}
           />
@@ -82,7 +81,7 @@ export function Hero() {
             className="animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-xs text-muted-foreground/60 tracking-editorial uppercase">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-[11px] text-muted-foreground/50 tracking-editorial uppercase">
               <span>Licensed</span>
               <span className="w-px h-3 bg-border hidden md:block" />
               <span>Since 2017</span>

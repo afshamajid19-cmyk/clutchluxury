@@ -1,10 +1,11 @@
+import { forwardRef } from "react";
 import { useSettings } from "@/hooks/useSettings";
 
-export function Footer() {
+export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
   const { data: settings } = useSettings();
 
   return (
-    <footer className="py-16 md:py-20 bg-foreground text-background">
+    <footer ref={ref} className="py-16 md:py-20 bg-foreground text-background">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           {/* Logo */}
@@ -34,4 +35,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+});

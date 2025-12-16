@@ -25,9 +25,9 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border/40">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-18">
           {/* Logo */}
           <a
             href="#home"
@@ -41,7 +41,7 @@ export function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -50,7 +50,7 @@ export function Navigation() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 tracking-editorial uppercase"
+                className="text-[11px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 tracking-editorial uppercase"
               >
                 {link.label}
               </a>
@@ -60,10 +60,9 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button
-              variant="premium"
               size="sm"
               onClick={() => handleNavClick("#request")}
-              className="tracking-wide"
+              className="text-xs tracking-wide h-9"
             >
               Request an Item
             </Button>
@@ -100,7 +99,6 @@ export function Navigation() {
                 </div>
                 <div className="p-6 border-t border-border">
                   <Button
-                    variant="premium"
                     size="lg"
                     className="w-full tracking-wide"
                     onClick={() => handleNavClick("#request")}
