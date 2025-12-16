@@ -2,106 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clutch Luxury Sourcing - Ultra Premium Editorial Design System */
+/* Clutch Luxury Sourcing - Premium Editorial Design System */
 
 @layer base {
   :root {
-    /* Warm Alabaster Background */
-    --background: 42 40% 98%;
-    --foreground: 20 10% 12%;
+    /* Clutch Color System */
+    --clutch-bg: 38 23% 94%;
+    --clutch-surface: 40 33% 97%;
+    --clutch-ink: 0 0% 7%;
+    --clutch-muted: 0 0% 36%;
+    --clutch-border: 35 18% 85%;
+    --clutch-accent: 36 38% 52%;
+    --clutch-accent-soft: 38 38% 85%;
 
-    /* Cards - Subtle warmth */
-    --card: 40 35% 97%;
-    --card-foreground: 20 10% 12%;
+    /* Semantic mappings */
+    --background: var(--clutch-bg);
+    --foreground: var(--clutch-ink);
 
-    /* Popover */
-    --popover: 42 40% 98%;
-    --popover-foreground: 20 10% 12%;
+    --card: var(--clutch-surface);
+    --card-foreground: var(--clutch-ink);
 
-    /* Primary - Deep Charcoal */
-    --primary: 20 10% 12%;
-    --primary-foreground: 42 40% 98%;
+    --popover: var(--clutch-surface);
+    --popover-foreground: var(--clutch-ink);
 
-    /* Secondary - Warm Sand */
-    --secondary: 38 25% 94%;
-    --secondary-foreground: 20 10% 18%;
+    --primary: var(--clutch-ink);
+    --primary-foreground: var(--clutch-bg);
 
-    /* Muted */
-    --muted: 38 18% 93%;
-    --muted-foreground: 20 5% 48%;
+    --secondary: 38 18% 91%;
+    --secondary-foreground: var(--clutch-ink);
 
-    /* Accent - Refined Muted Gold */
-    --accent: 42 35% 52%;
-    --accent-foreground: 20 10% 10%;
+    --muted: 38 15% 90%;
+    --muted-foreground: var(--clutch-muted);
 
-    /* Destructive */
+    --accent: var(--clutch-accent);
+    --accent-foreground: 0 0% 100%;
+
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders - Warm subtle */
-    --border: 38 18% 90%;
-    --input: 38 18% 88%;
-    --ring: 42 35% 52%;
+    --border: var(--clutch-border);
+    --input: var(--clutch-border);
+    --ring: var(--clutch-accent);
 
-    --radius: 0.25rem;
-
-    /* Luxury additions */
-    --gold: 42 35% 52%;
-    --gold-light: 42 30% 72%;
-    --gold-dark: 42 40% 42%;
-    --ivory: 42 40% 98%;
-    --sand: 38 25% 91%;
-    --charcoal: 20 10% 12%;
-    --charcoal-light: 20 8% 28%;
+    --radius: 0.125rem;
 
     /* Sidebar */
-    --sidebar-background: 40 30% 97%;
-    --sidebar-foreground: 20 10% 15%;
-    --sidebar-primary: 20 10% 12%;
-    --sidebar-primary-foreground: 42 40% 98%;
-    --sidebar-accent: 38 25% 94%;
-    --sidebar-accent-foreground: 20 10% 15%;
-    --sidebar-border: 38 18% 90%;
-    --sidebar-ring: 42 35% 52%;
+    --sidebar-background: var(--clutch-surface);
+    --sidebar-foreground: var(--clutch-ink);
+    --sidebar-primary: var(--clutch-ink);
+    --sidebar-primary-foreground: var(--clutch-bg);
+    --sidebar-accent: 38 18% 91%;
+    --sidebar-accent-foreground: var(--clutch-ink);
+    --sidebar-border: var(--clutch-border);
+    --sidebar-ring: var(--clutch-accent);
   }
 
   .dark {
-    --background: 20 8% 7%;
-    --foreground: 40 20% 92%;
+    --clutch-bg: 0 0% 7%;
+    --clutch-surface: 0 0% 10%;
+    --clutch-ink: 38 23% 94%;
+    --clutch-muted: 0 0% 60%;
+    --clutch-border: 0 0% 18%;
+    --clutch-accent: 36 38% 52%;
+    --clutch-accent-soft: 36 25% 25%;
 
-    --card: 20 8% 9%;
-    --card-foreground: 40 20% 92%;
+    --background: var(--clutch-bg);
+    --foreground: var(--clutch-ink);
 
-    --popover: 20 8% 9%;
-    --popover-foreground: 40 20% 92%;
+    --card: var(--clutch-surface);
+    --card-foreground: var(--clutch-ink);
 
-    --primary: 40 20% 92%;
-    --primary-foreground: 20 8% 7%;
+    --popover: var(--clutch-surface);
+    --popover-foreground: var(--clutch-ink);
 
-    --secondary: 20 6% 14%;
-    --secondary-foreground: 40 20% 92%;
+    --primary: var(--clutch-ink);
+    --primary-foreground: var(--clutch-bg);
 
-    --muted: 20 6% 16%;
-    --muted-foreground: 40 10% 58%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: var(--clutch-ink);
 
-    --accent: 42 35% 52%;
-    --accent-foreground: 20 8% 7%;
+    --muted: 0 0% 16%;
+    --muted-foreground: var(--clutch-muted);
+
+    --accent: var(--clutch-accent);
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
-    --destructive-foreground: 40 20% 92%;
+    --destructive-foreground: var(--clutch-ink);
 
-    --border: 20 6% 16%;
-    --input: 20 6% 16%;
-    --ring: 42 35% 52%;
+    --border: var(--clutch-border);
+    --input: var(--clutch-border);
+    --ring: var(--clutch-accent);
 
-    --sidebar-background: 20 8% 9%;
-    --sidebar-foreground: 40 20% 92%;
-    --sidebar-primary: 42 35% 52%;
-    --sidebar-primary-foreground: 20 8% 7%;
-    --sidebar-accent: 20 6% 14%;
-    --sidebar-accent-foreground: 40 20% 92%;
-    --sidebar-border: 20 6% 16%;
-    --sidebar-ring: 42 35% 52%;
+    --sidebar-background: var(--clutch-surface);
+    --sidebar-foreground: var(--clutch-ink);
+    --sidebar-primary: var(--clutch-accent);
+    --sidebar-primary-foreground: var(--clutch-bg);
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: var(--clutch-ink);
+    --sidebar-border: var(--clutch-border);
+    --sidebar-ring: var(--clutch-accent);
   }
 }
 
@@ -116,14 +116,14 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    @apply tracking-tight;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
+    letter-spacing: -0.02em;
   }
 
   p {
@@ -133,34 +133,27 @@
 
 @layer utilities {
   .font-serif {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
   }
   
   .font-sans {
-    font-family: 'DM Sans', system-ui, sans-serif;
-  }
-
-  .text-gold {
-    color: hsl(var(--gold));
-  }
-
-  .bg-gold {
-    background-color: hsl(var(--gold));
-  }
-
-  .border-gold {
-    border-color: hsl(var(--gold));
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
   /* Premium shadows */
   .luxury-shadow {
-    box-shadow: 0 2px 16px -2px rgba(20, 20, 20, 0.04),
-                0 1px 4px -1px rgba(20, 20, 20, 0.02);
+    box-shadow: 0 2px 20px -4px rgba(18, 18, 18, 0.06),
+                0 1px 4px -1px rgba(18, 18, 18, 0.03);
   }
 
   .luxury-shadow-lg {
-    box-shadow: 0 8px 32px -4px rgba(20, 20, 20, 0.08),
-                0 4px 12px -2px rgba(20, 20, 20, 0.04);
+    box-shadow: 0 12px 40px -8px rgba(18, 18, 18, 0.1),
+                0 4px 16px -4px rgba(18, 18, 18, 0.05);
+  }
+
+  .luxury-shadow-xl {
+    box-shadow: 0 20px 60px -12px rgba(18, 18, 18, 0.15),
+                0 8px 24px -6px rgba(18, 18, 18, 0.08);
   }
 
   /* Subtle texture overlay */
@@ -172,47 +165,66 @@
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.015;
+    opacity: 0.012;
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
   /* Premium animations */
   .animate-fade-up {
-    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: fadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
   }
 
   /* Card hover lift */
   .hover-lift {
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
   
   .hover-lift:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
 
   /* Tracking utilities for editorial typography */
   .tracking-editorial {
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
   }
 
   .tracking-luxury {
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
+  }
+
+  .tracking-tight {
+    letter-spacing: -0.02em;
+  }
+
+  /* 3D Carousel styles */
+  .carousel-3d {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+  }
+
+  .carousel-3d-item {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -232,7 +244,7 @@
   @keyframes slideUp {
     from {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(32px);
     }
     to {
       opacity: 1;
