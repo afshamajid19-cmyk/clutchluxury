@@ -3,7 +3,6 @@ import { Navigation } from "@/components/landing/Navigation";
 import { Hero } from "@/components/landing/Hero";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { TrendingCarousel } from "@/components/landing/TrendingCarousel";
-import { AvailableItems } from "@/components/landing/AvailableItems";
 import { About } from "@/components/landing/About";
 import { RequestForm } from "@/components/landing/RequestForm";
 import { Contact } from "@/components/landing/Contact";
@@ -37,13 +36,10 @@ const Index = () => {
         <Hero />
         <HowItWorks />
         
-        {/* Trending Carousel - only trending items */}
+        {/* Trending Carousel - the ONLY product showcase */}
         {trendingItems && trendingItems.length > 0 && (
           <TrendingCarousel items={trendingItems} onEnquire={handleEnquire} />
         )}
-        
-        {/* Available Items Grid */}
-        <AvailableItems onEnquire={handleEnquire} />
         
         <About />
         <RequestForm

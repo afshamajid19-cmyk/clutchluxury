@@ -6,14 +6,14 @@
 
 @layer base {
   :root {
-    /* Clutch Color System */
-    --clutch-bg: 38 23% 94%;
-    --clutch-surface: 40 33% 97%;
-    --clutch-ink: 0 0% 7%;
-    --clutch-muted: 0 0% 36%;
-    --clutch-border: 35 18% 85%;
-    --clutch-accent: 36 38% 52%;
-    --clutch-accent-soft: 38 38% 85%;
+    /* Clutch Luxury Color System - Pearl/Stone Palette */
+    --clutch-bg: 37 27% 94%;          /* #F6F1E8 pearl background */
+    --clutch-surface: 42 35% 97%;     /* #FBF8F2 warm off-white */
+    --clutch-ink: 0 0% 7%;            /* #121212 deep charcoal */
+    --clutch-muted: 30 8% 40%;        /* #6F6A61 stone gray */
+    --clutch-border: 0 0% 7% / 0.08;  /* hairline borders */
+    --clutch-accent: 41 40% 54%;      /* #B79B5B champagne gold */
+    --clutch-accent-soft: 38 30% 88%;
 
     /* Semantic mappings */
     --background: var(--clutch-bg);
@@ -28,10 +28,10 @@
     --primary: var(--clutch-ink);
     --primary-foreground: var(--clutch-bg);
 
-    --secondary: 38 18% 91%;
+    --secondary: 38 20% 92%;
     --secondary-foreground: var(--clutch-ink);
 
-    --muted: 38 15% 90%;
+    --muted: 38 18% 91%;
     --muted-foreground: var(--clutch-muted);
 
     --accent: var(--clutch-accent);
@@ -41,17 +41,17 @@
     --destructive-foreground: 0 0% 100%;
 
     --border: var(--clutch-border);
-    --input: var(--clutch-border);
+    --input: 0 0% 7% / 0.12;
     --ring: var(--clutch-accent);
 
-    --radius: 0.125rem;
+    --radius: 0.5rem;
 
     /* Sidebar */
     --sidebar-background: var(--clutch-surface);
     --sidebar-foreground: var(--clutch-ink);
     --sidebar-primary: var(--clutch-ink);
     --sidebar-primary-foreground: var(--clutch-bg);
-    --sidebar-accent: 38 18% 91%;
+    --sidebar-accent: 38 20% 92%;
     --sidebar-accent-foreground: var(--clutch-ink);
     --sidebar-border: var(--clutch-border);
     --sidebar-ring: var(--clutch-accent);
