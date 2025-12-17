@@ -25,9 +25,9 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border/40">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-accent/10">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between h-18 md:h-20">
           {/* Logo */}
           <a
             href="#home"
@@ -35,13 +35,13 @@ export function Navigation() {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="font-serif text-xl md:text-2xl tracking-luxury text-foreground uppercase"
+            className="font-display text-xl md:text-2xl tracking-luxury text-gold-gradient uppercase"
           >
             Clutch
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -50,7 +50,7 @@ export function Navigation() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="text-[11px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 tracking-editorial uppercase"
+                className="text-[11px] font-medium text-muted-foreground hover:text-accent transition-colors duration-500 tracking-luxury uppercase"
               >
                 {link.label}
               </a>
@@ -60,9 +60,10 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button
+              variant="outline"
               size="sm"
               onClick={() => handleNavClick("#request")}
-              className="text-xs tracking-wide h-9"
+              className="text-xs tracking-luxury h-10"
             >
               Request an Item
             </Button>
@@ -71,14 +72,14 @@ export function Navigation() {
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" className="h-10 w-10">
+              <Button variant="ghost" size="icon" className="h-10 w-10 text-accent">
                 {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-sm bg-background border-l border-border p-0">
+            <SheetContent side="right" className="w-full max-w-sm bg-clutch-surface border-l border-accent/20 p-0">
               <div className="flex flex-col h-full">
-                <div className="p-6 border-b border-border">
-                  <span className="font-serif text-xl tracking-luxury uppercase">Clutch</span>
+                <div className="p-6 border-b border-accent/20">
+                  <span className="font-display text-xl tracking-luxury text-gold-gradient uppercase">Clutch</span>
                 </div>
                 <div className="flex-1 py-8 px-6">
                   <div className="flex flex-col gap-1">
@@ -90,17 +91,18 @@ export function Navigation() {
                           e.preventDefault();
                           handleNavClick(link.href);
                         }}
-                        className="py-4 text-base font-medium text-foreground hover:text-accent transition-colors duration-300 tracking-wide border-b border-border/50 last:border-0"
+                        className="py-4 text-base font-medium text-foreground hover:text-accent transition-colors duration-500 tracking-wide border-b border-accent/10 last:border-0"
                       >
                         {link.label}
                       </a>
                     ))}
                   </div>
                 </div>
-                <div className="p-6 border-t border-border">
+                <div className="p-6 border-t border-accent/20">
                   <Button
+                    variant="royal"
                     size="lg"
-                    className="w-full tracking-wide"
+                    className="w-full"
                     onClick={() => handleNavClick("#request")}
                   >
                     Request an Item
