@@ -1,13 +1,20 @@
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-secondary/40">
-      <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-10">
+    <section id="about" className="py-32 md:py-40 relative">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-clutch-elevated/40" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 font-medium">
+            Our Story
+          </p>
+          <h2 className="font-display text-display text-gold-gradient mb-8 uppercase">
             About Clutch
           </h2>
+          <div className="ornate-divider w-32 mx-auto mb-12" />
 
-          <div className="space-y-6 text-muted-foreground leading-relaxed text-base md:text-lg">
+          <div className="space-y-8 text-muted-foreground leading-loose text-base md:text-lg font-light">
             <p>
               Established in Dubai in 2017, Clutch is a boutique sourcing platform 
               for discerning clients seeking exceptional luxury pieces. We specialize 
@@ -21,9 +28,9 @@ export function About() {
             </p>
           </div>
 
-          <div className="mt-12 pt-10 border-t border-border">
-            <p className="text-xs text-muted-foreground/60 tracking-wide">
-              Independent sourcing. No brand affiliation.
+          <div className="mt-16 pt-12 border-t border-accent/20">
+            <p className="text-xs text-accent/50 tracking-luxury uppercase">
+              Independent sourcing · No brand affiliation
             </p>
           </div>
         </div>

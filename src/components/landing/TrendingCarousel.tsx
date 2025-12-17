@@ -70,7 +70,7 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
 
   if (itemCount === 0) {
     return (
-      <div className="text-center py-16">
+      <div className="text-center py-24">
         <p className="text-muted-foreground text-sm">No trending items at the moment.</p>
       </div>
     );
@@ -86,26 +86,30 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
     let translateXVal = 0;
     let zIndex = 10;
     let opacity = 1;
+    let blur = 0;
 
     if (diff === 0) {
-      // Center card
-      scale = 1;
+      // Center card - Royal treatment
+      scale = 1.1;
       zIndex = 30;
       opacity = 1;
+      blur = 0;
     } else if (absD === 1) {
       // Adjacent cards
-      scale = 0.85;
-      rotateY = diff > 0 ? -15 : 15;
-      translateXVal = diff > 0 ? 60 : -60;
+      scale = 0.75;
+      rotateY = diff > 0 ? -20 : 20;
+      translateXVal = diff > 0 ? 70 : -70;
       zIndex = 20;
-      opacity = 0.7;
+      opacity = 0.5;
+      blur = 2;
     } else if (absD === 2) {
       // Far cards
-      scale = 0.7;
-      rotateY = diff > 0 ? -25 : 25;
-      translateXVal = diff > 0 ? 120 : -120;
+      scale = 0.6;
+      rotateY = diff > 0 ? -30 : 30;
+      translateXVal = diff > 0 ? 130 : -130;
       zIndex = 10;
-      opacity = 0.4;
+      opacity = 0.25;
+      blur = 4;
     } else {
       // Hidden cards
       opacity = 0;
@@ -116,21 +120,26 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
       transform: `translateX(${translateXVal}%) scale(${scale}) rotateY(${rotateY}deg)`,
       zIndex,
       opacity,
+      filter: blur > 0 ? `blur(${blur}px) brightness(0.7)` : 'none',
     };
   };
 
   return (
-    <section id="trending" className="py-24 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section id="trending" className="py-32 md:py-40 overflow-hidden relative">
+      {/* Spotlight gradient */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-clutch-elevated/30 via-transparent to-transparent pointer-events-none" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-xs tracking-luxury uppercase text-muted-foreground mb-4 animate-fade-up">
+        <div className="text-center mb-20">
+          <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 animate-fade-up font-medium">
             Curated Selection
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 animate-fade-up" style={{ animationDelay: "0.05s" }}>
+          <h2 className="font-display text-display text-gold-gradient mb-6 animate-fade-up uppercase" style={{ animationDelay: "0.1s" }}>
             Trending Now
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div className="ornate-divider w-32 mx-auto mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }} />
+          <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto animate-fade-up font-light" style={{ animationDelay: "0.2s" }}>
             The most sought-after pieces of the moment
           </p>
         </div>
@@ -138,7 +147,7 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
         {/* 3D Carousel */}
         <div 
           ref={containerRef}
-          className="relative carousel-3d h-[480px] md:h-[560px] mx-auto max-w-5xl"
+          className="relative carousel-3d h-[520px] md:h-[620px] mx-auto max-w-6xl"
           onMouseDown={(e) => handleDragStart(e.clientX)}
           onMouseMove={(e) => handleDragMove(e.clientX)}
           onMouseUp={handleDragEnd}
@@ -155,13 +164,27 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
               return (
                 <div
                   key={item.id}
-                  className="carousel-3d-item absolute w-[280px] md:w-[340px] cursor-grab active:cursor-grabbing select-none"
+                  className="carousel-3d-item absolute w-[300px] md:w-[380px] cursor-grab active:cursor-grabbing select-none"
                   style={{
                     ...style,
-                    transition: isDragging ? "none" : "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                    transition: isDragging ? "none" : "all 0.8s cubic-bezier(0.65, 0, 0.35, 1)",
                   }}
                 >
-                  <div className={`bg-card border border-border overflow-hidden ${isActive ? 'luxury-shadow-xl' : 'luxury-shadow'}`}>
+                  <div className={`relative overflow-hidden ${
+                    isActive 
+                      ? 'golden-glow luxury-shadow-xl' 
+                      : 'border border-accent/10 luxury-shadow'
+                  }`}>
+                    {/* Ornate corner decorations for active card */}
+                    {isActive && (
+                      <>
+                        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-accent/60 z-20" />
+                        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-accent/60 z-20" />
+                        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-accent/60 z-20" />
+                        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-accent/60 z-20" />
+                      </>
+                    )}
+
                     {/* Image */}
                     <div className="aspect-[3/4] bg-secondary relative overflow-hidden">
                       {item.hero_image_url ? (
@@ -173,47 +196,52 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                           draggable={false}
                         />
                       ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-card to-secondary border border-border">
-                          <span className="font-serif text-6xl md:text-7xl text-muted-foreground/15 tracking-tight">
+                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-clutch-surface to-clutch-elevated">
+                          <span className="font-display text-7xl md:text-8xl text-accent/20 tracking-tight">
                             {item.brand.charAt(0)}
                           </span>
-                          <span className="text-[10px] tracking-luxury uppercase text-muted-foreground/30 mt-3">
+                          <span className="text-[10px] tracking-luxury uppercase text-accent/30 mt-4 font-medium">
                             {item.brand}
                           </span>
                         </div>
                       )}
                       
+                      {/* Cinematic gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-royal-midnight via-royal-midnight/60 to-transparent opacity-90" />
+                      
                       {/* Trending Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1.5 text-[10px] font-medium tracking-editorial uppercase bg-foreground/90 text-background">
+                      <div className="absolute top-5 left-5 z-10">
+                        <span className="inline-block px-4 py-2 text-[10px] font-medium tracking-luxury uppercase bg-accent/90 text-accent-foreground border border-accent">
                           Trending
                         </span>
                       </div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="p-5 md:p-6">
-                      <div className="text-[10px] text-accent font-medium tracking-luxury uppercase mb-2">
-                        {item.brand}
+                      {/* Content positioned over gradient */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10">
+                        <div className="text-[10px] text-accent font-semibold tracking-luxury uppercase mb-2">
+                          {item.brand}
+                        </div>
+                        <div className="w-12 h-px bg-gradient-to-r from-accent/60 to-transparent mb-3" />
+                        <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2 line-clamp-2 leading-tight">
+                          {item.item_name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wide mb-5">
+                          {item.category}
+                        </p>
+                        
+                        {isActive && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onEnquire(item);
+                            }}
+                            className="group inline-flex items-center gap-2 text-sm text-accent font-medium tracking-wide transition-all duration-500 hover:gap-4"
+                          >
+                            <span className="border-b border-accent/50 pb-0.5 group-hover:border-accent">Enquire</span>
+                            <span className="text-accent/60 group-hover:text-accent transition-colors">→</span>
+                          </button>
+                        )}
                       </div>
-                      <h3 className="font-serif text-xl md:text-2xl text-foreground mb-3 line-clamp-1">
-                        {item.item_name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground uppercase tracking-wide mb-4">
-                        {item.category}
-                      </p>
-                      
-                      {isActive && (
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onEnquire(item);
-                          }}
-                          className="text-sm text-foreground font-medium tracking-wide hover:text-accent transition-colors duration-300 underline underline-offset-4 decoration-border hover:decoration-accent"
-                        >
-                          Enquire
-                        </button>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -227,18 +255,18 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-40 h-12 w-12 bg-background/80 backdrop-blur-sm border border-border hover:bg-background"
+                className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-40 h-16 w-16 rounded-full bg-background/40 backdrop-blur-sm border border-accent/30 hover:bg-accent/20 hover:border-accent/60 hover:shadow-royal-soft transition-all duration-500 group"
                 onClick={handlePrev}
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-6 w-6 text-accent group-hover:scale-110 transition-transform" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-40 h-12 w-12 bg-background/80 backdrop-blur-sm border border-border hover:bg-background"
+                className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-40 h-16 w-16 rounded-full bg-background/40 backdrop-blur-sm border border-accent/30 hover:bg-accent/20 hover:border-accent/60 hover:shadow-royal-soft transition-all duration-500 group"
                 onClick={handleNext}
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-6 w-6 text-accent group-hover:scale-110 transition-transform" />
               </Button>
             </>
           )}
@@ -246,15 +274,15 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
 
         {/* Dots */}
         {itemCount > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-8">
+          <div className="flex items-center justify-center gap-3 mt-12">
             {items.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`rounded-full transition-all duration-500 ${
                   index === activeIndex 
-                    ? 'w-8 bg-foreground' 
-                    : 'w-2 bg-border hover:bg-muted-foreground'
+                    ? 'w-10 h-2 bg-gradient-to-r from-royal-gold to-royal-gold-light shadow-royal-soft' 
+                    : 'w-2 h-2 bg-accent/30 hover:bg-accent/50'
                 }`}
               />
             ))}
@@ -263,14 +291,14 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
 
         {/* Instagram Link */}
         {settings?.instagram_url && (
-          <div className="text-center mt-12">
-            <p className="text-sm text-muted-foreground">
+          <div className="text-center mt-16">
+            <p className="text-sm text-muted-foreground/60 font-light">
               For daily updates, view the latest on{" "}
               <a
                 href={settings.instagram_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground underline underline-offset-4 decoration-border hover:decoration-accent transition-colors"
+                className="text-accent/80 hover:text-accent transition-colors duration-300 border-b border-accent/30 hover:border-accent/60 pb-0.5"
               >
                 Instagram
               </a>

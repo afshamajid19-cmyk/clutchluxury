@@ -185,30 +185,31 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
   if (isSuccess) {
     return (
-      <section id="request" className="py-24 md:py-32" ref={formRef}>
-        <div className="container mx-auto px-6">
+      <section id="request" className="py-32 md:py-40 relative" ref={formRef}>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent pointer-events-none" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-lg mx-auto text-center">
             {/* Success icon */}
-            <div className="w-16 h-16 border border-accent rounded-full flex items-center justify-center mx-auto mb-8">
-              <Check className="h-6 w-6 text-accent" />
+            <div className="w-20 h-20 border-2 border-accent/60 rounded-full flex items-center justify-center mx-auto mb-10 golden-glow-soft">
+              <Check className="h-8 w-8 text-accent" />
             </div>
             
-            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl text-gold-gradient mb-4 uppercase">
               Request Received
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-10 font-light">
               Our concierge will respond shortly.
             </p>
 
             {submittedData && (
-              <div className="bg-secondary/50 border border-border/50 p-6 mb-10 text-left text-sm">
-                <div className="space-y-2">
+              <div className="bg-clutch-surface/50 border border-accent/20 p-8 mb-12 text-left text-sm backdrop-blur-sm">
+                <div className="space-y-3">
                   <p className="text-muted-foreground">
-                    <span className="text-foreground font-medium">Item:</span>{" "}
+                    <span className="text-accent font-medium">Item:</span>{" "}
                     {submittedData.brand} — {submittedData.item_name}
                   </p>
                   <p className="text-muted-foreground">
-                    <span className="text-foreground font-medium">Timeline:</span>{" "}
+                    <span className="text-accent font-medium">Timeline:</span>{" "}
                     {submittedData.urgency}
                   </p>
                 </div>
@@ -216,9 +217,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
             )}
 
             <Button
-              variant="premium"
+              variant="royal"
               size="lg"
-              className="mb-4"
+              className="mb-6"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -226,12 +227,12 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               }}
             >
               <MessageCircle className="mr-2 h-4 w-4" />
-              Message Us on WhatsApp (Fastest)
+              Message Us on WhatsApp
             </Button>
 
             <div>
               <button
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+                className="text-sm text-accent/70 hover:text-accent transition-colors duration-500 border-b border-accent/30 hover:border-accent pb-0.5"
                 onClick={() => {
                   setIsSuccess(false);
                   setSubmittedData(null);
@@ -248,14 +249,19 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   }
 
   return (
-    <section id="request" className="py-24 md:py-32" ref={formRef}>
-      <div className="container mx-auto px-6">
+    <section id="request" className="py-32 md:py-40 relative" ref={formRef}>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent pointer-events-none" />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+          <div className="text-center mb-16">
+            <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 font-medium">
+              Start Here
+            </p>
+            <h2 className="font-display text-display text-gold-gradient mb-6 uppercase">
               Private Client Request
             </h2>
-            <p className="text-muted-foreground text-sm md:text-base">
+            <div className="ornate-divider w-32 mx-auto mb-8" />
+            <p className="text-muted-foreground text-sm md:text-base font-light">
               Share your wishlist and our concierge will respond with options.
             </p>
           </div>
@@ -263,7 +269,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="bg-card border border-border/50 p-8 md:p-10 luxury-shadow"
+              className="relative bg-clutch-surface/80 border border-accent/20 p-10 md:p-14 luxury-shadow-xl backdrop-blur-sm"
             >
               {/* Honeypot field */}
               <input
