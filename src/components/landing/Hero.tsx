@@ -17,17 +17,23 @@ export function Hero() {
       id="home"
       className="min-h-screen flex flex-col justify-center pt-20 md:pt-24 relative texture-grain vignette particles overflow-hidden"
     >
-      {/* Cinematic gradient background */}
-      <div className="absolute inset-0 bg-gradient-radial from-clutch-elevated via-background to-background pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-clutch-elevated/50 via-transparent to-transparent pointer-events-none" />
+      {/* Warm cinematic gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#241E1A_0%,_#1A1512_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,_rgba(139,127,116,0.08),_transparent)] pointer-events-none" />
       
-      {/* Subtle spotlight effect - TAUPE tinted */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-radial from-taupe-DEFAULT/5 via-transparent to-transparent blur-3xl pointer-events-none" />
+      {/* Subtle warm spotlight effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(139,127,116,0.06),_transparent)] blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Main Headline with taupe gradient */}
-          <h1 className="font-display text-hero text-taupe-gradient mb-8 animate-scale-up tracking-tight uppercase">
+          {/* Main Headline - Solid cream, wide tracking, Cormorant Garamond */}
+          <h1 
+            className="font-display text-[clamp(3rem,8vw,6rem)] text-taupe-cream mb-8 animate-scale-up uppercase font-normal"
+            style={{ 
+              letterSpacing: '0.08em',
+              textShadow: '0 4px 40px rgba(139, 127, 116, 0.25)'
+            }}
+          >
             Attaining the Unattainable
           </h1>
 
@@ -37,17 +43,17 @@ export function Hero() {
             style={{ animationDelay: "0.2s" }}
           />
 
-          {/* Subheadline */}
+          {/* Subheadline - Italic serif */}
           <p
-            className="font-serif text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-4 max-w-2xl mx-auto animate-fade-up leading-relaxed italic"
-            style={{ animationDelay: "0.3s" }}
+            className="font-serif-italic text-xl md:text-2xl lg:text-[1.75rem] text-taupe-light/85 mb-4 max-w-2xl mx-auto animate-fade-up leading-relaxed font-light"
+            style={{ animationDelay: "0.3s", letterSpacing: '0.02em' }}
           >
             Luxury personal shopping & discreet sourcing
           </p>
 
           {/* Supporting line */}
           <p
-            className="text-sm md:text-base text-muted-foreground/60 mb-16 max-w-md mx-auto animate-fade-up tracking-wide"
+            className="text-sm md:text-base text-muted-foreground/60 mb-16 max-w-md mx-auto animate-fade-up tracking-wide font-light"
             style={{ animationDelay: "0.4s" }}
           >
             Dubai-based · Worldwide delivery · Since 2017
@@ -60,7 +66,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium bg-gradient-to-r from-taupe-light via-taupe-DEFAULT to-taupe-dark text-taupe-cream hover:shadow-taupe transition-all duration-500 hover:scale-[1.02] border-0"
+              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-semibold bg-taupe-DEFAULT text-[#1A1512] hover:bg-taupe-light hover:shadow-[0_8px_32px_rgba(139,127,116,0.4)] transition-all duration-500 hover:translate-y-[-4px] border-0 rounded-sm"
               onClick={scrollToRequest}
             >
               Request an Item
@@ -68,7 +74,7 @@ export function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium border-taupe-DEFAULT/30 text-foreground hover:bg-taupe-DEFAULT/10 hover:border-taupe-DEFAULT/60 hover:shadow-taupe-soft transition-all duration-500 backdrop-blur-sm"
+              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium border-taupe-DEFAULT/40 bg-taupe-DEFAULT/10 text-taupe-cream hover:bg-taupe-DEFAULT hover:text-[#1A1512] hover:border-taupe-DEFAULT transition-all duration-500 backdrop-blur-sm rounded-sm"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
