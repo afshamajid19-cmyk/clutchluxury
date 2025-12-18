@@ -185,10 +185,10 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                       </>
                     )}
 
-                    {/* Image - FIXED: object-contain with padding */}
-                    <div className="aspect-[3/4] bg-clutch-surface relative overflow-hidden">
+                    {/* Image - object-contain with padding, warm background */}
+                    <div className="aspect-[3/4] bg-[#1F1A16] relative overflow-hidden">
                       {item.hero_image_url ? (
-                        <div className="w-full h-full p-4 md:p-6 flex items-center justify-center bg-gradient-to-br from-clutch-surface to-clutch-elevated">
+                        <div className="w-full h-full p-5 md:p-6 flex items-center justify-center bg-gradient-to-br from-[#241E1A] to-[#1F1A16]">
                           <img
                             src={item.hero_image_url}
                             alt={`${item.brand} ${item.item_name}`}
@@ -198,8 +198,8 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                           />
                         </div>
                       ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-clutch-surface to-clutch-elevated">
-                          <span className="font-display text-7xl md:text-8xl text-taupe-DEFAULT/20 tracking-tight">
+                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#241E1A] to-[#1F1A16]">
+                          <span className="font-display text-7xl md:text-8xl text-taupe-DEFAULT/20" style={{ letterSpacing: '0.05em' }}>
                             {item.brand.charAt(0)}
                           </span>
                           <span className="text-[10px] tracking-luxury uppercase text-taupe-DEFAULT/30 mt-4 font-medium">
@@ -208,8 +208,8 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                         </div>
                       )}
                       
-                      {/* Cinematic gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B0A] via-[#0D0B0A]/60 to-transparent opacity-90 pointer-events-none" />
+                      {/* Cinematic gradient overlay - warm brown */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1512] via-[#1A1512]/60 to-transparent opacity-90 pointer-events-none" />
                       
                       {/* Trending Badge - TAUPE color */}
                       <div className="absolute top-5 left-5 z-10">

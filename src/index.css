@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    /* Cinematic Taupe Color System - Warm Dark + Stone */
-    --clutch-bg: 20 20% 4%;              /* #0D0B0A deep warm black */
-    --clutch-surface: 20 15% 9%;         /* #1A1614 dark warm surface */
-    --clutch-elevated: 20 10% 13%;       /* #252220 elevated surface */
+    /* Cinematic Warm Brown-Black Color System */
+    --clutch-bg: 20 25% 8%;              /* #1A1512 warm deep brown-black */
+    --clutch-surface: 20 20% 12%;        /* #241E1A warmer dark surface */
+    --clutch-elevated: 20 15% 15%;       /* #2D2622 warm charcoal brown */
     --clutch-ink: 40 30% 93%;            /* #F5EFE0 cream */
     --clutch-muted: 30 15% 71%;          /* #C4B5A8 lighter taupe */
     --clutch-tertiary: 30 10% 50%;       /* #8B7F74 clutch taupe */
@@ -100,9 +100,9 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', 'Cinzel', serif;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
   }
 
   p {
@@ -112,15 +112,20 @@
 
 @layer utilities {
   .font-serif {
-    font-family: 'Playfair Display', 'Cinzel', serif;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
   }
   
   .font-display {
-    font-family: 'Cinzel', 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', 'Cinzel', serif;
   }
   
   .font-sans {
     font-family: 'Raleway', 'Inter', system-ui, sans-serif;
+  }
+
+  .font-serif-italic {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-style: italic;
   }
 
   /* Taupe Gradient Text */
@@ -191,7 +196,7 @@
     90% { transform: translate(1%, 1%); }
   }
 
-  /* Cinematic Vignette */
+  /* Cinematic Vignette - Warm Brown */
   .vignette {
     position: relative;
   }
@@ -201,7 +206,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, transparent 40%, rgba(13, 11, 10, 0.6) 100%);
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(26, 21, 18, 0.7) 100%);
   }
 
   /* Premium animations */
