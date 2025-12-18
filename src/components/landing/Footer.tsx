@@ -5,11 +5,11 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
   const { data: settings } = useSettings();
 
   return (
-    <footer ref={ref} className="py-20 md:py-24 bg-clutch-surface border-t border-accent/20">
+    <footer ref={ref} className="py-20 md:py-24 bg-clutch-surface border-t border-taupe-DEFAULT/20">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           {/* Logo */}
-          <div className="font-display text-2xl tracking-luxury text-gold-gradient uppercase mb-10">
+          <div className="font-display text-2xl tracking-luxury text-taupe-gradient uppercase mb-10">
             Clutch
           </div>
 
@@ -27,7 +27,7 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
             <p className="text-xs text-muted-foreground/40 tracking-wide">
               We use your details only to respond to your request.
             </p>
-            <p className="text-xs text-accent/40 tracking-luxury uppercase">
+            <p className="text-xs text-taupe-DEFAULT/40 tracking-luxury uppercase">
               © {new Date().getFullYear()} Clutch Luxury Sourcing
             </p>
           </div>

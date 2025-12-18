@@ -29,10 +29,10 @@ export function HowItWorks() {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 font-medium">
+          <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
             The Process
           </p>
-          <h2 className="font-display text-display text-gold-gradient mb-6 uppercase">
+          <h2 className="font-display text-display text-taupe-gradient mb-6 uppercase">
             How It Works
           </h2>
           <div className="ornate-divider w-32 mx-auto" />
@@ -46,7 +46,7 @@ export function HowItWorks() {
                 className="text-center group animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-gold-gradient font-display text-5xl md:text-6xl mb-6 group-hover:scale-110 transition-transform duration-500">
+                <div className="text-taupe-gradient font-display text-5xl md:text-6xl mb-6 group-hover:scale-110 transition-transform duration-500">
                   {step.number}
                 </div>
                 <h3 className="text-sm font-medium text-foreground mb-3 tracking-wide uppercase">

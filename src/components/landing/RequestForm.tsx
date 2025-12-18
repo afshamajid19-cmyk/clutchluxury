@@ -186,15 +186,15 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   if (isSuccess) {
     return (
       <section id="request" className="py-32 md:py-40 relative" ref={formRef}>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-lg mx-auto text-center">
             {/* Success icon */}
-            <div className="w-20 h-20 border-2 border-accent/60 rounded-full flex items-center justify-center mx-auto mb-10 golden-glow-soft">
-              <Check className="h-8 w-8 text-accent" />
+            <div className="w-20 h-20 border-2 border-taupe-DEFAULT/60 rounded-full flex items-center justify-center mx-auto mb-10 taupe-glow-soft">
+              <Check className="h-8 w-8 text-taupe-light" />
             </div>
             
-            <h2 className="font-display text-3xl md:text-4xl text-gold-gradient mb-4 uppercase">
+            <h2 className="font-display text-3xl md:text-4xl text-taupe-gradient mb-4 uppercase">
               Request Received
             </h2>
             <p className="text-muted-foreground mb-10 font-light">
@@ -202,14 +202,14 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
             </p>
 
             {submittedData && (
-              <div className="bg-clutch-surface/50 border border-accent/20 p-8 mb-12 text-left text-sm backdrop-blur-sm">
+              <div className="bg-clutch-surface/50 border border-taupe-DEFAULT/20 p-8 mb-12 text-left text-sm backdrop-blur-sm">
                 <div className="space-y-3">
                   <p className="text-muted-foreground">
-                    <span className="text-accent font-medium">Item:</span>{" "}
+                    <span className="text-taupe-light font-medium">Item:</span>{" "}
                     {submittedData.brand} — {submittedData.item_name}
                   </p>
                   <p className="text-muted-foreground">
-                    <span className="text-accent font-medium">Timeline:</span>{" "}
+                    <span className="text-taupe-light font-medium">Timeline:</span>{" "}
                     {submittedData.urgency}
                   </p>
                 </div>
@@ -232,7 +232,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
             <div>
               <button
-                className="text-sm text-accent/70 hover:text-accent transition-colors duration-500 border-b border-accent/30 hover:border-accent pb-0.5"
+                className="text-sm text-taupe-DEFAULT/70 hover:text-taupe-light transition-colors duration-500 border-b border-taupe-DEFAULT/30 hover:border-taupe-DEFAULT pb-0.5"
                 onClick={() => {
                   setIsSuccess(false);
                   setSubmittedData(null);
@@ -250,14 +250,14 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
   return (
     <section id="request" className="py-32 md:py-40 relative" ref={formRef}>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 font-medium">
+            <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
               Start Here
             </p>
-            <h2 className="font-display text-display text-gold-gradient mb-6 uppercase">
+            <h2 className="font-display text-display text-taupe-gradient mb-6 uppercase">
               Private Client Request
             </h2>
             <div className="ornate-divider w-32 mx-auto mb-8" />

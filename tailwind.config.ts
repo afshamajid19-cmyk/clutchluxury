@@ -79,12 +79,12 @@ export default {
           bronze: "hsl(var(--clutch-bronze))",
           border: "hsl(var(--clutch-border))",
         },
-        royal: {
-          gold: "#D4AF37",
-          "gold-light": "#F4D03F",
-          bronze: "#CD7F32",
-          midnight: "#0A0A0F",
-          surface: "#14141F",
+        taupe: {
+          DEFAULT: "#8B7F74",
+          light: "#A89B8E",
+          dark: "#6B5E54",
+          cream: "#F5EFE0",
+          charcoal: "#3D3935",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -103,10 +103,10 @@ export default {
         sm: "calc(var(--radius) - 2px)",
       },
       boxShadow: {
-        'royal': '0 0 40px rgba(212, 175, 55, 0.4), inset 0 0 0 1px rgba(212, 175, 55, 0.6)',
-        'royal-soft': '0 0 30px rgba(212, 175, 55, 0.2)',
+        'taupe': '0 0 40px rgba(139, 127, 116, 0.4), inset 0 0 0 1px rgba(139, 127, 116, 0.6)',
+        'taupe-soft': '0 0 30px rgba(139, 127, 116, 0.2)',
         'dramatic': '0 24px 64px -16px rgba(0, 0, 0, 0.85)',
-        'cinematic': '0 16px 50px -12px rgba(0, 0, 0, 0.8), 0 0 60px -20px rgba(212, 175, 55, 0.2)',
+        'cinematic': '0 16px 50px -12px rgba(0, 0, 0, 0.8), 0 0 60px -20px rgba(139, 127, 116, 0.2)',
       },
       keyframes: {
         "accordion-down": {
@@ -130,8 +130,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 30px rgba(212, 175, 55, 0.3)" },
-          "50%": { boxShadow: "0 0 50px rgba(212, 175, 55, 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 30px rgba(139, 127, 116, 0.3)" },
+          "50%": { boxShadow: "0 0 50px rgba(139, 127, 116, 0.5)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },

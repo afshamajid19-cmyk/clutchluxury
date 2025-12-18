@@ -21,13 +21,13 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-radial from-clutch-elevated via-background to-background pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-clutch-elevated/50 via-transparent to-transparent pointer-events-none" />
       
-      {/* Subtle spotlight effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-radial from-accent/5 via-transparent to-transparent blur-3xl pointer-events-none" />
+      {/* Subtle spotlight effect - TAUPE tinted */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-radial from-taupe-DEFAULT/5 via-transparent to-transparent blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Main Headline with golden gradient */}
-          <h1 className="font-display text-hero text-gold-gradient mb-8 animate-scale-up tracking-tight uppercase">
+          {/* Main Headline with taupe gradient */}
+          <h1 className="font-display text-hero text-taupe-gradient mb-8 animate-scale-up tracking-tight uppercase">
             Attaining the Unattainable
           </h1>
 
@@ -53,14 +53,14 @@ export function Hero() {
             Dubai-based · Worldwide delivery · Since 2017
           </p>
 
-          {/* CTAs */}
+          {/* CTAs - TAUPE styled */}
           <div
             className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-24 animate-fade-up"
             style={{ animationDelay: "0.5s" }}
           >
             <Button
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium bg-gradient-to-r from-royal-gold via-royal-gold-light to-royal-gold text-royal-midnight hover:shadow-royal transition-all duration-500 hover:scale-[1.02] border-0"
+              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium bg-gradient-to-r from-taupe-light via-taupe-DEFAULT to-taupe-dark text-taupe-cream hover:shadow-taupe transition-all duration-500 hover:scale-[1.02] border-0"
               onClick={scrollToRequest}
             >
               Request an Item
@@ -68,7 +68,7 @@ export function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium border-accent/30 text-foreground hover:bg-accent/10 hover:border-accent/60 hover:shadow-royal-soft transition-all duration-500 backdrop-blur-sm"
+              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium border-taupe-DEFAULT/30 text-foreground hover:bg-taupe-DEFAULT/10 hover:border-taupe-DEFAULT/60 hover:shadow-taupe-soft transition-all duration-500 backdrop-blur-sm"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -86,13 +86,13 @@ export function Hero() {
             style={{ animationDelay: "0.6s" }}
           >
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-[11px] text-muted-foreground/40 tracking-luxury uppercase">
-              <span className="hover:text-accent/60 transition-colors duration-300">Licensed</span>
-              <span className="w-1 h-1 rounded-full bg-accent/30 hidden md:block" />
-              <span className="hover:text-accent/60 transition-colors duration-300">Since 2017</span>
-              <span className="w-1 h-1 rounded-full bg-accent/30 hidden md:block" />
-              <span className="hover:text-accent/60 transition-colors duration-300">International Shipping</span>
-              <span className="w-1 h-1 rounded-full bg-accent/30 hidden md:block" />
-              <span className="hover:text-accent/60 transition-colors duration-300">Discreet Sourcing</span>
+              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">Licensed</span>
+              <span className="w-1 h-1 rounded-full bg-taupe-DEFAULT/30 hidden md:block" />
+              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">Since 2017</span>
+              <span className="w-1 h-1 rounded-full bg-taupe-DEFAULT/30 hidden md:block" />
+              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">International Shipping</span>
+              <span className="w-1 h-1 rounded-full bg-taupe-DEFAULT/30 hidden md:block" />
+              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">Discreet Sourcing</span>
             </div>
           </div>
         </div>

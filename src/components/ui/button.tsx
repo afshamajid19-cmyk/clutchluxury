@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium tracking-wide ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium tracking-wide ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-taupe-DEFAULT focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-royal-gold via-royal-gold-light to-royal-gold text-royal-midnight hover:shadow-royal hover:scale-[1.02]",
+        default: "bg-gradient-to-r from-taupe-light via-taupe-DEFAULT to-taupe-dark text-taupe-cream hover:shadow-taupe hover:scale-[1.02]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-accent/30 bg-transparent text-foreground hover:bg-accent/10 hover:border-accent/60 hover:shadow-royal-soft backdrop-blur-sm",
-        secondary: "bg-clutch-elevated text-foreground hover:bg-clutch-elevated/80 border border-accent/20",
-        ghost: "hover:bg-clutch-elevated hover:text-accent",
-        link: "text-accent underline-offset-4 hover:underline",
-        premium: "bg-gradient-to-r from-royal-gold via-royal-gold-light to-royal-gold text-royal-midnight hover:shadow-royal hover:scale-[1.02] font-semibold",
-        "premium-outline": "border-2 border-accent/40 bg-transparent text-accent hover:bg-accent hover:text-accent-foreground hover:shadow-royal",
-        minimal: "text-accent hover:text-royal-gold-light transition-colors underline-offset-4",
-        royal: "bg-gradient-to-r from-royal-gold via-royal-gold-light to-royal-gold text-royal-midnight hover:shadow-royal hover:scale-[1.02] tracking-luxury uppercase font-semibold",
+        outline: "border border-taupe-DEFAULT/30 bg-transparent text-foreground hover:bg-taupe-DEFAULT/10 hover:border-taupe-DEFAULT/60 hover:shadow-taupe-soft backdrop-blur-sm",
+        secondary: "bg-clutch-elevated text-foreground hover:bg-clutch-elevated/80 border border-taupe-DEFAULT/20",
+        ghost: "hover:bg-clutch-elevated hover:text-taupe-light",
+        link: "text-taupe-light underline-offset-4 hover:underline",
+        premium: "bg-gradient-to-r from-taupe-light via-taupe-DEFAULT to-taupe-dark text-taupe-cream hover:shadow-taupe hover:scale-[1.02] font-semibold",
+        "premium-outline": "border-2 border-taupe-DEFAULT/40 bg-transparent text-taupe-light hover:bg-taupe-DEFAULT hover:text-taupe-cream hover:shadow-taupe",
+        minimal: "text-taupe-light hover:text-taupe-cream transition-colors underline-offset-4",
+        royal: "bg-gradient-to-r from-taupe-light via-taupe-DEFAULT to-taupe-dark text-taupe-cream hover:shadow-taupe hover:scale-[1.02] tracking-luxury uppercase font-semibold",
       },
       size: {
         default: "h-11 px-6 py-2.5 rounded-sm",

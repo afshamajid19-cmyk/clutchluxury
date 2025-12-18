@@ -54,10 +54,10 @@ export function FAQ() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 font-medium">
+            <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
               Questions
             </p>
-            <h2 className="font-display text-display text-gold-gradient mb-6 uppercase">
+            <h2 className="font-display text-display text-taupe-gradient mb-6 uppercase">
               Frequently Asked
             </h2>
             <div className="ornate-divider w-32 mx-auto" />
@@ -68,9 +68,9 @@ export function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-b border-accent/20 first:border-t"
+                className="border-b border-taupe-DEFAULT/20 first:border-t"
               >
-                <AccordionTrigger className="py-6 hover:no-underline text-left pr-4 text-foreground hover:text-accent transition-colors duration-500 font-serif text-base">
+                <AccordionTrigger className="py-6 hover:no-underline text-left pr-4 text-foreground hover:text-taupe-light transition-colors duration-500 font-serif text-base">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground/80 pb-6 leading-relaxed text-sm font-light">

@@ -6,10 +6,10 @@ export function About() {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 font-medium">
+          <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
             Our Story
           </p>
-          <h2 className="font-display text-display text-gold-gradient mb-8 uppercase">
+          <h2 className="font-display text-display text-taupe-gradient mb-8 uppercase">
             About Clutch
           </h2>
           <div className="ornate-divider w-32 mx-auto mb-12" />
@@ -28,8 +28,8 @@ export function About() {
             </p>
           </div>
 
-          <div className="mt-16 pt-12 border-t border-accent/20">
-            <p className="text-xs text-accent/50 tracking-luxury uppercase">
+          <div className="mt-16 pt-12 border-t border-taupe-DEFAULT/20">
+            <p className="text-xs text-taupe-DEFAULT/50 tracking-luxury uppercase">
               Independent sourcing · No brand affiliation
             </p>
           </div>

@@ -39,15 +39,15 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-32 md:py-40 relative">
-      {/* Spotlight effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent pointer-events-none" />
+      {/* Spotlight effect - TAUPE tinted */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs tracking-luxury uppercase text-accent/70 mb-6 font-medium">
+          <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
             Connect
           </p>
-          <h2 className="font-display text-display text-gold-gradient mb-6 uppercase">
+          <h2 className="font-display text-display text-taupe-gradient mb-6 uppercase">
             Get in Touch
           </h2>
           <div className="ornate-divider w-32 mx-auto mb-8" />
@@ -69,18 +69,18 @@ export function Contact() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex flex-col items-center gap-5 py-10 px-6 bg-clutch-surface/50 border border-accent/20 transition-all duration-500 hover:border-accent/60 hover:-translate-y-2 hover:shadow-royal backdrop-blur-sm"
+                  className="group relative flex flex-col items-center gap-5 py-10 px-6 bg-clutch-surface/50 border border-taupe-DEFAULT/20 transition-all duration-500 hover:border-taupe-DEFAULT/60 hover:-translate-y-2 hover:shadow-taupe backdrop-blur-sm"
                 >
-                  {/* Corner accents */}
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-accent/30 group-hover:border-accent/60 transition-colors duration-500" />
-                  <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-accent/30 group-hover:border-accent/60 transition-colors duration-500" />
-                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-accent/30 group-hover:border-accent/60 transition-colors duration-500" />
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-accent/30 group-hover:border-accent/60 transition-colors duration-500" />
+                  {/* Corner accents - TAUPE */}
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
                   
-                  {/* Icon with golden ring */}
+                  {/* Icon with taupe ring */}
                   <div className="relative">
-                    <div className="absolute inset-0 rounded-full border border-accent/30 scale-150 group-hover:scale-[1.8] group-hover:border-accent/50 transition-all duration-500" />
-                    <Icon className="h-8 w-8 text-accent/70 group-hover:text-accent transition-all duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 rounded-full border border-taupe-DEFAULT/30 scale-150 group-hover:scale-[1.8] group-hover:border-taupe-DEFAULT/50 transition-all duration-500" />
+                    <Icon className="h-8 w-8 text-taupe-DEFAULT/70 group-hover:text-taupe-light transition-all duration-500 group-hover:scale-110" />
                   </div>
                   
                   <span className="text-xs font-medium tracking-luxury uppercase text-foreground/70 group-hover:text-foreground transition-colors duration-500">
