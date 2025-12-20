@@ -26,12 +26,11 @@ export function Hero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Main Headline - Solid cream, wide tracking, Cormorant Garamond */}
+          {/* Main Headline - Cinzel, wide tracking, solid cream */}
           <h1 
-            className="font-display text-[clamp(3rem,8vw,6rem)] text-taupe-cream mb-8 animate-scale-up uppercase font-normal"
+            className="font-display text-hero-mobile md:text-hero text-taupe-cream mb-6 md:mb-8 animate-scale-up uppercase font-normal"
             style={{ 
-              letterSpacing: '0.08em',
-              textShadow: '0 4px 40px rgba(139, 127, 116, 0.25)'
+              textShadow: '0 2px 30px rgba(139, 127, 116, 0.25)'
             }}
           >
             Attaining the Unattainable
