@@ -38,27 +38,33 @@ export function Contact() {
   const { data: settings } = useSettings();
 
   return (
-    <section id="contact" className="py-32 md:py-40 relative">
+    <section id="contact" className="py-32 md:py-44 relative">
       {/* Spotlight effect - TAUPE tinted */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
+          <p className="section-overline mb-5">
             Connect
           </p>
-          <h2 className="font-display text-display text-taupe-gradient mb-6 uppercase">
+          <h2 className="section-title">
             Get in Touch
           </h2>
-          <div className="ornate-divider w-32 mx-auto mb-8" />
-          <p className="text-muted-foreground text-sm md:text-base mb-3 font-light">
+          <div className="section-divider mb-10" />
+          <p 
+            className="text-[15px] mb-4 font-light"
+            style={{ color: 'rgba(245,239,224,0.7)' }}
+          >
             Reach out through your preferred channel.
           </p>
-          <p className="text-xs text-muted-foreground/50 tracking-wide mb-16">
+          <p 
+            className="text-[13px] mb-16"
+            style={{ color: 'rgba(245,239,224,0.5)', letterSpacing: '1px' }}
+          >
             We typically respond within a few hours.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {contactLinks.map(({ key, label, Icon }) => {
               const url = settings?.[key as keyof typeof settings];
               if (!url) return null;
@@ -69,27 +75,63 @@ export function Contact() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex flex-col items-center gap-5 py-10 px-6 bg-clutch-surface/50 border border-taupe-DEFAULT/20 transition-all duration-500 hover:border-taupe-DEFAULT/60 hover:-translate-y-2 hover:shadow-taupe backdrop-blur-sm"
+                  className="group relative flex flex-col items-center gap-5 py-12 px-8 rounded-lg transition-all duration-500 cursor-pointer"
+                  style={{
+                    background: 'rgba(36,30,26,0.4)',
+                    border: '1px solid rgba(139,127,116,0.2)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(36,30,26,0.7)';
+                    e.currentTarget.style.borderColor = 'rgba(139,127,116,0.5)';
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 16px 48px rgba(139,127,116,0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(36,30,26,0.4)';
+                    e.currentTarget.style.borderColor = 'rgba(139,127,116,0.2)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
                 >
-                  {/* Corner accents - TAUPE */}
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
-                  <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
-                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-taupe-DEFAULT/30 group-hover:border-taupe-DEFAULT/60 transition-colors duration-500" />
-                  
-                  {/* Icon with taupe ring */}
+                  {/* Icon with subtle ring */}
                   <div className="relative">
-                    <div className="absolute inset-0 rounded-full border border-taupe-DEFAULT/30 scale-150 group-hover:scale-[1.8] group-hover:border-taupe-DEFAULT/50 transition-all duration-500" />
-                    <Icon className="h-8 w-8 text-taupe-DEFAULT/70 group-hover:text-taupe-light transition-all duration-500 group-hover:scale-110" />
+                    <div 
+                      className="absolute inset-0 rounded-full scale-[2] transition-all duration-500 group-hover:scale-[2.5]"
+                      style={{ 
+                        background: 'rgba(139,127,116,0.1)',
+                        width: '80px',
+                        height: '80px',
+                        left: '50%',
+                        top: '50%',
+                        transform: 'translate(-50%, -50%)'
+                      }}
+                    />
+                    <Icon 
+                      className="h-[52px] w-[52px] transition-all duration-500 relative z-10 group-hover:scale-110" 
+                      style={{ color: '#8B7F74' }}
+                    />
                   </div>
                   
-                  <span className="text-xs font-medium tracking-luxury uppercase text-foreground/70 group-hover:text-foreground transition-colors duration-500">
+                  <span 
+                    className="text-[13px] font-medium uppercase transition-colors duration-500"
+                    style={{ 
+                      letterSpacing: '2px', 
+                      color: '#F5EFE0'
+                    }}
+                  >
                     {label}
                   </span>
                 </a>
               );
             })}
           </div>
+
+          <p 
+            className="mt-12 text-[13px]"
+            style={{ color: 'rgba(245,239,224,0.5)' }}
+          >
+            We typically respond within a few hours
+          </p>
         </div>
       </div>
     </section>

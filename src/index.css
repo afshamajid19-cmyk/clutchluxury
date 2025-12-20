@@ -96,17 +96,23 @@
     font-family: 'Raleway', 'Inter', system-ui, sans-serif;
     letter-spacing: 0.02em;
     font-weight: 300;
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
     font-weight: 400;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
   }
 
   p {
     @apply leading-relaxed;
+    line-height: 1.85;
+  }
+
+  /* Section styling */
+  section {
+    @apply relative;
   }
 }
 
@@ -116,7 +122,7 @@
   }
   
   .font-display {
-    font-family: 'Cormorant Garamond', 'Cinzel', serif;
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
   }
   
   .font-sans {
@@ -126,6 +132,37 @@
   .font-serif-italic {
     font-family: 'Cormorant Garamond', 'Playfair Display', serif;
     font-style: italic;
+  }
+
+  /* Section header styles */
+  .section-overline {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #8B7F74;
+    font-weight: 400;
+    margin-bottom: 16px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .section-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #F5EFE0;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .section-divider {
+    position: relative;
+    height: 1px;
+    width: 60px;
+    margin: 32px auto;
+    background: linear-gradient(90deg, transparent, rgba(139, 127, 116, 0.5), transparent);
+    box-shadow: 0 0 20px rgba(139, 127, 116, 0.2);
   }
 
   /* Taupe Gradient Text */

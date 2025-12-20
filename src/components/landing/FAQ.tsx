@@ -50,30 +50,43 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-32 md:py-40 relative">
+    <section id="faq" className="py-32 md:py-44 relative">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
+            <p className="section-overline mb-5">
               Questions
             </p>
-            <h2 className="font-display text-display text-taupe-gradient mb-6 uppercase">
+            <h2 className="section-title">
               Frequently Asked
             </h2>
-            <div className="ornate-divider w-32 mx-auto" />
+            <div className="section-divider" />
           </div>
 
-          <Accordion type="single" collapsible className="space-y-0">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-b border-taupe-DEFAULT/20 first:border-t"
+                className="rounded-md overflow-hidden transition-all duration-300"
+                style={{
+                  background: 'rgba(36,30,26,0.3)',
+                  border: '1px solid rgba(139,127,116,0.15)'
+                }}
               >
-                <AccordionTrigger className="py-6 hover:no-underline text-left pr-4 text-foreground hover:text-taupe-light transition-colors duration-500 font-serif text-base">
+                <AccordionTrigger 
+                  className="py-6 px-8 hover:no-underline text-left text-[17px] font-normal transition-colors duration-500 hover:bg-[rgba(36,30,26,0.5)]"
+                  style={{ 
+                    color: '#F5EFE0',
+                    letterSpacing: '0.3px'
+                  }}
+                >
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground/80 pb-6 leading-relaxed text-sm font-light">
+                <AccordionContent 
+                  className="px-8 pb-7 text-[15px] leading-[1.8] font-light"
+                  style={{ color: 'rgba(245,239,224,0.65)' }}
+                >
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

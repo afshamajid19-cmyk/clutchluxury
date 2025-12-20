@@ -18,17 +18,17 @@ export function Hero() {
       className="min-h-screen flex flex-col justify-center pt-20 md:pt-24 relative texture-grain vignette particles overflow-hidden"
     >
       {/* Warm cinematic gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#241E1A_0%,_#1A1512_100%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,_rgba(139,127,116,0.08),_transparent)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_40%,_rgba(45,38,34,0.4),_#1A1512)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,_rgba(139,127,116,0.06),_transparent)] pointer-events-none" />
       
       {/* Subtle warm spotlight effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(139,127,116,0.06),_transparent)] blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(139,127,116,0.04),_transparent)] blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '10vh' }}>
           {/* Main Headline - Cinzel, wide tracking, solid cream */}
           <h1 
-            className="font-display text-hero-mobile md:text-hero text-taupe-cream mb-6 md:mb-8 animate-scale-up uppercase font-normal"
+            className="font-display text-hero-mobile md:text-hero text-taupe-cream mb-16 md:mb-24 animate-scale-up uppercase font-normal"
             style={{ 
               textShadow: '0 2px 30px rgba(139, 127, 116, 0.25)'
             }}
@@ -38,34 +38,39 @@ export function Hero() {
 
           {/* Ornate divider */}
           <div 
-            className="ornate-divider w-48 mx-auto mb-10 animate-fade-up"
+            className="ornate-divider w-48 mx-auto mb-12 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           />
 
-          {/* Subheadline - Italic serif */}
+          {/* Subheadline - Italic serif, larger */}
           <p
-            className="font-serif-italic text-xl md:text-2xl lg:text-[1.75rem] text-taupe-light/85 mb-4 max-w-2xl mx-auto animate-fade-up leading-relaxed font-light"
+            className="font-serif-italic text-[clamp(22px,3vw,30px)] text-taupe-light/85 mb-5 max-w-2xl mx-auto animate-fade-up leading-relaxed font-light"
             style={{ animationDelay: "0.3s", letterSpacing: '0.02em' }}
           >
             Luxury personal shopping & discreet sourcing
           </p>
 
-          {/* Supporting line */}
+          {/* Supporting line - more subtle */}
           <p
-            className="text-sm md:text-base text-muted-foreground/60 mb-16 max-w-md mx-auto animate-fade-up tracking-wide font-light"
-            style={{ animationDelay: "0.4s" }}
+            className="text-[13px] mb-20 md:mb-24 max-w-md mx-auto animate-fade-up font-light"
+            style={{ 
+              animationDelay: "0.4s", 
+              letterSpacing: '3px',
+              color: 'rgba(245,239,224,0.5)',
+              textTransform: 'uppercase'
+            }}
           >
             Dubai-based · Worldwide delivery · Since 2017
           </p>
 
-          {/* CTAs - TAUPE styled */}
+          {/* CTAs - Larger, more prominent */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-24 animate-fade-up"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-28 md:mb-32 animate-fade-up"
             style={{ animationDelay: "0.5s" }}
           >
             <Button
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-semibold bg-taupe-DEFAULT text-[#1A1512] hover:bg-taupe-light hover:shadow-[0_8px_32px_rgba(139,127,116,0.4)] transition-all duration-500 hover:translate-y-[-4px] border-0 rounded-sm"
+              className="w-full sm:w-auto min-w-[240px] h-16 px-14 text-[14px] tracking-[2.5px] uppercase font-semibold bg-taupe-DEFAULT text-[#1A1512] hover:bg-taupe-light hover:shadow-[0_12px_40px_rgba(139,127,116,0.5)] transition-all duration-500 hover:-translate-y-1.5 border-0 rounded-sm"
               onClick={scrollToRequest}
             >
               Request an Item
@@ -73,7 +78,7 @@ export function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-14 md:h-16 text-sm tracking-luxury uppercase font-medium border-taupe-DEFAULT/40 bg-taupe-DEFAULT/10 text-taupe-cream hover:bg-taupe-DEFAULT hover:text-[#1A1512] hover:border-taupe-DEFAULT transition-all duration-500 backdrop-blur-sm rounded-sm"
+              className="w-full sm:w-auto min-w-[240px] h-16 px-14 text-[14px] tracking-[2.5px] uppercase font-medium border-2 border-taupe-DEFAULT/40 bg-taupe-DEFAULT/[0.08] text-taupe-cream hover:bg-taupe-DEFAULT/20 hover:border-taupe-DEFAULT/70 transition-all duration-500 backdrop-blur-[10px] rounded-sm"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -85,19 +90,19 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Trust Row */}
+          {/* Trust Row - refined */}
           <div
             className="animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-[11px] text-muted-foreground/40 tracking-luxury uppercase">
-              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">Licensed</span>
-              <span className="w-1 h-1 rounded-full bg-taupe-DEFAULT/30 hidden md:block" />
-              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">Since 2017</span>
-              <span className="w-1 h-1 rounded-full bg-taupe-DEFAULT/30 hidden md:block" />
-              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">International Shipping</span>
-              <span className="w-1 h-1 rounded-full bg-taupe-DEFAULT/30 hidden md:block" />
-              <span className="hover:text-taupe-DEFAULT/60 transition-colors duration-300">Discreet Sourcing</span>
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5 text-[11px] uppercase" style={{ letterSpacing: '2.5px', color: 'rgba(139,127,116,0.6)' }}>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">Licensed</span>
+              <span className="text-taupe-DEFAULT/40">•</span>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">Since 2017</span>
+              <span className="text-taupe-DEFAULT/40">•</span>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">International Shipping</span>
+              <span className="text-taupe-DEFAULT/40">•</span>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">Discreet Sourcing</span>
             </div>
           </div>
         </div>

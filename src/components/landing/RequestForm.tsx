@@ -249,19 +249,19 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   }
 
   return (
-    <section id="request" className="py-32 md:py-40 relative" ref={formRef}>
+    <section id="request" className="py-32 md:py-44 relative" ref={formRef} style={{ background: '#1F1A16' }}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-[700px] mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 font-medium">
+            <p className="section-overline mb-5">
               Start Here
             </p>
-            <h2 className="font-display text-display text-taupe-gradient mb-6 uppercase">
+            <h2 className="section-title">
               Private Client Request
             </h2>
-            <div className="ornate-divider w-32 mx-auto mb-8" />
-            <p className="text-muted-foreground text-sm md:text-base font-light">
+            <div className="section-divider mb-10" />
+            <p className="text-[15px] font-light" style={{ color: 'rgba(245,239,224,0.6)' }}>
               Share your wishlist and our concierge will respond with options.
             </p>
           </div>
@@ -269,7 +269,14 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="relative bg-clutch-surface/80 border border-accent/20 p-10 md:p-14 luxury-shadow-xl backdrop-blur-sm"
+              className="relative rounded-lg"
+              style={{
+                background: 'rgba(36,30,26,0.6)',
+                backdropFilter: 'blur(30px)',
+                border: '1px solid rgba(139,127,116,0.2)',
+                padding: '60px',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.5)'
+              }}
             >
               {/* Honeypot field */}
               <input
