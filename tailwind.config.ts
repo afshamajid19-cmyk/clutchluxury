@@ -18,7 +18,8 @@ export default {
     extend: {
       fontFamily: {
         serif: ["'Cormorant Garamond'", "'Playfair Display'", "serif"],
-        display: ["'Cormorant Garamond'", "'Cinzel'", "serif"],
+        display: ["'Cinzel'", "'Cormorant Garamond'", "serif"],
+        "serif-italic": ["'Cormorant Garamond'", "serif"],
         sans: ["'Raleway'", "'Inter'", "system-ui", "sans-serif"],
       },
       spacing: {
@@ -29,7 +30,8 @@ export default {
         '36': '9rem',
       },
       fontSize: {
-        'hero': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '1.05', letterSpacing: '0.08em' }],
+        'hero': ['clamp(3rem, 6vw, 5rem)', { lineHeight: '1.15', letterSpacing: '0.15em' }],
+        'hero-mobile': ['clamp(2rem, 8vw, 3rem)', { lineHeight: '1.2', letterSpacing: '0.10em' }],
         'display': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1.1', letterSpacing: '0.05em' }],
       },
       colors: {
