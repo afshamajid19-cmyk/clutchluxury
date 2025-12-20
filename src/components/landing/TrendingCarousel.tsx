@@ -87,29 +87,33 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
     let zIndex = 10;
     let opacity = 1;
     let blur = 0;
+    let grayscale = 0;
 
     if (diff === 0) {
       // Center card - Royal treatment
-      scale = 1.1;
+      scale = 1.05;
       zIndex = 30;
       opacity = 1;
       blur = 0;
+      grayscale = 0;
     } else if (absD === 1) {
       // Adjacent cards
       scale = 0.75;
       rotateY = diff > 0 ? -20 : 20;
       translateXVal = diff > 0 ? 70 : -70;
       zIndex = 20;
-      opacity = 0.5;
-      blur = 2;
+      opacity = 0.35;
+      blur = 3;
+      grayscale = 20;
     } else if (absD === 2) {
       // Far cards
       scale = 0.6;
       rotateY = diff > 0 ? -30 : 30;
       translateXVal = diff > 0 ? 130 : -130;
       zIndex = 10;
-      opacity = 0.25;
-      blur = 4;
+      opacity = 0.2;
+      blur = 5;
+      grayscale = 30;
     } else {
       // Hidden cards
       opacity = 0;
@@ -120,26 +124,38 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
       transform: `translateX(${translateXVal}%) scale(${scale}) rotateY(${rotateY}deg)`,
       zIndex,
       opacity,
-      filter: blur > 0 ? `blur(${blur}px) brightness(0.7)` : 'none',
+      filter: blur > 0 ? `blur(${blur}px) brightness(0.6) grayscale(${grayscale}%)` : 'none',
     };
   };
 
   return (
-    <section id="trending" className="py-32 md:py-40 overflow-hidden relative">
+    <section 
+      id="trending" 
+      className="py-32 md:py-44 overflow-hidden relative"
+      style={{ background: '#151210' }}
+    >
       {/* Spotlight gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-clutch-elevated/30 via-transparent to-transparent pointer-events-none" />
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{ 
+          background: 'radial-gradient(circle at center, rgba(139,127,116,0.05), transparent 70%)' 
+        }}
+      />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
-          <p className="text-xs tracking-luxury uppercase text-taupe-DEFAULT/70 mb-6 animate-fade-up font-medium">
+        <div className="text-center mb-20 md:mb-24">
+          <p className="section-overline mb-5 animate-fade-up">
             Curated Selection
           </p>
-          <h2 className="font-display text-display text-taupe-gradient mb-6 animate-fade-up uppercase" style={{ animationDelay: "0.1s" }}>
+          <h2 className="section-title animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Trending Now
           </h2>
-          <div className="ornate-divider w-32 mx-auto mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }} />
-          <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto animate-fade-up font-light" style={{ animationDelay: "0.2s" }}>
+          <div className="section-divider animate-fade-up" style={{ animationDelay: "0.15s" }} />
+          <p 
+            className="text-[16px] max-w-md mx-auto animate-fade-up font-light mt-8"
+            style={{ animationDelay: "0.2s", color: 'rgba(245,239,224,0.7)' }}
+          >
             The most sought-after pieces of the moment
           </p>
         </div>
@@ -147,7 +163,7 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
         {/* 3D Carousel */}
         <div 
           ref={containerRef}
-          className="relative carousel-3d h-[520px] md:h-[620px] mx-auto max-w-6xl"
+          className="relative carousel-3d h-[520px] md:h-[640px] mx-auto max-w-6xl"
           onMouseDown={(e) => handleDragStart(e.clientX)}
           onMouseMove={(e) => handleDragMove(e.clientX)}
           onMouseUp={handleDragEnd}
@@ -170,25 +186,36 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                     transition: isDragging ? "none" : "all 0.8s cubic-bezier(0.65, 0, 0.35, 1)",
                   }}
                 >
-                  <div className={`relative overflow-hidden ${
-                    isActive 
-                      ? 'taupe-glow luxury-shadow-xl' 
-                      : 'border border-taupe-DEFAULT/10 luxury-shadow'
-                  }`}>
+                  <div 
+                    className="relative overflow-hidden rounded-lg"
+                    style={{
+                      background: '#241E1A',
+                      boxShadow: isActive 
+                        ? '0 32px 80px rgba(0,0,0,0.9), 0 0 60px rgba(139,127,116,0.3), inset 0 0 0 1px rgba(139,127,116,0.4)' 
+                        : '0 16px 50px -12px rgba(0,0,0,0.8)',
+                      border: isActive ? 'none' : '1px solid rgba(139,127,116,0.1)'
+                    }}
+                  >
                     {/* Ornate corner decorations for active card */}
                     {isActive && (
                       <>
-                        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-taupe-DEFAULT/60 z-20" />
-                        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-taupe-DEFAULT/60 z-20" />
-                        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-taupe-DEFAULT/60 z-20" />
-                        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-taupe-DEFAULT/60 z-20" />
+                        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-taupe-DEFAULT/60 z-20 rounded-tl-lg" />
+                        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-taupe-DEFAULT/60 z-20 rounded-tr-lg" />
+                        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-taupe-DEFAULT/60 z-20 rounded-bl-lg" />
+                        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-taupe-DEFAULT/60 z-20 rounded-br-lg" />
                       </>
                     )}
 
                     {/* Image - object-contain with padding, warm background */}
-                    <div className="aspect-[3/4] bg-[#1F1A16] relative overflow-hidden">
+                    <div className="aspect-[3/4] relative overflow-hidden">
                       {item.hero_image_url ? (
-                        <div className="w-full h-full p-5 md:p-6 flex items-center justify-center bg-gradient-to-br from-[#241E1A] to-[#1F1A16]">
+                        <div 
+                          className="w-full h-full flex items-center justify-center"
+                          style={{ 
+                            padding: '24px',
+                            background: 'linear-gradient(to br, #241E1A, rgba(31,26,22,0.5))' 
+                          }}
+                        >
                           <img
                             src={item.hero_image_url}
                             alt={`${item.brand} ${item.item_name}`}
@@ -198,7 +225,10 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                           />
                         </div>
                       ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#241E1A] to-[#1F1A16]">
+                        <div 
+                          className="w-full h-full flex flex-col items-center justify-center"
+                          style={{ background: 'linear-gradient(to br, #241E1A, #1F1A16)' }}
+                        >
                           <span className="font-display text-7xl md:text-8xl text-taupe-DEFAULT/20" style={{ letterSpacing: '0.05em' }}>
                             {item.brand.charAt(0)}
                           </span>
@@ -208,26 +238,47 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                         </div>
                       )}
                       
-                      {/* Cinematic gradient overlay - warm brown */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1512] via-[#1A1512]/60 to-transparent opacity-90 pointer-events-none" />
+                      {/* Cinematic gradient overlay */}
+                      <div 
+                        className="absolute inset-0 pointer-events-none"
+                        style={{ 
+                          background: 'linear-gradient(to top, rgba(26,21,18,0.98) 0%, rgba(26,21,18,0.85) 50%, transparent 100%)'
+                        }}
+                      />
                       
-                      {/* Trending Badge - TAUPE color */}
+                      {/* Trending Badge */}
                       <div className="absolute top-5 left-5 z-10">
-                        <span className="inline-block px-4 py-2 text-[10px] font-medium tracking-luxury uppercase bg-taupe-DEFAULT text-taupe-cream border border-taupe-light/30">
+                        <span 
+                          className="inline-block px-4 py-2 text-[10px] font-semibold uppercase rounded-sm"
+                          style={{ 
+                            letterSpacing: '2px',
+                            background: '#8B7F74',
+                            color: '#1A1512'
+                          }}
+                        >
                           Trending
                         </span>
                       </div>
 
                       {/* Content positioned over gradient */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10">
-                        <div className="text-[10px] text-taupe-light font-semibold tracking-luxury uppercase mb-2">
+                      <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+                        <div 
+                          className="text-[14px] font-medium uppercase mb-2"
+                          style={{ letterSpacing: '3px', color: '#8B7F74' }}
+                        >
                           {item.brand}
                         </div>
-                        <div className="w-12 h-px bg-gradient-to-r from-taupe-DEFAULT/60 to-transparent mb-3" />
-                        <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2 line-clamp-2 leading-tight">
+                        <div className="w-12 h-px bg-gradient-to-r from-taupe-DEFAULT/60 to-transparent mb-4" />
+                        <h3 
+                          className="font-serif text-xl md:text-2xl text-foreground mb-3 line-clamp-2 font-light"
+                          style={{ lineHeight: 1.3 }}
+                        >
                           {item.item_name}
                         </h3>
-                        <p className="text-xs text-muted-foreground uppercase tracking-wide mb-5">
+                        <p 
+                          className="text-xs uppercase mb-5"
+                          style={{ letterSpacing: '1.5px', color: 'rgba(245,239,224,0.5)' }}
+                        >
                           {item.category}
                         </p>
                         
@@ -237,10 +288,24 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                               e.stopPropagation();
                               onEnquire(item);
                             }}
-                            className="group inline-flex items-center gap-2 text-sm text-taupe-light font-medium tracking-wide transition-all duration-500 hover:gap-4"
+                            className="inline-flex items-center h-10 px-6 text-[12px] uppercase font-medium transition-all duration-300 rounded-sm"
+                            style={{
+                              letterSpacing: '1.5px',
+                              color: '#F5EFE0',
+                              background: 'rgba(245,239,224,0.05)',
+                              border: '1px solid rgba(245,239,224,0.3)',
+                              backdropFilter: 'blur(10px)'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.background = 'rgba(139,127,116,0.2)';
+                              e.currentTarget.style.borderColor = 'rgba(139,127,116,0.5)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.background = 'rgba(245,239,224,0.05)';
+                              e.currentTarget.style.borderColor = 'rgba(245,239,224,0.3)';
+                            }}
                           >
-                            <span className="border-b border-taupe-DEFAULT/50 pb-0.5 group-hover:border-taupe-light">Enquire</span>
-                            <span className="text-taupe-DEFAULT/60 group-hover:text-taupe-light transition-colors">→</span>
+                            Enquire
                           </button>
                         )}
                       </div>
@@ -251,41 +316,71 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
             })}
           </div>
 
-          {/* Navigation Arrows - TAUPE styled */}
+          {/* Navigation Arrows - Larger, more premium */}
           {itemCount > 1 && (
             <>
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-40 h-16 w-16 rounded-full bg-background/40 backdrop-blur-sm border border-taupe-DEFAULT/30 hover:bg-taupe-DEFAULT/20 hover:border-taupe-DEFAULT/60 hover:shadow-taupe-soft transition-all duration-500 group"
+                className="absolute left-4 md:left-20 top-1/2 -translate-y-1/2 z-40 h-[72px] w-[72px] rounded-full transition-all duration-500 group"
+                style={{
+                  background: 'rgba(36,30,26,0.8)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(139,127,116,0.25)'
+                }}
                 onClick={handlePrev}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(139,127,116,0.15)';
+                  e.currentTarget.style.transform = 'translateY(-50%) translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(36,30,26,0.8)';
+                  e.currentTarget.style.transform = 'translateY(-50%)';
+                }}
               >
-                <ChevronLeft className="h-6 w-6 text-taupe-light group-hover:scale-110 transition-transform" />
+                <ChevronLeft className="h-6 w-6 transition-colors" style={{ color: '#A89B8E' }} />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-40 h-16 w-16 rounded-full bg-background/40 backdrop-blur-sm border border-taupe-DEFAULT/30 hover:bg-taupe-DEFAULT/20 hover:border-taupe-DEFAULT/60 hover:shadow-taupe-soft transition-all duration-500 group"
+                className="absolute right-4 md:right-20 top-1/2 -translate-y-1/2 z-40 h-[72px] w-[72px] rounded-full transition-all duration-500 group"
+                style={{
+                  background: 'rgba(36,30,26,0.8)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(139,127,116,0.25)'
+                }}
                 onClick={handleNext}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(139,127,116,0.15)';
+                  e.currentTarget.style.transform = 'translateY(-50%) translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(36,30,26,0.8)';
+                  e.currentTarget.style.transform = 'translateY(-50%)';
+                }}
               >
-                <ChevronRight className="h-6 w-6 text-taupe-light group-hover:scale-110 transition-transform" />
+                <ChevronRight className="h-6 w-6 transition-colors" style={{ color: '#A89B8E' }} />
               </Button>
             </>
           )}
         </div>
 
-        {/* Dots - TAUPE styled */}
+        {/* Dots */}
         {itemCount > 1 && (
-          <div className="flex items-center justify-center gap-3 mt-12">
+          <div className="flex items-center justify-center gap-3 mt-14">
             {items.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`rounded-full transition-all duration-500 ${
-                  index === activeIndex 
-                    ? 'w-10 h-2 bg-gradient-to-r from-taupe-light to-taupe-DEFAULT shadow-taupe-soft' 
-                    : 'w-2 h-2 bg-taupe-DEFAULT/30 hover:bg-taupe-DEFAULT/50'
-                }`}
+                className="rounded-full transition-all duration-500"
+                style={{
+                  width: index === activeIndex ? '40px' : '8px',
+                  height: '8px',
+                  background: index === activeIndex 
+                    ? 'linear-gradient(to right, #A89B8E, #8B7F74)' 
+                    : 'rgba(139,127,116,0.3)',
+                  boxShadow: index === activeIndex ? '0 0 20px rgba(139,127,116,0.3)' : 'none'
+                }}
               />
             ))}
           </div>
@@ -294,13 +389,25 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
         {/* Instagram Link */}
         {settings?.instagram_url && (
           <div className="text-center mt-16">
-            <p className="text-sm text-muted-foreground/60 font-light">
+            <p className="text-sm font-light" style={{ color: 'rgba(245,239,224,0.6)' }}>
               For daily updates, view the latest on{" "}
               <a
                 href={settings.instagram_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-taupe-light/80 hover:text-taupe-light transition-colors duration-300 border-b border-taupe-DEFAULT/30 hover:border-taupe-DEFAULT/60 pb-0.5"
+                className="transition-colors duration-300 border-b pb-0.5"
+                style={{ 
+                  color: 'rgba(168,155,142,0.8)',
+                  borderColor: 'rgba(139,127,116,0.3)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#A89B8E';
+                  e.currentTarget.style.borderColor = 'rgba(139,127,116,0.6)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgba(168,155,142,0.8)';
+                  e.currentTarget.style.borderColor = 'rgba(139,127,116,0.3)';
+                }}
               >
                 Instagram
               </a>
