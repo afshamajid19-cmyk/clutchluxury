@@ -68,24 +68,24 @@ export function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="rounded-md overflow-hidden transition-all duration-300"
+                className="rounded-md overflow-hidden transition-all duration-400"
                 style={{
-                  background: 'rgba(36,30,26,0.3)',
-                  border: '1px solid rgba(139,127,116,0.15)'
+                  background: 'rgba(86,82,80,0.15)',
+                  border: '1px solid rgba(146,131,119,0.15)'
                 }}
               >
                 <AccordionTrigger 
-                  className="py-6 px-8 hover:no-underline text-left text-[17px] font-normal transition-colors duration-500 hover:bg-[rgba(36,30,26,0.5)]"
+                  className="py-6 px-8 hover:no-underline text-left text-[17px] font-sans font-normal transition-all duration-500"
                   style={{ 
-                    color: '#F5EFE0',
+                    color: '#E9EADE',
                     letterSpacing: '0.3px'
                   }}
                 >
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent 
-                  className="px-8 pb-7 text-[15px] leading-[1.8] font-light"
-                  style={{ color: 'rgba(245,239,224,0.65)' }}
+                  className="px-8 pb-7 text-[15px] leading-[1.8] font-sans font-light"
+                  style={{ color: 'rgba(233,234,222,0.65)' }}
                 >
                   {faq.answer}
                 </AccordionContent>

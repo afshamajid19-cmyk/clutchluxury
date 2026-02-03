@@ -7,9 +7,9 @@ interface ItemCardProps {
 }
 
 const statusColors: Record<string, string> = {
-  trending: "bg-foreground/90 text-background",
-  available: "bg-secondary text-foreground/80",
-  sourced: "bg-muted text-muted-foreground",
+  trending: "bg-sage text-espresso",
+  available: "bg-charcoal/50 text-ivory/80",
+  sourced: "bg-charcoal/30 text-ivory/60",
 };
 
 const statusLabels: Record<string, string> = {
@@ -23,10 +23,10 @@ export const ItemCard = forwardRef<HTMLDivElement, ItemCardProps>(
     return (
       <div
         ref={ref}
-        className="group bg-card border border-border overflow-hidden hover-lift luxury-shadow hover:luxury-shadow-lg"
+        className="group bg-card border border-sage/20 overflow-hidden hover-lift luxury-shadow hover:shadow-luxury-lg transition-all duration-400"
       >
         {/* Image */}
-        <div className="aspect-[4/5] bg-secondary relative overflow-hidden">
+        <div className="aspect-[4/5] bg-charcoal/20 relative overflow-hidden">
           {item.hero_image_url ? (
             <img
               src={item.hero_image_url}
@@ -35,12 +35,11 @@ export const ItemCard = forwardRef<HTMLDivElement, ItemCardProps>(
               loading="lazy"
             />
           ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-card to-secondary border border-border">
-              {/* Monogram placeholder */}
-              <span className="font-serif text-5xl text-muted-foreground/15 tracking-tight">
+            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-charcoal/30 to-espresso border border-sage/10">
+              <span className="font-display text-5xl text-sage/20 tracking-tight">
                 {item.brand.charAt(0)}
               </span>
-              <span className="text-[10px] tracking-luxury uppercase text-muted-foreground/30 mt-2">
+              <span className="text-[10px] tracking-luxury uppercase text-sage/30 mt-2 font-sans">
                 {item.brand}
               </span>
             </div>
@@ -49,7 +48,7 @@ export const ItemCard = forwardRef<HTMLDivElement, ItemCardProps>(
           {/* Status Badge */}
           <div className="absolute top-4 left-4">
             <span
-              className={`inline-block px-3 py-1.5 text-[10px] font-medium tracking-editorial uppercase ${
+              className={`inline-block px-3 py-1.5 text-[10px] font-sans font-medium tracking-wide-custom uppercase ${
                 statusColors[item.availability_status] || statusColors.available
               }`}
             >
@@ -61,30 +60,30 @@ export const ItemCard = forwardRef<HTMLDivElement, ItemCardProps>(
         {/* Content */}
         <div className="p-5 md:p-6">
           {/* Brand */}
-          <div className="text-[10px] text-accent font-medium tracking-luxury uppercase mb-2">
+          <div className="text-[10px] text-taupe font-sans font-medium tracking-luxury uppercase mb-2">
             {item.brand}
           </div>
 
           {/* Item name */}
-          <h3 className="font-serif text-xl md:text-2xl text-foreground mb-1 line-clamp-1">
+          <h3 className="font-serif text-xl md:text-2xl text-ivory mb-1 line-clamp-1">
             {item.item_name}
           </h3>
 
           {/* Category */}
-          <p className="text-xs text-muted-foreground uppercase tracking-wide mb-4">
+          <p className="text-xs text-sage/70 uppercase tracking-wide font-sans mb-4">
             {item.category}
           </p>
 
           {item.price_hint && (
-            <p className="text-sm text-muted-foreground mb-4 italic">
+            <p className="text-sm text-sage/60 mb-4 font-serif italic">
               {item.price_hint}
             </p>
           )}
 
-          {/* Enquire button - minimal text style */}
+          {/* Enquire button */}
           <button
             onClick={() => onEnquire(item)}
-            className="text-sm text-foreground font-medium tracking-wide hover:text-accent transition-colors duration-300 underline underline-offset-4 decoration-border hover:decoration-accent"
+            className="text-sm text-ivory font-sans font-medium tracking-wide hover:text-sage transition-colors duration-400 underline underline-offset-4 decoration-sage/30 hover:decoration-sage"
           >
             Enquire
           </button>
