@@ -186,30 +186,30 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   if (isSuccess) {
     return (
       <section id="request" className="py-32 md:py-40 relative" ref={formRef}>
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(146,131,119,0.05), transparent 70%)' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-lg mx-auto text-center">
             {/* Success icon */}
-            <div className="w-20 h-20 border-2 rounded-full flex items-center justify-center mx-auto mb-10 sage-glow-soft" style={{ borderColor: 'rgba(146,131,119,0.5)' }}>
-              <Check className="h-8 w-8 text-sage" />
+            <div className="w-20 h-20 border-2 border-taupe-DEFAULT/60 rounded-full flex items-center justify-center mx-auto mb-10 taupe-glow-soft">
+              <Check className="h-8 w-8 text-taupe-light" />
             </div>
             
-            <h2 className="font-display text-3xl md:text-4xl text-gradient-luxury mb-4 uppercase">
+            <h2 className="font-display text-3xl md:text-4xl text-taupe-gradient mb-4 uppercase">
               Request Received
             </h2>
-            <p className="text-muted-foreground mb-10 font-sans font-light">
+            <p className="text-muted-foreground mb-10 font-light">
               Our concierge will respond shortly.
             </p>
 
             {submittedData && (
-              <div className="border p-8 mb-12 text-left text-sm backdrop-blur-sm rounded-lg" style={{ background: 'rgba(86,82,80,0.2)', borderColor: 'rgba(146,131,119,0.2)' }}>
+              <div className="bg-clutch-surface/50 border border-taupe-DEFAULT/20 p-8 mb-12 text-left text-sm backdrop-blur-sm">
                 <div className="space-y-3">
-                  <p className="text-muted-foreground font-sans">
-                    <span className="text-sage font-medium">Item:</span>{" "}
+                  <p className="text-muted-foreground">
+                    <span className="text-taupe-light font-medium">Item:</span>{" "}
                     {submittedData.brand} — {submittedData.item_name}
                   </p>
-                  <p className="text-muted-foreground font-sans">
-                    <span className="text-sage font-medium">Timeline:</span>{" "}
+                  <p className="text-muted-foreground">
+                    <span className="text-taupe-light font-medium">Timeline:</span>{" "}
                     {submittedData.urgency}
                   </p>
                 </div>
@@ -217,8 +217,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
             )}
 
             <Button
+              variant="royal"
               size="lg"
-              className="mb-6 bg-sage text-espresso hover:bg-taupe btn-luxury"
+              className="mb-6"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -231,8 +232,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
             <div>
               <button
-                className="text-sm font-sans hover:text-sage transition-colors duration-400 border-b pb-0.5"
-                style={{ color: 'rgba(146,131,119,0.7)', borderColor: 'rgba(146,131,119,0.3)' }}
+                className="text-sm text-taupe-DEFAULT/70 hover:text-taupe-light transition-colors duration-500 border-b border-taupe-DEFAULT/30 hover:border-taupe-DEFAULT pb-0.5"
                 onClick={() => {
                   setIsSuccess(false);
                   setSubmittedData(null);
@@ -249,8 +249,8 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   }
 
   return (
-    <section id="request" className="py-32 md:py-44 relative" ref={formRef} style={{ background: '#231C17' }}>
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(146,131,119,0.05), transparent 70%)' }} />
+    <section id="request" className="py-32 md:py-44 relative" ref={formRef} style={{ background: '#1F1A16' }}>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-[700px] mx-auto">
           <div className="text-center mb-16">
@@ -261,7 +261,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               Private Client Request
             </h2>
             <div className="section-divider mb-10" />
-            <p className="text-[15px] font-sans font-light" style={{ color: 'rgba(233,234,222,0.6)' }}>
+            <p className="text-[15px] font-light" style={{ color: 'rgba(245,239,224,0.6)' }}>
               Share your wishlist and our concierge will respond with options.
             </p>
           </div>
@@ -271,11 +271,11 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               onSubmit={form.handleSubmit(onSubmit)}
               className="relative rounded-lg"
               style={{
-                background: 'rgba(86,82,80,0.2)',
+                background: 'rgba(36,30,26,0.6)',
                 backdropFilter: 'blur(30px)',
-                border: '1px solid rgba(146,131,119,0.2)',
+                border: '1px solid rgba(139,127,116,0.2)',
                 padding: '60px',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.4)'
+                boxShadow: '0 20px 60px rgba(0,0,0,0.5)'
               }}
             >
               {/* Honeypot field */}

@@ -1,4 +1,4 @@
-import { MessageCircle, ChevronDown } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSettings } from "@/hooks/useSettings";
 
@@ -17,26 +17,20 @@ export function Hero() {
       id="home"
       className="min-h-screen flex flex-col justify-center pt-20 md:pt-24 relative texture-grain vignette particles overflow-hidden"
     >
-      {/* Espresso background with subtle sage/taupe radial gradients */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `
-            radial-gradient(ellipse 80% 50% at 50% 30%, rgba(146, 131, 119, 0.08), transparent),
-            radial-gradient(ellipse 60% 40% at 30% 70%, rgba(134, 103, 88, 0.05), transparent),
-            radial-gradient(ellipse 100% 100% at 50% 50%, #291E15, #291E15)
-          `
-        }}
-      />
+      {/* Warm cinematic gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_40%,_rgba(45,38,34,0.4),_#1A1512)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,_rgba(139,127,116,0.06),_transparent)] pointer-events-none" />
+      
+      {/* Subtle warm spotlight effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(139,127,116,0.04),_transparent)] blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '12vh' }}>
-          {/* Main Headline - Playfair Display, gradient ivory to sage */}
+        <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '10vh' }}>
+          {/* Main Headline - Cinzel, wide tracking, solid cream */}
           <h1 
-            className="font-display text-hero-mobile md:text-hero text-gradient-luxury mb-8 md:mb-10 uppercase font-normal animate-fade-up"
+            className="font-display text-hero-mobile md:text-hero text-taupe-cream mb-16 md:mb-24 animate-scale-up uppercase font-normal"
             style={{ 
-              animationDelay: '0.3s',
-              animationFillMode: 'backwards'
+              textShadow: '0 2px 30px rgba(139, 127, 116, 0.25)'
             }}
           >
             Attaining the Unattainable
@@ -44,51 +38,47 @@ export function Hero() {
 
           {/* Ornate divider */}
           <div 
-            className="ornate-divider w-32 mx-auto mb-10 animate-fade-up"
-            style={{ animationDelay: "0.5s", animationFillMode: 'backwards' }}
+            className="ornate-divider w-48 mx-auto mb-12 animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
           />
 
-          {/* Subheadline - Cormorant Garamond italic, sage color */}
+          {/* Subheadline - Italic serif, larger */}
           <p
-            className="font-serif-italic text-[clamp(20px,3vw,28px)] text-sage mb-6 max-w-2xl mx-auto animate-fade-up leading-relaxed font-light"
-            style={{ animationDelay: "0.7s", animationFillMode: 'backwards' }}
+            className="font-serif-italic text-[clamp(22px,3vw,30px)] text-taupe-light/85 mb-5 max-w-2xl mx-auto animate-fade-up leading-relaxed font-light"
+            style={{ animationDelay: "0.3s", letterSpacing: '0.02em' }}
           >
             Luxury personal shopping & discreet sourcing
           </p>
 
-          {/* Tagline - Small caps, wide spacing, sage */}
+          {/* Supporting line - more subtle */}
           <p
-            className="text-[12px] mb-16 md:mb-20 max-w-md mx-auto animate-fade-up font-sans font-light"
+            className="text-[13px] mb-20 md:mb-24 max-w-md mx-auto animate-fade-up font-light"
             style={{ 
-              animationDelay: "0.9s", 
-              animationFillMode: 'backwards',
+              animationDelay: "0.4s", 
               letterSpacing: '3px',
-              color: '#928377',
-              textTransform: 'uppercase',
-              fontVariant: 'small-caps'
+              color: 'rgba(245,239,224,0.5)',
+              textTransform: 'uppercase'
             }}
           >
             Dubai-based · Worldwide delivery · Since 2017
           </p>
 
-          {/* CTAs */}
+          {/* CTAs - Larger, more prominent */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 md:mb-24 animate-fade-up"
-            style={{ animationDelay: "1.1s", animationFillMode: 'backwards' }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-28 md:mb-32 animate-fade-up"
+            style={{ animationDelay: "0.5s" }}
           >
-            {/* Primary - Sage bg, espresso text */}
             <Button
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-16 px-12 text-[13px] tracking-wide-custom uppercase font-medium bg-sage text-espresso hover:bg-taupe hover:shadow-hover-lift transition-all duration-400 border-0 rounded-sm btn-luxury"
+              className="w-full sm:w-auto min-w-[240px] h-16 px-14 text-[14px] tracking-[2.5px] uppercase font-semibold bg-taupe-DEFAULT text-[#1A1512] hover:bg-taupe-light hover:shadow-[0_12px_40px_rgba(139,127,116,0.5)] transition-all duration-500 hover:-translate-y-1.5 border-0 rounded-sm"
               onClick={scrollToRequest}
             >
               Request an Item
             </Button>
-            {/* Secondary - Ivory border, transparent bg */}
             <Button
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto min-w-[220px] h-16 px-12 text-[13px] tracking-wide-custom uppercase font-light border border-ivory/40 bg-transparent text-ivory hover:bg-ivory hover:text-espresso transition-all duration-400 backdrop-blur-sm rounded-sm btn-luxury"
+              className="w-full sm:w-auto min-w-[240px] h-16 px-14 text-[14px] tracking-[2.5px] uppercase font-medium border-2 border-taupe-DEFAULT/40 bg-taupe-DEFAULT/[0.08] text-taupe-cream hover:bg-taupe-DEFAULT/20 hover:border-taupe-DEFAULT/70 transition-all duration-500 backdrop-blur-[10px] rounded-sm"
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -100,32 +90,19 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Trust Badges - Small caps, sage */}
+          {/* Trust Row - refined */}
           <div
             className="animate-fade-up"
-            style={{ animationDelay: "1.3s", animationFillMode: 'backwards' }}
+            style={{ animationDelay: "0.6s" }}
           >
-            <div 
-              className="flex flex-wrap items-center justify-center gap-5 md:gap-6 text-[11px] uppercase font-sans font-light"
-              style={{ letterSpacing: '2.5px', color: '#928377' }}
-            >
-              <span className="hover:text-ivory transition-colors duration-300">Licensed</span>
-              <span style={{ color: 'rgba(146,131,119,0.4)' }}>•</span>
-              <span className="hover:text-ivory transition-colors duration-300">Since 2017</span>
-              <span style={{ color: 'rgba(146,131,119,0.4)' }}>•</span>
-              <span className="hover:text-ivory transition-colors duration-300">International Shipping</span>
-              <span style={{ color: 'rgba(146,131,119,0.4)' }}>•</span>
-              <span className="hover:text-ivory transition-colors duration-300">Discreet Sourcing</span>
-            </div>
-          </div>
-
-          {/* Floating scroll indicator */}
-          <div 
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-scroll-indicator"
-          >
-            <div className="flex flex-col items-center gap-2 text-sage/60">
-              <span className="text-[10px] uppercase tracking-widest font-light">Scroll</span>
-              <ChevronDown className="h-4 w-4" />
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5 text-[11px] uppercase" style={{ letterSpacing: '2.5px', color: 'rgba(139,127,116,0.6)' }}>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">Licensed</span>
+              <span className="text-taupe-DEFAULT/40">•</span>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">Since 2017</span>
+              <span className="text-taupe-DEFAULT/40">•</span>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">International Shipping</span>
+              <span className="text-taupe-DEFAULT/40">•</span>
+              <span className="hover:text-taupe-DEFAULT transition-colors duration-300">Discreet Sourcing</span>
             </div>
           </div>
         </div>
