@@ -24,8 +24,8 @@ export function HowItWorks() {
 
   return (
     <section id="how-it-works" className="py-32 md:py-44 relative">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-clutch-elevated/30" />
+      {/* Subtle alternate background */}
+      <div className="absolute inset-0" style={{ background: 'rgba(243,240,237,0.5)' }} />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20 md:mb-24">
@@ -47,9 +47,9 @@ export function HowItWorks() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div 
-                  className="font-display text-[56px] mb-6 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_20px_rgba(139,127,116,0.3)]"
+                  className="font-display text-[56px] mb-6 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_20px_rgba(134,103,88,0.15)]"
                   style={{ 
-                    color: 'rgba(139,127,116,0.3)',
+                    color: 'rgba(134,103,88,0.25)',
                     letterSpacing: '0.05em',
                     fontWeight: 300,
                     lineHeight: 1
@@ -58,14 +58,14 @@ export function HowItWorks() {
                   {step.number}
                 </div>
                 <h3 
-                  className="text-[18px] font-medium text-foreground mb-4 uppercase"
-                  style={{ letterSpacing: '2px' }}
+                  className="text-[18px] font-medium mb-4 uppercase"
+                  style={{ letterSpacing: '2px', color: '#291E15' }}
                 >
                   {step.title}
                 </h3>
                 <p 
                   className="text-[15px] leading-[1.7] font-light max-w-[280px] mx-auto"
-                  style={{ color: 'rgba(245,239,224,0.65)' }}
+                  style={{ color: '#565250' }}
                 >
                   {step.description}
                 </p>
@@ -76,7 +76,7 @@ export function HowItWorks() {
           <div className="section-divider w-48 mt-20" />
           <p 
             className="text-center text-[11px] mt-8 uppercase"
-            style={{ letterSpacing: '3px', color: 'rgba(139,127,116,0.5)' }}
+            style={{ letterSpacing: '3px', color: '#928377' }}
           >
             Concierge-level sourcing with curated options
           </p>
