@@ -39,8 +39,8 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-32 md:py-44 relative">
-      {/* Spotlight effect - TAUPE tinted */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
+      {/* Spotlight effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[rgba(134,103,88,0.03)] via-transparent to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -53,13 +53,13 @@ export function Contact() {
           <div className="section-divider mb-10" />
           <p 
             className="text-[15px] mb-4 font-light"
-            style={{ color: 'rgba(245,239,224,0.7)' }}
+            style={{ color: '#565250' }}
           >
             Reach out through your preferred channel.
           </p>
           <p 
             className="text-[13px] mb-16"
-            style={{ color: 'rgba(245,239,224,0.5)', letterSpacing: '1px' }}
+            style={{ color: '#928377', letterSpacing: '1px' }}
           >
             We typically respond within a few hours.
           </p>
@@ -77,18 +77,18 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="group relative flex flex-col items-center gap-5 py-12 px-8 rounded-lg transition-all duration-500 cursor-pointer"
                   style={{
-                    background: 'rgba(36,30,26,0.4)',
-                    border: '1px solid rgba(139,127,116,0.2)'
+                    background: 'rgba(243,240,237,0.6)',
+                    border: '1px solid rgba(134,103,88,0.15)'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(36,30,26,0.7)';
-                    e.currentTarget.style.borderColor = 'rgba(139,127,116,0.5)';
+                    e.currentTarget.style.background = 'rgba(243,240,237,0.9)';
+                    e.currentTarget.style.borderColor = 'rgba(134,103,88,0.35)';
                     e.currentTarget.style.transform = 'translateY(-8px)';
-                    e.currentTarget.style.boxShadow = '0 16px 48px rgba(139,127,116,0.3)';
+                    e.currentTarget.style.boxShadow = '0 16px 48px rgba(134,103,88,0.15)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(36,30,26,0.4)';
-                    e.currentTarget.style.borderColor = 'rgba(139,127,116,0.2)';
+                    e.currentTarget.style.background = 'rgba(243,240,237,0.6)';
+                    e.currentTarget.style.borderColor = 'rgba(134,103,88,0.15)';
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
@@ -98,7 +98,7 @@ export function Contact() {
                     <div 
                       className="absolute inset-0 rounded-full scale-[2] transition-all duration-500 group-hover:scale-[2.5]"
                       style={{ 
-                        background: 'rgba(139,127,116,0.1)',
+                        background: 'rgba(134,103,88,0.06)',
                         width: '80px',
                         height: '80px',
                         left: '50%',
@@ -108,7 +108,7 @@ export function Contact() {
                     />
                     <Icon 
                       className="h-[52px] w-[52px] transition-all duration-500 relative z-10 group-hover:scale-110" 
-                      style={{ color: '#8B7F74' }}
+                      style={{ color: '#866758' }}
                     />
                   </div>
                   
@@ -116,7 +116,7 @@ export function Contact() {
                     className="text-[13px] font-medium uppercase transition-colors duration-500"
                     style={{ 
                       letterSpacing: '2px', 
-                      color: '#F5EFE0'
+                      color: '#291E15'
                     }}
                   >
                     {label}
@@ -128,7 +128,7 @@ export function Contact() {
 
           <p 
             className="mt-12 text-[13px]"
-            style={{ color: 'rgba(245,239,224,0.5)' }}
+            style={{ color: '#928377' }}
           >
             We typically respond within a few hours
           </p>
