@@ -185,31 +185,30 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
   if (isSuccess) {
     return (
-      <section id="request" className="py-32 md:py-40 relative" ref={formRef}>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
+      <section id="request" className="py-32 md:py-40 relative" ref={formRef} style={{ background: '#E9E4DE' }}>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-lg mx-auto text-center">
             {/* Success icon */}
-            <div className="w-20 h-20 border-2 border-taupe-DEFAULT/60 rounded-full flex items-center justify-center mx-auto mb-10 taupe-glow-soft">
-              <Check className="h-8 w-8 text-taupe-light" />
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-10" style={{ border: '2px solid rgba(134,103,88,0.5)' }}>
+              <Check className="h-8 w-8" style={{ color: '#866758' }} />
             </div>
             
             <h2 className="font-display text-3xl md:text-4xl text-taupe-gradient mb-4 uppercase">
               Request Received
             </h2>
-            <p className="text-muted-foreground mb-10 font-light">
+            <p className="mb-10 font-light" style={{ color: '#565250' }}>
               Our concierge will respond shortly.
             </p>
 
             {submittedData && (
-              <div className="bg-clutch-surface/50 border border-taupe-DEFAULT/20 p-8 mb-12 text-left text-sm backdrop-blur-sm">
+              <div className="p-8 mb-12 text-left text-sm" style={{ background: '#F5F2EE', border: '1px solid rgba(134,103,88,0.15)' }}>
                 <div className="space-y-3">
-                  <p className="text-muted-foreground">
-                    <span className="text-taupe-light font-medium">Item:</span>{" "}
+                  <p style={{ color: '#565250' }}>
+                    <span style={{ color: '#291E15' }} className="font-medium">Item:</span>{" "}
                     {submittedData.brand} — {submittedData.item_name}
                   </p>
-                  <p className="text-muted-foreground">
-                    <span className="text-taupe-light font-medium">Timeline:</span>{" "}
+                  <p style={{ color: '#565250' }}>
+                    <span style={{ color: '#291E15' }} className="font-medium">Timeline:</span>{" "}
                     {submittedData.urgency}
                   </p>
                 </div>
@@ -217,9 +216,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
             )}
 
             <Button
-              variant="royal"
               size="lg"
               className="mb-6"
+              style={{ background: '#866758', color: '#FFFFFF' }}
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -232,7 +231,10 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
             <div>
               <button
-                className="text-sm text-taupe-DEFAULT/70 hover:text-taupe-light transition-colors duration-500 border-b border-taupe-DEFAULT/30 hover:border-taupe-DEFAULT pb-0.5"
+                className="text-sm transition-colors duration-500 border-b pb-0.5"
+                style={{ color: '#866758', borderColor: 'rgba(134,103,88,0.3)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#6b5345'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#866758'; }}
                 onClick={() => {
                   setIsSuccess(false);
                   setSubmittedData(null);
@@ -249,8 +251,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
   }
 
   return (
-    <section id="request" className="py-32 md:py-44 relative" ref={formRef} style={{ background: '#1F1A16' }}>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-taupe-DEFAULT/5 via-transparent to-transparent pointer-events-none" />
+    <section id="request" className="py-32 md:py-44 relative" ref={formRef} style={{ background: '#E9E4DE' }}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-[700px] mx-auto">
           <div className="text-center mb-16">
@@ -261,7 +262,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               Private Client Request
             </h2>
             <div className="section-divider mb-10" />
-            <p className="text-[15px] font-light" style={{ color: 'rgba(245,239,224,0.6)' }}>
+            <p className="text-[15px] font-light" style={{ color: '#565250' }}>
               Share your wishlist and our concierge will respond with options.
             </p>
           </div>
@@ -271,11 +272,10 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               onSubmit={form.handleSubmit(onSubmit)}
               className="relative rounded-lg"
               style={{
-                background: 'rgba(36,30,26,0.6)',
-                backdropFilter: 'blur(30px)',
-                border: '1px solid rgba(139,127,116,0.2)',
+                background: '#F5F2EE',
+                border: '1px solid rgba(134,103,88,0.15)',
                 padding: '60px',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.5)'
+                boxShadow: '0 20px 60px rgba(41,30,21,0.08)'
               }}
             >
               {/* Honeypot field */}
@@ -288,9 +288,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                 {...form.register("company")}
               />
 
-              {/* Contact Info - Two columns on desktop */}
+              {/* Contact Info */}
               <div className="mb-8">
-                <h3 className="text-xs text-muted-foreground tracking-editorial uppercase mb-6">
+                <h3 className="text-xs tracking-editorial uppercase mb-6" style={{ color: '#928377' }}>
                   Contact Information
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -299,9 +299,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="full_name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Full Name *</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Full Name *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your name" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          <Input placeholder="Your name" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -313,9 +313,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="whatsapp"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">WhatsApp *</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>WhatsApp *</FormLabel>
                         <FormControl>
-                          <Input placeholder="+971 50 123 4567" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          <Input placeholder="+971 50 123 4567" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -327,9 +327,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Email (optional)</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Email (optional)</FormLabel>
                         <FormControl>
-                          <Input placeholder="your@email.com" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          <Input placeholder="your@email.com" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -341,9 +341,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="location"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Location *</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Location *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Dubai, UAE" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          <Input placeholder="Dubai, UAE" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -353,8 +353,8 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               </div>
 
               {/* Request Details */}
-              <div className="mb-8 pt-8 border-t border-border/50">
-                <h3 className="text-xs text-muted-foreground tracking-editorial uppercase mb-6">
+              <div className="mb-8 pt-8" style={{ borderTop: '1px solid rgba(134,103,88,0.15)' }}>
+                <h3 className="text-xs tracking-editorial uppercase mb-6" style={{ color: '#928377' }}>
                   Request Details
                 </h3>
                 
@@ -364,16 +364,16 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="request_type"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Request Type *</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Request Type *</FormLabel>
                         <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
-                            <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                            <SelectTrigger className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }}>
                               <SelectValue placeholder="Select type" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent className="bg-card border-border">
+                          <SelectContent style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.2)' }}>
                             {requestTypes.map((type) => (
-                              <SelectItem key={type} value={type}>
+                              <SelectItem key={type} value={type} style={{ color: '#291E15' }}>
                                 {type}
                               </SelectItem>
                             ))}
@@ -390,9 +390,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                       name="brand"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs font-medium tracking-wide">Brand *</FormLabel>
+                          <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Brand *</FormLabel>
                           <FormControl>
-                            <Input placeholder="e.g. Hermès" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                            <Input placeholder="e.g. Hermès" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                           </FormControl>
                           <FormMessage className="text-xs" />
                         </FormItem>
@@ -404,9 +404,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                       name="item_name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs font-medium tracking-wide">Item / Model *</FormLabel>
+                          <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Item / Model *</FormLabel>
                           <FormControl>
-                            <Input placeholder="e.g. Birkin 25" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                            <Input placeholder="e.g. Birkin 25" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                           </FormControl>
                           <FormMessage className="text-xs" />
                         </FormItem>
@@ -420,16 +420,16 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                       name="category"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs font-medium tracking-wide">Category *</FormLabel>
+                          <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Category *</FormLabel>
                           <Select onValueChange={field.onChange} value={field.value}>
                             <FormControl>
-                              <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                              <SelectTrigger className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }}>
                                 <SelectValue placeholder="Select category" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent className="bg-card border-border">
+                            <SelectContent style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.2)' }}>
                               {categories.map((cat) => (
-                                <SelectItem key={cat} value={cat}>
+                                <SelectItem key={cat} value={cat} style={{ color: '#291E15' }}>
                                   {cat}
                                 </SelectItem>
                               ))}
@@ -445,16 +445,16 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                       name="urgency"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs font-medium tracking-wide">Timeline *</FormLabel>
+                          <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Timeline *</FormLabel>
                           <Select onValueChange={field.onChange} value={field.value}>
                             <FormControl>
-                              <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                              <SelectTrigger className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }}>
                                 <SelectValue placeholder="Select timeline" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent className="bg-card border-border">
+                            <SelectContent style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.2)' }}>
                               {urgencyOptions.map((opt) => (
-                                <SelectItem key={opt.value} value={opt.value}>
+                                <SelectItem key={opt.value} value={opt.value} style={{ color: '#291E15' }}>
                                   {opt.label}
                                 </SelectItem>
                               ))}
@@ -471,11 +471,12 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="specs"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Specifications (optional)</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Specifications (optional)</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="Size, colour, hardware, material..."
-                            className="bg-transparent border-border/50 focus-visible:ring-accent resize-none min-h-[100px]"
+                            className="resize-none min-h-[100px]"
+                            style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }}
                             {...field}
                           />
                         </FormControl>
@@ -487,8 +488,8 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               </div>
 
               {/* Budget */}
-              <div className="mb-8 pt-8 border-t border-border/50">
-                <h3 className="text-xs text-muted-foreground tracking-editorial uppercase mb-6">
+              <div className="mb-8 pt-8" style={{ borderTop: '1px solid rgba(134,103,88,0.15)' }}>
+                <h3 className="text-xs tracking-editorial uppercase mb-6" style={{ color: '#928377' }}>
                   Budget (optional)
                 </h3>
                 <div className="grid grid-cols-3 gap-5">
@@ -497,9 +498,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="budget_min"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Min</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Min</FormLabel>
                         <FormControl>
-                          <Input type="number" placeholder="0" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          <Input type="number" placeholder="0" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -511,9 +512,9 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="budget_max"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Max</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Max</FormLabel>
                         <FormControl>
-                          <Input type="number" placeholder="0" className="bg-transparent border-border/50 focus-visible:ring-accent h-12" {...field} />
+                          <Input type="number" placeholder="0" className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }} {...field} />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -525,18 +526,18 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                     name="currency"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs font-medium tracking-wide">Currency</FormLabel>
+                        <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Currency</FormLabel>
                         <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
-                            <SelectTrigger className="bg-transparent border-border/50 focus:ring-accent h-12">
+                            <SelectTrigger className="h-12" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }}>
                               <SelectValue />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent className="bg-card border-border">
-                            <SelectItem value="AED">AED</SelectItem>
-                            <SelectItem value="USD">USD</SelectItem>
-                            <SelectItem value="EUR">EUR</SelectItem>
-                            <SelectItem value="GBP">GBP</SelectItem>
+                          <SelectContent style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.2)' }}>
+                            <SelectItem value="AED" style={{ color: '#291E15' }}>AED</SelectItem>
+                            <SelectItem value="USD" style={{ color: '#291E15' }}>USD</SelectItem>
+                            <SelectItem value="EUR" style={{ color: '#291E15' }}>EUR</SelectItem>
+                            <SelectItem value="GBP" style={{ color: '#291E15' }}>GBP</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage className="text-xs" />
@@ -553,11 +554,12 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                   name="reference_links"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-xs font-medium tracking-wide">Reference Links (optional)</FormLabel>
+                      <FormLabel className="text-xs font-medium tracking-wide" style={{ color: '#565250' }}>Reference Links (optional)</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Paste URLs, one per line"
-                          className="bg-transparent border-border/50 focus-visible:ring-accent resize-none min-h-[80px]"
+                          className="resize-none min-h-[80px]"
+                          style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.25)', color: '#291E15' }}
                           {...field}
                         />
                       </FormControl>
@@ -568,7 +570,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
               </div>
 
               {/* Consent */}
-              <div className="mb-8 pt-8 border-t border-border/50">
+              <div className="mb-8 pt-8" style={{ borderTop: '1px solid rgba(134,103,88,0.15)' }}>
                 <FormField
                   control={form.control}
                   name="consent"
@@ -578,11 +580,11 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                         <Checkbox
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="border-border/50 data-[state=checked]:bg-foreground data-[state=checked]:border-foreground"
+                          style={{ borderColor: 'rgba(134,103,88,0.4)' }}
                         />
                       </FormControl>
                       <div className="space-y-1 leading-none">
-                        <FormLabel className="text-sm font-normal text-muted-foreground">
+                        <FormLabel className="text-sm font-normal" style={{ color: '#565250' }}>
                           I consent to be contacted by Clutch regarding my request.
                         </FormLabel>
                         <FormMessage className="text-xs" />
@@ -594,9 +596,13 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
 
               <Button
                 type="submit"
-                variant="premium"
-                size="xl"
-                className="w-full"
+                size="lg"
+                className="w-full h-[60px] text-[14px] uppercase font-semibold rounded-sm"
+                style={{
+                  background: '#866758',
+                  color: '#FFFFFF',
+                  letterSpacing: '2.5px',
+                }}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit Request"}

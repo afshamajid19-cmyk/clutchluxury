@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clutch – Cinematic Royal Design System with Taupe Palette */
+/* Clutch – Light Luxury Design System */
 
 @layer base {
   :root {
-    /* Cinematic Warm Brown-Black Color System */
-    --clutch-bg: 20 25% 8%;              /* #1A1512 warm deep brown-black */
-    --clutch-surface: 20 20% 12%;        /* #241E1A warmer dark surface */
-    --clutch-elevated: 20 15% 15%;       /* #2D2622 warm charcoal brown */
-    --clutch-ink: 40 30% 93%;            /* #F5EFE0 cream */
-    --clutch-muted: 30 15% 71%;          /* #C4B5A8 lighter taupe */
-    --clutch-tertiary: 30 10% 50%;       /* #8B7F74 clutch taupe */
-    --clutch-accent: 30 10% 50%;         /* #8B7F74 taupe accent */
-    --clutch-accent-soft: 30 12% 58%;    /* #A89B8E lighter warm taupe */
-    --clutch-bronze: 30 12% 37%;         /* #6B5E54 bronze-taupe */
-    --clutch-border: 30 10% 50% / 0.15;  /* Taupe glow borders */
+    /* Light Luxury Color System */
+    --clutch-bg: 20 10% 88%;               /* #E9E4DE cream background */
+    --clutch-surface: 20 12% 93%;           /* #F5F2EE warm white surface */
+    --clutch-elevated: 0 0% 100%;           /* #FFFFFF white elevated */
+    --clutch-ink: 16 35% 13%;               /* #291E15 deep brown */
+    --clutch-muted: 15 8% 33%;              /* #565250 charcoal */
+    --clutch-tertiary: 15 18% 44%;          /* #866758 taupe */
+    --clutch-accent: 15 18% 44%;            /* #866758 taupe accent */
+    --clutch-accent-soft: 15 10% 49%;       /* #928377 warm gray */
+    --clutch-bronze: 15 18% 34%;            /* #6b5345 darker taupe */
+    --clutch-border: 15 18% 44% / 0.2;      /* Taupe borders */
 
     /* Semantic mappings */
     --background: var(--clutch-bg);
@@ -25,26 +25,26 @@
     --card: var(--clutch-surface);
     --card-foreground: var(--clutch-ink);
 
-    --popover: var(--clutch-surface);
+    --popover: var(--clutch-elevated);
     --popover-foreground: var(--clutch-ink);
 
     --primary: var(--clutch-accent);
-    --primary-foreground: var(--clutch-ink);
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--clutch-elevated);
+    --secondary: var(--clutch-surface);
     --secondary-foreground: var(--clutch-ink);
 
-    --muted: var(--clutch-elevated);
+    --muted: var(--clutch-surface);
     --muted-foreground: var(--clutch-muted);
 
     --accent: var(--clutch-accent);
-    --accent-foreground: var(--clutch-ink);
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: var(--clutch-ink);
+    --destructive-foreground: 0 0% 100%;
 
     --border: var(--clutch-border);
-    --input: 30 10% 50% / 0.2;
+    --input: 15 18% 44% / 0.25;
     --ring: var(--clutch-accent);
 
     --radius: 0.25rem;
@@ -53,29 +53,28 @@
     --sidebar-background: var(--clutch-surface);
     --sidebar-foreground: var(--clutch-ink);
     --sidebar-primary: var(--clutch-accent);
-    --sidebar-primary-foreground: var(--clutch-ink);
-    --sidebar-accent: var(--clutch-elevated);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--clutch-bg);
     --sidebar-accent-foreground: var(--clutch-ink);
     --sidebar-border: var(--clutch-border);
     --sidebar-ring: var(--clutch-accent);
   }
 
-  /* No light mode - cinematic dark only */
   .dark {
     --background: var(--clutch-bg);
     --foreground: var(--clutch-ink);
     --card: var(--clutch-surface);
     --card-foreground: var(--clutch-ink);
-    --popover: var(--clutch-surface);
+    --popover: var(--clutch-elevated);
     --popover-foreground: var(--clutch-ink);
     --primary: var(--clutch-accent);
-    --primary-foreground: var(--clutch-ink);
-    --secondary: var(--clutch-elevated);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--clutch-surface);
     --secondary-foreground: var(--clutch-ink);
-    --muted: var(--clutch-elevated);
+    --muted: var(--clutch-surface);
     --muted-foreground: var(--clutch-muted);
     --accent: var(--clutch-accent);
-    --accent-foreground: var(--clutch-ink);
+    --accent-foreground: 0 0% 100%;
     --border: var(--clutch-border);
     --input: var(--clutch-border);
     --ring: var(--clutch-accent);
@@ -110,7 +109,6 @@
     line-height: 1.85;
   }
 
-  /* Section styling */
   section {
     @apply relative;
   }
@@ -139,7 +137,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #8B7F74;
+    color: #866758;
     font-weight: 400;
     margin-bottom: 16px;
     font-family: 'Raleway', sans-serif;
@@ -151,7 +149,7 @@
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #F5EFE0;
+    color: #291E15;
     margin-bottom: 24px;
     line-height: 1.2;
   }
@@ -161,51 +159,51 @@
     height: 1px;
     width: 60px;
     margin: 32px auto;
-    background: linear-gradient(90deg, transparent, rgba(139, 127, 116, 0.5), transparent);
-    box-shadow: 0 0 20px rgba(139, 127, 116, 0.2);
+    background: linear-gradient(90deg, transparent, rgba(134, 103, 88, 0.5), transparent);
+    box-shadow: 0 0 20px rgba(134, 103, 88, 0.15);
   }
 
   /* Taupe Gradient Text */
   .text-taupe-gradient {
-    background: linear-gradient(135deg, #A89B8E 0%, #8B7F74 50%, #6B5E54 100%);
+    background: linear-gradient(135deg, #928377 0%, #866758 50%, #6b5345 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Cinematic Shadows */
+  /* Luxury Shadows - Light mode */
   .luxury-shadow {
-    box-shadow: 0 4px 30px -8px rgba(0, 0, 0, 0.7),
-                0 0 40px -20px rgba(139, 127, 116, 0.15);
+    box-shadow: 0 4px 30px -8px rgba(41, 30, 21, 0.1),
+                0 0 40px -20px rgba(134, 103, 88, 0.1);
   }
 
   .luxury-shadow-lg {
-    box-shadow: 0 16px 50px -12px rgba(0, 0, 0, 0.8),
-                0 0 60px -20px rgba(139, 127, 116, 0.2);
+    box-shadow: 0 16px 50px -12px rgba(41, 30, 21, 0.15),
+                0 0 60px -20px rgba(134, 103, 88, 0.1);
   }
 
   .luxury-shadow-xl {
-    box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.85),
-                0 0 80px -20px rgba(139, 127, 116, 0.3);
+    box-shadow: 0 24px 64px -16px rgba(41, 30, 21, 0.2),
+                0 0 80px -20px rgba(134, 103, 88, 0.15);
   }
 
   /* Taupe Glow Effect */
   .taupe-glow {
-    box-shadow: 0 0 40px rgba(139, 127, 116, 0.4),
-                inset 0 0 0 1px rgba(139, 127, 116, 0.6);
+    box-shadow: 0 0 40px rgba(134, 103, 88, 0.25),
+                inset 0 0 0 1px rgba(134, 103, 88, 0.4);
   }
 
   .taupe-glow-soft {
-    box-shadow: 0 0 30px rgba(139, 127, 116, 0.2);
+    box-shadow: 0 0 30px rgba(134, 103, 88, 0.15);
   }
 
   /* Border Glow */
   .border-glow {
-    border: 1px solid rgba(139, 127, 116, 0.3);
-    box-shadow: 0 0 20px rgba(139, 127, 116, 0.1);
+    border: 1px solid rgba(134, 103, 88, 0.25);
+    box-shadow: 0 0 20px rgba(134, 103, 88, 0.08);
   }
 
-  /* Film grain overlay */
+  /* Subtle texture overlay for light mode */
   .texture-grain {
     position: relative;
   }
@@ -214,7 +212,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.015;
+    opacity: 0.02;
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     animation: grainShift 8s steps(10) infinite;
@@ -233,7 +231,7 @@
     90% { transform: translate(1%, 1%); }
   }
 
-  /* Cinematic Vignette - Warm Brown */
+  /* Soft vignette for light mode */
   .vignette {
     position: relative;
   }
@@ -243,7 +241,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, transparent 40%, rgba(26, 21, 18, 0.7) 100%);
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(233, 228, 222, 0.5) 100%);
   }
 
   /* Premium animations */
@@ -266,7 +264,7 @@
     animation: glowPulse 3s ease-in-out infinite;
   }
 
-  /* Floating particles effect */
+  /* Floating particles effect - subtle on light */
   .particles {
     position: relative;
   }
@@ -276,11 +274,11 @@
     position: absolute;
     inset: 0;
     background-image: 
-      radial-gradient(1px 1px at 20% 30%, rgba(139, 127, 116, 0.3) 1px, transparent 0),
-      radial-gradient(1px 1px at 40% 70%, rgba(139, 127, 116, 0.2) 1px, transparent 0),
-      radial-gradient(1px 1px at 60% 20%, rgba(139, 127, 116, 0.25) 1px, transparent 0),
-      radial-gradient(1.5px 1.5px at 80% 50%, rgba(139, 127, 116, 0.2) 1px, transparent 0),
-      radial-gradient(1px 1px at 30% 80%, rgba(139, 127, 116, 0.15) 1px, transparent 0);
+      radial-gradient(1px 1px at 20% 30%, rgba(134, 103, 88, 0.15) 1px, transparent 0),
+      radial-gradient(1px 1px at 40% 70%, rgba(134, 103, 88, 0.1) 1px, transparent 0),
+      radial-gradient(1px 1px at 60% 20%, rgba(134, 103, 88, 0.12) 1px, transparent 0),
+      radial-gradient(1.5px 1.5px at 80% 50%, rgba(134, 103, 88, 0.1) 1px, transparent 0),
+      radial-gradient(1px 1px at 30% 80%, rgba(134, 103, 88, 0.08) 1px, transparent 0);
     background-size: 100% 100%;
     animation: floatParticles 60s linear infinite;
     pointer-events: none;
@@ -301,7 +299,7 @@
     transform: translateY(-8px);
   }
 
-  /* Tracking utilities for editorial typography */
+  /* Tracking utilities */
   .tracking-editorial {
     letter-spacing: 0.15em;
   }
@@ -330,7 +328,7 @@
   .ornate-divider {
     position: relative;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139, 127, 116, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(134, 103, 88, 0.4), transparent);
   }
 
   .ornate-divider::before {
@@ -339,7 +337,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: rgba(139, 127, 116, 0.6);
+    color: rgba(134, 103, 88, 0.5);
     font-size: 10px;
     background: hsl(var(--clutch-bg));
     padding: 0 12px;
@@ -375,10 +373,10 @@
 
   @keyframes glowPulse {
     0%, 100% {
-      box-shadow: 0 0 30px rgba(139, 127, 116, 0.3);
+      box-shadow: 0 0 30px rgba(134, 103, 88, 0.2);
     }
     50% {
-      box-shadow: 0 0 50px rgba(139, 127, 116, 0.5);
+      box-shadow: 0 0 50px rgba(134, 103, 88, 0.35);
     }
   }
 
@@ -391,9 +389,9 @@
   .shimmer {
     background: linear-gradient(
       90deg,
-      rgba(139, 127, 116, 0.1) 25%,
-      rgba(139, 127, 116, 0.3) 50%,
-      rgba(139, 127, 116, 0.1) 75%
+      rgba(134, 103, 88, 0.08) 25%,
+      rgba(134, 103, 88, 0.2) 50%,
+      rgba(134, 103, 88, 0.08) 75%
     );
     background-size: 200% 100%;
     animation: shimmer 2s infinite;

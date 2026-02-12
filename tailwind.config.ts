@@ -82,11 +82,11 @@ export default {
           border: "hsl(var(--clutch-border))",
         },
         taupe: {
-          DEFAULT: "#8B7F74",
-          light: "#A89B8E",
-          dark: "#6B5E54",
-          cream: "#F5EFE0",
-          charcoal: "#3D3935",
+          DEFAULT: "#866758",
+          light: "#928377",
+          dark: "#6b5345",
+          cream: "#E9E4DE",
+          charcoal: "#565250",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
