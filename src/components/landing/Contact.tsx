@@ -52,7 +52,7 @@ export function Contact() {
             className="text-[15px] mb-4 font-light"
             style={{ color: '#565250' }}
           >
-            Reach out through your preferred channel.
+            Get in touch for sourcing requests, inquiries, or to share your wishlist
           </p>
           <p 
             className="text-[13px] mb-16"

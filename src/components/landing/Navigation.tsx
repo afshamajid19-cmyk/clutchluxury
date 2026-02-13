@@ -8,7 +8,6 @@ const navLinks = [
   { label: "How it Works", href: "#how-it-works" },
   { label: "Trending", href: "#trending" },
   { label: "About", href: "#about" },
-  { label: "Request", href: "#request" },
   { label: "Contact", href: "#contact" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -71,7 +70,7 @@ export function Navigation() {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => handleNavClick("#request")}
+              onClick={() => handleNavClick("#contact")}
               className="text-xs tracking-luxury h-10"
               style={{
                 border: '1px solid rgba(134,103,88,0.4)',
@@ -89,7 +88,7 @@ export function Navigation() {
                 e.currentTarget.style.borderColor = 'rgba(134,103,88,0.4)';
               }}
             >
-              Request an Item
+              Contact Us
             </Button>
           </div>
 
@@ -140,9 +139,9 @@ export function Navigation() {
                     size="lg"
                     className="w-full"
                     style={{ background: '#866758', color: '#FFFFFF' }}
-                    onClick={() => handleNavClick("#request")}
+                    onClick={() => handleNavClick("#contact")}
                   >
-                    Request an Item
+                    Contact Us
                   </Button>
                 </div>
               </div>
