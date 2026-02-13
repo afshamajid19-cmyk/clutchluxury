@@ -1,21 +1,95 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import type { Item } from "@/hooks/useItems";
 import { useSettings } from "@/hooks/useSettings";
+import { useItems, type Item } from "@/hooks/useItems";
 
-interface TrendingCarouselProps {
-  items: Item[];
-  onEnquire: (item: Item) => void;
-}
+// ====================
+// TRENDING ITEMS - UPDATE THIS SECTION TO CHANGE DISPLAYED PRODUCTS
+// ====================
+//
+// This carousel pulls items from your database where availability_status = "trending".
+// To add/remove trending items, update the availability_status field in your admin panel.
+//
+// If no database items are found, the fallback array below is used instead.
+// You can also hardcode items here by editing this array directly.
+//
+/**
+ * DAILY TRENDING ITEMS UPDATE GUIDE
+ *
+ * To update Trending Now section:
+ * 1. Prepare images: 800px × 800px, JPG/WebP, under 200KB
+ * 2. Upload to: /public/images/trending/
+ * 3. Update the fallbackTrendingItems array below with new item details
+ * 4. Keep 4-8 items for optimal display
+ * 5. Test on preview before publishing
+ *
+ * TO ADD A NEW ITEM:
+ *   Copy one of the objects below, increment the id, and fill in the details.
+ *
+ * TO REMOVE AN ITEM:
+ *   Delete the entire object (including the trailing comma).
+ *
+ * IMAGE SPECS:
+ *   - Dimensions: 800px × 800px (square)
+ *   - Format: JPG or WebP
+ *   - Max file size: 200KB
+ *   - Location: /public/images/trending/
+ */
+const fallbackTrendingItems: Array<{
+  id: string;
+  brand: string;
+  item_name: string;
+  category: string;
+  hero_image_url: string | null;
+}> = [
+  {
+    id: "fallback-1",
+    title: "Classic Wallet on Chain",
+    brand: "CHANEL",
+    category: "BAG",
+    item_name: "Classic Wallet on Chain",
+    hero_image_url: "/images/chanel-woc.jpg",
+  },
+  {
+    id: "fallback-2",
+    title: "Birkin 25",
+    brand: "HERMÈS",
+    category: "BAG",
+    item_name: "Birkin 25",
+    hero_image_url: "/images/birkin-rose-sakura.jpg",
+  },
+  {
+    id: "fallback-3",
+    title: "Picotin Lock 18",
+    brand: "HERMÈS",
+    category: "BAG",
+    item_name: "Picotin Lock 18",
+    hero_image_url: "/images/hermes-picotin-gold.jpg",
+  },
+  {
+    id: "fallback-4",
+    title: "Extra Pocket L19",
+    brand: "LORO PIANA",
+    category: "BAG",
+    item_name: "Extra Pocket L19",
+    hero_image_url: "/images/loro-piana-extra-bag.jpg",
+  },
+  // TO ADD MORE ITEMS: Copy the structure above, increment the ID, and add item details
+] as any;
+// ====================
 
-export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
+export function TrendingCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const { data: settings } = useSettings();
+
+  // Fetch trending items from DB; fall back to hardcoded array
+  const { data: dbItems } = useItems({ availability_status: "trending" });
+  const items = dbItems && dbItems.length > 0 ? dbItems : fallbackTrendingItems;
 
   const itemCount = items.length;
 
@@ -121,6 +195,19 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
       opacity,
       filter: blur > 0 ? `blur(${blur}px) brightness(0.6) grayscale(${grayscale}%)` : 'none',
     };
+  };
+
+  const handleEnquire = (item: typeof items[0]) => {
+    const message = encodeURIComponent(`Hi, I'm interested in ${item.brand} ${item.item_name}`);
+    if (settings?.whatsapp_link) {
+      // Append pre-filled message to existing WhatsApp link
+      const baseUrl = settings.whatsapp_link.split('?')[0];
+      window.open(`${baseUrl}?text=${message}`, "_blank");
+    } else {
+      // Fallback: scroll to contact section
+      const element = document.querySelector("#contact");
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -281,7 +368,7 @@ export function TrendingCarousel({ items, onEnquire }: TrendingCarouselProps) {
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
-                              onEnquire(item);
+                              handleEnquire(item);
                             }}
                             className="inline-flex items-center h-10 px-6 text-[12px] uppercase font-medium transition-all duration-300 rounded-sm"
                             style={{

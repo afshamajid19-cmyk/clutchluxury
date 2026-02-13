@@ -5,8 +5,8 @@ import { useSettings } from "@/hooks/useSettings";
 export function Hero() {
   const { data: settings } = useSettings();
 
-  const scrollToRequest = () => {
-    const element = document.querySelector("#request");
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -86,9 +86,12 @@ export function Hero() {
                 e.currentTarget.style.background = '#866758';
                 e.currentTarget.style.boxShadow = 'none';
               }}
-              onClick={scrollToRequest}
+              onClick={() => {
+                const element = document.querySelector("#contact");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+              }}
             >
-              Request an Item
+              Contact Us
             </Button>
             <Button
               variant="outline"
