@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "How do I share my wishlist?",
     answer:
-      "To share your wishlist or inquire about specific luxury items, please reach out to us directly via:\n\n• WhatsApp: Contact us at +971 50 123 4567 for immediate assistance\n• Contact Form: Fill out the contact form on our Contact page with details about the item(s) you're seeking\n• Email: Send us an email through the contact form with reference links, specifications, and any other relevant details\n\nOur concierge team will personally review your request and respond with curated options, pricing, and sourcing timelines within 24-48 hours.",
+      "To share your wishlist or inquire about specific luxury items, please contact us on WhatsApp at +971 56 669 7372. Our concierge team will personally review your request and respond with curated options, pricing, and sourcing timelines within 24-48 hours.",
   },
   {
     question: "What payment methods do you accept?",
