@@ -7,7 +7,7 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
   return (
     <footer 
       ref={ref} 
-      className="py-20 md:py-24"
+      className="py-24 md:py-28"
       style={{ 
         background: '#E9E4DE',
         borderTop: '1px solid rgba(134,103,88,0.2)'
@@ -15,10 +15,13 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
     >
       <div className="container mx-auto px-6">
         <div className="max-w-[800px] mx-auto text-center">
-          {/* Logo */}
+          {/* Logo — Cormorant Garamond */}
           <div 
-            className="font-display text-2xl uppercase mb-12"
+            className="uppercase mb-14"
             style={{ 
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 300,
+              fontSize: '28px',
               letterSpacing: '0.25em',
               background: 'linear-gradient(135deg, #928377 0%, #866758 50%, #6b5345 100%)',
               WebkitBackgroundClip: 'text',
@@ -31,27 +34,44 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
 
           {/* Disclaimer */}
           <p 
-            className="text-[12px] leading-[1.7] mb-12 max-w-lg mx-auto font-light"
-            style={{ color: '#928377' }}
+            className="mb-14 max-w-lg mx-auto"
+            style={{ 
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 300,
+              fontSize: '12px',
+              lineHeight: 1.8,
+              color: '#928377' 
+            }}
           >
             {settings?.disclaimer_text ||
               "Clutch is an independent luxury sourcing platform. We are in no way affiliated with any of the brands we source."}
           </p>
 
           {/* Ornate Divider */}
-          <div className="ornate-divider w-24 mx-auto mb-10" />
+          <div className="ornate-divider w-24 mx-auto mb-12" />
 
           {/* Privacy & Copyright */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <p 
-              className="text-[12px]"
-              style={{ color: '#928377', letterSpacing: '1px' }}
+              style={{ 
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 300,
+                fontSize: '12px',
+                color: '#928377', 
+                letterSpacing: '0.05em' 
+              }}
             >
               We use your details only to respond to your request.
             </p>
             <p 
-              className="text-[11px] uppercase"
-              style={{ color: '#928377', letterSpacing: '2px' }}
+              className="uppercase"
+              style={{ 
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 500,
+                fontSize: '10px',
+                color: '#928377', 
+                letterSpacing: '0.15em' 
+              }}
             >
               © {new Date().getFullYear()} Clutch Luxury Sourcing
             </p>

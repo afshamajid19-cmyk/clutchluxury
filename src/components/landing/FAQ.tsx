@@ -50,42 +50,55 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-32 md:py-44 relative" style={{ background: '#E9E4DE' }}>
+    <section id="faq" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+      {/* Section divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <p className="section-overline mb-5">
               Questions
             </p>
-            <h2 className="section-title">
+            <h2 className="section-title mb-12">
               Frequently Asked
             </h2>
             <div className="section-divider" />
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-5">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="rounded-md overflow-hidden transition-all duration-300"
+                className="rounded-md overflow-hidden"
                 style={{
                   background: '#F5F2EE',
-                  border: '1px solid rgba(134,103,88,0.15)'
+                  border: '1px solid rgba(134,103,88,0.15)',
+                  transition: 'all 400ms ease',
                 }}
               >
                 <AccordionTrigger 
-                  className="py-6 px-8 hover:no-underline text-left text-[17px] font-normal transition-colors duration-500"
+                  className="py-7 px-8 hover:no-underline text-left transition-colors duration-[400ms]"
                   style={{ 
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 400,
+                    fontSize: '19px',
                     color: '#291E15',
-                    letterSpacing: '0.3px'
+                    letterSpacing: '0.03em',
                   }}
                 >
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent 
-                  className="px-8 pb-7 text-[15px] leading-[1.8] font-light"
-                  style={{ color: '#565250' }}
+                  className="px-8 pb-8"
+                  style={{ 
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 300,
+                    fontSize: '15px',
+                    lineHeight: 1.9,
+                    color: '#565250',
+                  }}
                 >
                   {faq.answer}
                 </AccordionContent>
