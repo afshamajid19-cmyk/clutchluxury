@@ -46,7 +46,7 @@ export function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-12">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -55,8 +55,8 @@ export function Navigation() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="text-[11px] font-medium tracking-luxury uppercase transition-colors duration-500"
-                style={{ color: '#291E15' }}
+                className="text-[11px] transition-colors duration-500 uppercase"
+                style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.18em' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = '#866758'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = '#291E15'; }}
               >
@@ -71,11 +71,14 @@ export function Navigation() {
               variant="outline"
               size="sm"
               onClick={() => handleNavClick("#contact")}
-              className="text-xs tracking-luxury h-10"
+              className="text-[11px] h-10 uppercase"
               style={{
                 border: '1px solid rgba(134,103,88,0.4)',
                 color: '#291E15',
                 background: 'transparent',
+                fontFamily: 'Montserrat, sans-serif',
+                fontWeight: 500,
+                letterSpacing: '0.15em',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#866758';
@@ -121,10 +124,15 @@ export function Navigation() {
                           e.preventDefault();
                           handleNavClick(link.href);
                         }}
-                        className="py-4 text-base font-medium transition-colors duration-500 tracking-wide"
+                        className="py-5 text-base transition-colors duration-500"
                         style={{ 
                           color: '#291E15',
-                          borderBottom: '1px solid rgba(134,103,88,0.1)'
+                          borderBottom: '1px solid rgba(134,103,88,0.1)',
+                          fontFamily: 'Montserrat, sans-serif',
+                          fontWeight: 500,
+                          letterSpacing: '0.15em',
+                          textTransform: 'uppercase' as const,
+                          fontSize: '12px',
                         }}
                         onMouseEnter={(e) => { e.currentTarget.style.color = '#866758'; }}
                         onMouseLeave={(e) => { e.currentTarget.style.color = '#291E15'; }}

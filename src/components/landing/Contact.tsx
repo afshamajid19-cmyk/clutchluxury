@@ -38,30 +38,45 @@ export function Contact() {
   const { data: settings } = useSettings();
 
   return (
-    <section id="contact" className="py-32 md:py-44 relative" style={{ background: '#E9E4DE' }}>
+    <section id="contact" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+      {/* Section divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <p className="section-overline mb-5">
             Connect
           </p>
-          <h2 className="section-title">
+          <h2 className="section-title mb-12">
             Get in Touch
           </h2>
-          <div className="section-divider mb-10" />
+          <div className="section-divider mb-12" />
           <p 
-            className="text-[15px] mb-4 font-light"
-            style={{ color: '#565250' }}
+            className="mb-5"
+            style={{ 
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 300,
+              fontSize: '16px',
+              lineHeight: 1.9,
+              color: '#565250' 
+            }}
           >
             Get in touch for sourcing requests, inquiries, or to share your wishlist
           </p>
           <p 
-            className="text-[13px] mb-16"
-            style={{ color: '#928377', letterSpacing: '1px' }}
+            className="mb-20 uppercase"
+            style={{ 
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 500,
+              fontSize: '10px',
+              letterSpacing: '0.15em',
+              color: '#928377', 
+            }}
           >
             We typically respond within a few hours.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {contactLinks.map(({ key, label, Icon }) => {
               const url = settings?.[key as keyof typeof settings];
               if (!url) return null;
@@ -72,7 +87,7 @@ export function Contact() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex flex-col items-center gap-5 py-12 px-8 rounded-lg transition-all duration-500 cursor-pointer"
+                  className="group relative flex flex-col items-center gap-6 py-14 px-8 rounded-lg transition-all duration-[400ms] cursor-pointer"
                   style={{
                     background: '#F5F2EE',
                     border: '1px solid rgba(134,103,88,0.2)'
@@ -90,18 +105,20 @@ export function Contact() {
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  {/* Icon */}
                   <div className="relative">
                     <Icon 
-                      className="h-[52px] w-[52px] transition-all duration-500 relative z-10 group-hover:scale-110" 
+                      className="h-[52px] w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110" 
                       style={{ color: '#866758' }}
                     />
                   </div>
                   
                   <span 
-                    className="text-[13px] font-medium uppercase transition-colors duration-500"
+                    className="uppercase transition-colors duration-[400ms]"
                     style={{ 
-                      letterSpacing: '2px', 
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontWeight: 500,
+                      fontSize: '11px',
+                      letterSpacing: '0.18em', 
                       color: '#291E15'
                     }}
                   >
@@ -113,8 +130,13 @@ export function Contact() {
           </div>
 
           <p 
-            className="mt-12 text-[13px]"
-            style={{ color: '#928377' }}
+            className="mt-14"
+            style={{ 
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 300,
+              fontSize: '13px',
+              color: '#928377' 
+            }}
           >
             We typically respond within a few hours
           </p>

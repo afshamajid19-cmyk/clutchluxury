@@ -213,9 +213,12 @@ export function TrendingCarousel() {
   return (
     <section 
       id="trending" 
-      className="py-32 md:py-44 overflow-hidden relative"
+      className="py-40 md:py-56 overflow-hidden relative"
       style={{ background: '#E9E4DE' }}
     >
+      {/* Section divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
+      
       {/* Subtle spotlight gradient */}
       <div 
         className="absolute inset-0 pointer-events-none"
@@ -226,17 +229,24 @@ export function TrendingCarousel() {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20 md:mb-24">
+        <div className="text-center mb-24 md:mb-28">
           <p className="section-overline mb-5 animate-fade-up">
             Curated Selection
           </p>
-          <h2 className="section-title animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h2 className="section-title animate-fade-up mb-12" style={{ animationDelay: "0.1s" }}>
             Trending Now
           </h2>
           <div className="section-divider animate-fade-up" style={{ animationDelay: "0.15s" }} />
           <p 
-            className="text-[16px] max-w-md mx-auto animate-fade-up font-light mt-8"
-            style={{ animationDelay: "0.2s", color: '#565250' }}
+            className="max-w-md mx-auto animate-fade-up mt-10"
+            style={{ 
+              animationDelay: "0.2s", 
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 300,
+              fontSize: '16px',
+              lineHeight: 1.9,
+              color: '#565250' 
+            }}
           >
             The most sought-after pieces of the moment
           </p>
@@ -331,9 +341,12 @@ export function TrendingCarousel() {
                       {/* Trending Badge */}
                       <div className="absolute top-5 left-5 z-10">
                         <span 
-                          className="inline-block px-4 py-2 text-[10px] font-semibold uppercase rounded-sm"
+                          className="inline-block px-5 py-2.5 rounded-[2px] uppercase"
                           style={{ 
-                            letterSpacing: '2px',
+                            fontFamily: "'Montserrat', sans-serif",
+                            fontWeight: 500,
+                            fontSize: '9px',
+                            letterSpacing: '0.2em',
                             background: '#565250',
                             color: '#FFFFFF'
                           }}
@@ -345,21 +358,39 @@ export function TrendingCarousel() {
                       {/* Content positioned over gradient */}
                       <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
                         <div 
-                          className="text-[14px] font-medium uppercase mb-2"
-                          style={{ letterSpacing: '3px', color: '#866758' }}
+                          className="uppercase mb-2"
+                          style={{ 
+                            fontFamily: "'Montserrat', sans-serif",
+                            fontWeight: 500,
+                            fontSize: '10px',
+                            letterSpacing: '0.2em', 
+                            color: '#866758' 
+                          }}
                         >
                           {item.brand}
                         </div>
                         <div className="w-12 h-px mb-4" style={{ background: 'linear-gradient(to right, rgba(134,103,88,0.5), transparent)' }} />
                         <h3 
-                          className="font-serif text-xl md:text-2xl mb-3 line-clamp-2 font-light"
-                          style={{ lineHeight: 1.3, color: '#291E15' }}
+                          className="mb-3 line-clamp-2"
+                          style={{ 
+                            fontFamily: "'Cormorant Garamond', serif",
+                            fontWeight: 300,
+                            fontSize: 'clamp(18px, 2vw, 24px)',
+                            lineHeight: 1.3, 
+                            color: '#291E15' 
+                          }}
                         >
                           {item.item_name}
                         </h3>
                         <p 
-                          className="text-xs uppercase mb-5"
-                          style={{ letterSpacing: '1.5px', color: '#928377' }}
+                          className="uppercase mb-6"
+                          style={{ 
+                            fontFamily: "'Montserrat', sans-serif",
+                            fontWeight: 500,
+                            fontSize: '9px',
+                            letterSpacing: '0.2em', 
+                            color: '#928377' 
+                          }}
                         >
                           {item.category}
                         </p>
@@ -370,9 +401,13 @@ export function TrendingCarousel() {
                               e.stopPropagation();
                               handleEnquire(item);
                             }}
-                            className="inline-flex items-center h-10 px-6 text-[12px] uppercase font-medium transition-all duration-300 rounded-sm"
+                            className="inline-flex items-center rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02]"
                             style={{
-                              letterSpacing: '1.5px',
+                              fontFamily: "'Montserrat', sans-serif",
+                              fontWeight: 500,
+                              fontSize: '10px',
+                              letterSpacing: '0.18em',
+                              padding: '12px 32px',
                               color: '#FFFFFF',
                               background: '#866758',
                               border: 'none',
@@ -467,14 +502,14 @@ export function TrendingCarousel() {
 
         {/* Instagram Link */}
         {settings?.instagram_url && (
-          <div className="text-center mt-16">
-            <p className="text-sm font-light" style={{ color: '#565250' }}>
+          <div className="text-center mt-18">
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '14px', color: '#565250' }}>
               For daily updates, view the latest on{" "}
               <a
                 href={settings.instagram_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors duration-300 border-b pb-0.5"
+                className="transition-colors duration-[400ms] border-b pb-0.5"
                 style={{ 
                   color: '#866758',
                   borderColor: 'rgba(134,103,88,0.3)'

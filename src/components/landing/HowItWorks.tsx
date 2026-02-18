@@ -23,46 +23,66 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-32 md:py-44 relative" style={{ background: '#E9E4DE' }}>
+    <section id="how-it-works" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+      {/* Section divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
+      
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20 md:mb-24">
+        <div className="text-center mb-24 md:mb-28">
           <p className="section-overline mb-5">
             The Process
           </p>
-          <h2 className="section-title">
+          <h2 className="section-title mb-12">
             How It Works
           </h2>
           <div className="section-divider" />
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-20 md:gap-14">
             {steps.map((step, index) => (
               <div 
                 key={step.number} 
                 className="text-center group animate-fade-up cursor-default"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Step number — Cormorant Garamond 300 */}
                 <div 
-                  className="font-display text-[56px] mb-6 transition-all duration-500 group-hover:scale-110"
+                  className="mb-8 transition-all duration-[400ms] group-hover:scale-110"
                   style={{ 
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 300,
+                    fontSize: '64px',
                     color: 'rgba(134,103,88,0.3)',
                     letterSpacing: '0.05em',
-                    fontWeight: 300,
-                    lineHeight: 1
+                    lineHeight: 1,
                   }}
                 >
                   {step.number}
                 </div>
+                {/* Step title — Montserrat Medium */}
                 <h3 
-                  className="text-[18px] font-medium mb-4 uppercase"
-                  style={{ letterSpacing: '2px', color: '#291E15' }}
+                  className="mb-5 uppercase"
+                  style={{ 
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 500,
+                    fontSize: '13px',
+                    letterSpacing: '0.15em', 
+                    color: '#291E15' 
+                  }}
                 >
                   {step.title}
                 </h3>
+                {/* Step description — Montserrat Light */}
                 <p 
-                  className="text-[15px] leading-[1.7] font-light max-w-[280px] mx-auto"
-                  style={{ color: '#565250' }}
+                  className="max-w-[280px] mx-auto"
+                  style={{ 
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 300,
+                    fontSize: '15px',
+                    lineHeight: 1.9,
+                    color: '#565250' 
+                  }}
                 >
                   {step.description}
                 </p>
@@ -70,10 +90,16 @@ export function HowItWorks() {
             ))}
           </div>
           
-          <div className="section-divider w-48 mt-20" />
+          <div className="section-divider w-48 mt-24" />
           <p 
-            className="text-center text-[11px] mt-8 uppercase"
-            style={{ letterSpacing: '3px', color: '#928377' }}
+            className="text-center mt-10 uppercase"
+            style={{ 
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 500,
+              fontSize: '10px',
+              letterSpacing: '0.2em', 
+              color: '#928377' 
+            }}
           >
             Concierge-level sourcing with curated options
           </p>
