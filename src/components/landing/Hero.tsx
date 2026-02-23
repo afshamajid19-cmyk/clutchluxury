@@ -27,7 +27,7 @@ export function Hero() {
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
               fontSize: 'clamp(32px, 5.5vw, 62px)',
-              color: '#291E15',
+              color: '#8B7355',
               textShadow: '0 2px 30px rgba(134, 103, 88, 0.15)',
               letterSpacing: '0.1em',
               lineHeight: 1.2,
