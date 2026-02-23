@@ -84,7 +84,7 @@ export function Hero() {
               size="lg"
               className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-[400ms] hover:-translate-y-1 hover:scale-[1.02] border-0"
               style={{
-                background: '#866758',
+                background: '#9B9B9B',
                 color: '#FFFFFF',
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 500,
@@ -94,11 +94,11 @@ export function Hero() {
                 height: 'auto',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#6b5345';
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(134,103,88,0.4)';
+                e.currentTarget.style.background = '#7A7A7A';
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(107,107,107,0.3)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#866758';
+                e.currentTarget.style.background = '#9B9B9B';
                 e.currentTarget.style.boxShadow = 'none';
               }}
               onClick={() => {
@@ -113,9 +113,9 @@ export function Hero() {
               size="lg"
               className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02]"
               style={{
-                border: '2px solid #866758',
+                border: '2px solid #6B6B6B',
                 background: 'transparent',
-                color: '#291E15',
+                color: '#6B6B6B',
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 500,
                 fontSize: '11px',
@@ -124,12 +124,12 @@ export function Hero() {
                 height: 'auto',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#866758';
+                e.currentTarget.style.background = '#6B6B6B';
                 e.currentTarget.style.color = '#FFFFFF';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = '#291E15';
+                e.currentTarget.style.color = '#6B6B6B';
               }}
               onClick={() => {
                 if (settings?.whatsapp_link) {

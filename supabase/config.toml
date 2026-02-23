@@ -1,1 +1,4 @@
 project_id = "dhflzabjnvlckyhuptwt"
+
+[functions.zoho-trending-items]
+verify_jwt = false
