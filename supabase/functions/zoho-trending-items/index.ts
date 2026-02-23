@@ -125,12 +125,14 @@ serve(async (req) => {
     // Filter for items tagged "trending" with images
     const trendingItems = allItems
       .filter((item: any) => {
-        const tags: string[] = item.tags || [];
-        const hasTrending = tags.some(
-          (t: string) => t.toLowerCase() === "trending"
-        );
+        const isTrending = item.cf_trending === true ||
+          item.cf_trending === "true" ||
+          item.cf_trending === "Yes" ||
+          item.cf_display_on_website === true ||
+          item.cf_display_on_website === "true" ||
+          item.cf_display_on_website === "Yes";
         const hasImage = !!(item.image_url || item.image_name);
-        return hasTrending && hasImage;
+        return isTrending && hasImage;
       })
       .map((item: any) => ({
         id: item.item_id,
