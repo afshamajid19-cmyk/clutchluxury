@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSettings } from "@/hooks/useSettings";
 import { useItems, type Item } from "@/hooks/useItems";
+import { useZohoTrendingItems } from "@/hooks/useZohoTrendingItems";
 
 // ====================
 // TRENDING ITEMS - UPDATE THIS SECTION TO CHANGE DISPLAYED PRODUCTS
@@ -87,9 +88,15 @@ export function TrendingCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { data: settings } = useSettings();
 
-  // Fetch trending items from DB; fall back to hardcoded array
+  // Fetch trending items: Zoho API first, then DB, then fallback
+  const { data: zohoItems, isLoading: zohoLoading } = useZohoTrendingItems();
   const { data: dbItems } = useItems({ availability_status: "trending" });
-  const items = dbItems && dbItems.length > 0 ? dbItems : fallbackTrendingItems;
+  
+  const items = (zohoItems && zohoItems.length > 0)
+    ? zohoItems
+    : (dbItems && dbItems.length > 0)
+      ? dbItems
+      : fallbackTrendingItems;
 
   const itemCount = items.length;
 
@@ -141,6 +148,14 @@ export function TrendingCarousel() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeIndex, itemCount]);
+
+  if (zohoLoading && (!dbItems || dbItems.length === 0) && fallbackTrendingItems.length === 0) {
+    return (
+      <div className="text-center py-24">
+        <p className="text-sm" style={{ color: '#928377' }}>Loading trending items...</p>
+      </div>
+    );
+  }
 
   if (itemCount === 0) {
     return (
@@ -409,14 +424,14 @@ export function TrendingCarousel() {
                               letterSpacing: '0.18em',
                               padding: '12px 32px',
                               color: '#FFFFFF',
-                              background: '#866758',
+                              background: '#6B6B6B',
                               border: 'none',
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.background = '#6b5345';
+                              e.currentTarget.style.background = '#4A4A4A';
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.background = '#866758';
+                              e.currentTarget.style.background = '#6B6B6B';
                             }}
                           >
                             Enquire

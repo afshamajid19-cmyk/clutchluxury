@@ -218,7 +218,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
             <Button
               size="lg"
               className="mb-6"
-              style={{ background: '#866758', color: '#FFFFFF' }}
+              style={{ background: '#6B6B6B', color: '#FFFFFF' }}
               onClick={() => {
                 if (settings?.whatsapp_link) {
                   window.open(settings.whatsapp_link, "_blank");
@@ -599,7 +599,7 @@ export function RequestForm({ prefilledItem, onClearPrefill }: RequestFormProps)
                 size="lg"
                 className="w-full h-[60px] text-[14px] uppercase font-semibold rounded-sm"
                 style={{
-                  background: '#866758',
+                  background: '#6B6B6B',
                   color: '#FFFFFF',
                   letterSpacing: '2.5px',
                 }}
