@@ -328,7 +328,7 @@
   .ornate-divider {
     position: relative;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(134, 103, 88, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, #6B6B6B, transparent);
   }
 
   .ornate-divider::before {
@@ -337,7 +337,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: rgba(134, 103, 88, 0.5);
+    color: #6B6B6B;
     font-size: 10px;
     background: hsl(var(--clutch-bg));
     padding: 0 12px;
