@@ -2,3 +2,6 @@ project_id = "dhflzabjnvlckyhuptwt"
 
 [functions.zoho-trending-items]
 verify_jwt = false
+
+[functions.zoho-item-image]
+verify_jwt = false

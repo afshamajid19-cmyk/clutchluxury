@@ -1,9 +1,21 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSettings } from "@/hooks/useSettings";
 import { useItems, type Item } from "@/hooks/useItems";
 import { useZohoTrendingItems } from "@/hooks/useZohoTrendingItems";
+
+function getImageUrl(item: { hero_image_url: string | null; id: string }): string | null {
+  const url = item.hero_image_url;
+  if (!url) return null;
+  // If it's a Zoho API URL, proxy it through our edge function
+  if (url.includes("zohoapis.com")) {
+    const match = url.match(/items\/(\d+)\/image/);
+    const itemId = match ? match[1] : item.id;
+    return `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/zoho-item-image?item_id=${itemId}`;
+  }
+  return url;
+}
 
 // ====================
 // TRENDING ITEMS - UPDATE THIS SECTION TO CHANGE DISPLAYED PRODUCTS
@@ -315,7 +327,7 @@ export function TrendingCarousel() {
 
                     {/* Image */}
                     <div className="aspect-[3/4] relative overflow-hidden">
-                      {item.hero_image_url ? (
+                      {getImageUrl(item) ? (
                         <div 
                           className="w-full h-full flex items-center justify-center"
                           style={{ 
@@ -324,7 +336,7 @@ export function TrendingCarousel() {
                           }}
                         >
                           <img
-                            src={item.hero_image_url}
+                            src={getImageUrl(item) || ''}
                             alt={`${item.brand} ${item.item_name}`}
                             className="max-w-full max-h-full object-contain"
                             loading="lazy"
