@@ -261,7 +261,7 @@ export function TrendingCarousel() {
             Curated Selection
           </p>
           <h2 className="section-title animate-fade-up mb-12" style={{ animationDelay: "0.1s" }}>
-            Trending Now
+            Available to Shop
           </h2>
           <div className="section-divider animate-fade-up" style={{ animationDelay: "0.15s" }} />
           <p 
@@ -275,7 +275,7 @@ export function TrendingCarousel() {
               color: '#565250' 
             }}
           >
-            The most sought-after pieces of the moment
+            Curated selection from our verified inventory
           </p>
         </div>
 
