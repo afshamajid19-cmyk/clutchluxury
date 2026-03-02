@@ -27,7 +27,7 @@ export function Hero() {
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
               fontSize: 'clamp(32px, 5.5vw, 62px)',
-              color: '#8B7355',
+              color: '#6B6B6B',
               textShadow: '0 2px 30px rgba(134, 103, 88, 0.15)',
               letterSpacing: '0.1em',
               lineHeight: 1.2,
@@ -37,11 +37,15 @@ export function Hero() {
             Attaining the Unattainable
           </h1>
 
-          {/* Ornate divider */}
-          <div 
-            className="ornate-divider w-48 mx-auto mb-14 animate-fade-up"
-            style={{ animationDelay: "0.2s" }}
-          />
+          {/* Clutch logo divider */}
+          <div className="flex justify-center mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <img 
+              src="/images/clutch-logo-ccc.jpg" 
+              alt="Clutch logo" 
+              className="block"
+              style={{ width: '55px', height: '55px', opacity: 0.35, filter: 'grayscale(20%)' }}
+            />
+          </div>
 
           {/* Subheadline — Montserrat Light Italic */}
           <p
@@ -56,7 +60,7 @@ export function Hero() {
               color: '#565250' 
             }}
           >
-            Luxury personal shopping & discreet sourcing
+            Luxury personal shopping & sourcing
           </p>
 
           {/* Supporting line — Montserrat Medium */}
