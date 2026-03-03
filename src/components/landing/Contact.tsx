@@ -7,7 +7,10 @@ function ThreadsIcon({ className }: { className?: string }) {
       src="/images/threads-logo.jpg" 
       alt="Threads" 
       className={className}
-      style={{ objectFit: 'contain' }}
+      style={{ 
+        objectFit: 'contain',
+        filter: 'brightness(0) saturate(100%) invert(47%) sepia(13%) saturate(744%) hue-rotate(337deg) brightness(95%) contrast(86%)',
+      }}
     />
   );
 }
