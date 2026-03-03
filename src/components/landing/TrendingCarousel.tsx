@@ -99,15 +99,12 @@ export function TrendingCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { data: settings } = useSettings();
 
-  // Fetch trending items: Zoho API first, then DB, then fallback
+  // Fetch trending items from Zoho API only, fallback to static
   const { data: zohoItems, isLoading: zohoLoading } = useZohoTrendingItems();
-  const { data: dbItems } = useItems({ availability_status: "trending" });
   
   const items = (zohoItems && zohoItems.length > 0)
     ? zohoItems
-    : (dbItems && dbItems.length > 0)
-      ? dbItems
-      : fallbackTrendingItems;
+    : fallbackTrendingItems;
 
   const itemCount = items.length;
 
@@ -160,7 +157,7 @@ export function TrendingCarousel() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeIndex, itemCount]);
 
-  if (zohoLoading && (!dbItems || dbItems.length === 0) && fallbackTrendingItems.length === 0) {
+  if (zohoLoading && fallbackTrendingItems.length === 0) {
     return (
       <div className="text-center py-24">
         <p className="text-sm" style={{ color: '#928377' }}>Loading trending items...</p>
