@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSettings } from "@/hooks/useSettings";
-import { useItems, type Item } from "@/hooks/useItems";
 import { useZohoTrendingItems } from "@/hooks/useZohoTrendingItems";
 
 function getImageUrl(item: { hero_image_url: string | null; id: string }): string | null {
