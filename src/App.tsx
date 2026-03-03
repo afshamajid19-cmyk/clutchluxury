@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import Admin from "./pages/Admin";
+import TrendingUpload from "./pages/TrendingUpload";
 import NotFound from "./pages/NotFound";
 import HermesLeatherTypes from "./pages/guides/HermesLeatherTypes";
 import HermesColorGuide from "./pages/guides/HermesColorGuide";
@@ -24,6 +25,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/trending-upload" element={<TrendingUpload />} />
             <Route path="/guides/hermes-leather-types" element={<HermesLeatherTypes />} />
             <Route path="/guides/hermes-color-guide" element={<HermesColorGuide />} />
             <Route path="/guides/hermes-date-stamps" element={<HermesDateStamps />} />
