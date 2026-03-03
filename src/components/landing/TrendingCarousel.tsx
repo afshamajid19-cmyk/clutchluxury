@@ -48,47 +48,7 @@ function getImageUrl(item: { hero_image_url: string | null; id: string }): strin
  *   - Max file size: 200KB
  *   - Location: /public/images/trending/
  */
-const fallbackTrendingItems: Array<{
-  id: string;
-  brand: string;
-  item_name: string;
-  category: string;
-  hero_image_url: string | null;
-}> = [
-  {
-    id: "fallback-1",
-    title: "Classic Wallet on Chain",
-    brand: "CHANEL",
-    category: "BAG",
-    item_name: "Classic Wallet on Chain",
-    hero_image_url: "/images/chanel-woc.jpg",
-  },
-  {
-    id: "fallback-2",
-    title: "Birkin 25",
-    brand: "HERMÈS",
-    category: "BAG",
-    item_name: "Birkin 25",
-    hero_image_url: "/images/birkin-rose-sakura.jpg",
-  },
-  {
-    id: "fallback-3",
-    title: "Picotin Lock 18",
-    brand: "HERMÈS",
-    category: "BAG",
-    item_name: "Picotin Lock 18",
-    hero_image_url: "/images/hermes-picotin-gold.jpg",
-  },
-  {
-    id: "fallback-4",
-    title: "Extra Pocket L19",
-    brand: "LORO PIANA",
-    category: "BAG",
-    item_name: "Extra Pocket L19",
-    hero_image_url: "/images/loro-piana-extra-bag.jpg",
-  },
-  // TO ADD MORE ITEMS: Copy the structure above, increment the ID, and add item details
-] as any;
+// No fallback items - only Zoho API data
 // ====================
 
 export function TrendingCarousel() {
@@ -99,12 +59,10 @@ export function TrendingCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { data: settings } = useSettings();
 
-  // Fetch trending items from Zoho API only, fallback to static
+  // Fetch trending items from Zoho API only
   const { data: zohoItems, isLoading: zohoLoading } = useZohoTrendingItems();
   
-  const items = (zohoItems && zohoItems.length > 0)
-    ? zohoItems
-    : fallbackTrendingItems;
+  const items = zohoItems || [];
 
   const itemCount = items.length;
 
@@ -157,19 +115,33 @@ export function TrendingCarousel() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeIndex, itemCount]);
 
-  if (zohoLoading && fallbackTrendingItems.length === 0) {
+  if (zohoLoading) {
     return (
-      <div className="text-center py-24">
-        <p className="text-sm" style={{ color: '#928377' }}>Loading trending items...</p>
-      </div>
+      <section id="trending" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <p className="text-sm" style={{ color: '#928377' }}>Loading items...</p>
+          </div>
+        </div>
+      </section>
     );
   }
 
   if (itemCount === 0) {
     return (
-      <div className="text-center py-24">
-        <p className="text-sm" style={{ color: '#928377' }}>No trending items at the moment.</p>
-      </div>
+      <section id="trending" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-24 md:mb-28">
+            <p className="section-overline mb-5">Curated Selection</p>
+            <h2 className="section-title mb-12">Available to Shop</h2>
+            <div className="section-divider" />
+          </div>
+          <p className="text-center" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '15px', color: '#928377' }}>
+            No items available at the moment. Check back soon.
+          </p>
+        </div>
+      </section>
     );
   }
 
