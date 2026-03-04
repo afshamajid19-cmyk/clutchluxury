@@ -5,7 +5,7 @@ const guides = [
     slug: "hermes-leather-types",
     title: "How to Identify Hermès Leather Types",
     excerpt: "From Togo to Crocodile — a comprehensive guide to understanding the leathers that define Hermès craftsmanship.",
-    image: "/images/blog/hermes-birkin-suede.jpg",
+    image: "/images/blog/hermes-himalaya-birkin.jpeg",
     readTime: "8 min read",
   },
   {
