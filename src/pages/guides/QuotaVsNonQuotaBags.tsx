@@ -11,8 +11,8 @@ export default function QuotaVsNonQuotaBags() {
       slug="quota-vs-non-quota-bags"
       keywords="Hermès quota bags, non-quota bags, Birkin quota, Kelly quota, Hermès purchasing system, luxury bag sourcing"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-birkin-suede.jpg" },
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-constance-pink.jpg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
       ]}
     >
       <p style={bodyStyle}>
