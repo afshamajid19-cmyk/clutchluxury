@@ -23,8 +23,8 @@ export function TrendingNow() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-24 md:mb-28">
-          <p className="section-overline mb-5">What's Hot</p>
-          <h2 className="section-title mb-12">Trending Now</h2>
+          <p className="section-overline mb-5">Curated</p>
+          <h2 className="section-title mb-12">The Must-Have</h2>
           <div className="section-divider" />
           <p
             className="max-w-md mx-auto mt-10"
@@ -36,7 +36,7 @@ export function TrendingNow() {
               color: '#928377',
             }}
           >
-            Trending in luxury right now
+            The most sought-after pieces of the moment
           </p>
         </div>
 

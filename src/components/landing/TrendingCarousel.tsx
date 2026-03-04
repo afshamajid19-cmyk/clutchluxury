@@ -346,7 +346,7 @@ export function TrendingCarousel() {
                             color: '#FFFFFF'
                           }}
                         >
-                          Trending
+                          In Demand
                         </span>
                       </div>
 

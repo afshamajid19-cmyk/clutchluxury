@@ -161,13 +161,13 @@ export function Hero() {
                 color: '#928377' 
               }}
             >
-              <span className="hover:text-[#866758] transition-colors duration-400">Licensed</span>
-              <span style={{ color: 'rgba(134,103,88,0.4)' }}>•</span>
+              <span className="hover:text-[#866758] transition-colors duration-400">The Clutch Experience</span>
+              <span style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
+              <span className="hover:text-[#866758] transition-colors duration-400">Private Sourcing</span>
+              <span style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
+              <span className="hover:text-[#866758] transition-colors duration-400">International delivery</span>
+              <span style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
               <span className="hover:text-[#866758] transition-colors duration-400">Since 2017</span>
-              <span style={{ color: 'rgba(134,103,88,0.4)' }}>•</span>
-              <span className="hover:text-[#866758] transition-colors duration-400">International Shipping</span>
-              <span style={{ color: 'rgba(134,103,88,0.4)' }}>•</span>
-              <span className="hover:text-[#866758] transition-colors duration-400">Discreet Sourcing</span>
             </div>
           </div>
         </div>

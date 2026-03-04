@@ -137,7 +137,7 @@ export function GuideLayout({
         <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
           <div className="guide-content">{children}</div>
 
-          <ImageAttribution />
+          {/* Attribution removed */}
 
           {/* CTA */}
           <div

@@ -68,7 +68,7 @@ export function HowItWorks() {
                     fontWeight: 500,
                     fontSize: '13px',
                     letterSpacing: '0.15em', 
-                    color: '#291E15' 
+                    color: '#6B6B6B' 
                   }}
                 >
                   {step.title}
