@@ -225,11 +225,11 @@ export function TrendingCarousel() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-24 md:mb-28">
-          <p className="section-overline mb-5 animate-fade-up">
+            <p className="section-overline mb-5 animate-fade-up">
             Curated Selection
           </p>
           <h2 className="section-title animate-fade-up mb-12" style={{ animationDelay: "0.1s" }}>
-            Available to Shop
+            Ready to Acquire
           </h2>
           <div className="section-divider animate-fade-up" style={{ animationDelay: "0.15s" }} />
           <p 
