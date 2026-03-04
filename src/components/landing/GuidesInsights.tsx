@@ -19,7 +19,7 @@ const guides = [
     slug: "hermes-date-stamps",
     title: "How to Read Hermès Date Stamps",
     excerpt: "Decode year codes, craftsman stamps, and authentication markers on your Hermès bag with this detailed guide.",
-    image: "/images/blog/hermes-birkin-suede.jpg",
+    image: "/images/blog/hermes-kelly-clutch-black.jpeg",
     readTime: "6 min read",
   },
   {
