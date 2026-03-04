@@ -5,14 +5,14 @@ export default function HermesColorGuide() {
     <GuideLayout
       title="Hermès Color Guide: Understanding Hermès Bag Colors"
       description="Permanent vs. seasonal colours, colour codes, resale value impact, and styling tips for Hermès bags."
-      heroImage="/images/blog/hermes-constance-pink.jpg"
+      heroImage="/images/blog/hermes-color-trends.jpeg"
       readTime="7 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-color-guide"
       keywords="Hermès colors, Hermès colour guide, Hermès bag colors, seasonal colors, Etoupe, Rose Sakura, luxury bags"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-birkin-suede.jpg" },
-        { slug: "quota-vs-non-quota-bags", title: "Quota vs Non-Quota Bags", image: "/images/blog/hermes-birkin-croc-red.jpg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
+        { slug: "quota-vs-non-quota-bags", title: "Quota vs Non-Quota Bags", image: "/images/blog/hermes-birkin-red-article.jpeg" },
       ]}
     >
       <p style={bodyStyle}>

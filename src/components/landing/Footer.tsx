@@ -47,8 +47,14 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
               "Clutch is an independent luxury sourcing platform. We are in no way affiliated with any of the brands we source."}
           </p>
 
-          {/* Ornate Divider */}
-          <div className="ornate-divider w-24 mx-auto mb-12" />
+          {/* Logo Divider */}
+          <div className="flex justify-center mb-12">
+            <img 
+              src="/images/clutch-logo-circular.jpeg" 
+              alt="Clutch" 
+              style={{ width: '55px', height: '55px', opacity: 0.35 }}
+            />
+          </div>
 
           {/* Privacy & Copyright */}
           <div className="space-y-5">

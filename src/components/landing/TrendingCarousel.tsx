@@ -134,7 +134,7 @@ export function TrendingCarousel() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-24 md:mb-28">
             <p className="section-overline mb-5">Curated Selection</p>
-            <h2 className="section-title mb-12">Available to Shop</h2>
+            <h2 className="section-title mb-12">Ready to Acquire</h2>
             <div className="section-divider" />
           </div>
           <p className="text-center" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '15px', color: '#928377' }}>
@@ -225,11 +225,11 @@ export function TrendingCarousel() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-24 md:mb-28">
-          <p className="section-overline mb-5 animate-fade-up">
+            <p className="section-overline mb-5 animate-fade-up">
             Curated Selection
           </p>
           <h2 className="section-title animate-fade-up mb-12" style={{ animationDelay: "0.1s" }}>
-            Available to Shop
+            Ready to Acquire
           </h2>
           <div className="section-divider animate-fade-up" style={{ animationDelay: "0.15s" }} />
           <p 
@@ -243,7 +243,7 @@ export function TrendingCarousel() {
               color: '#565250' 
             }}
           >
-            Curated selection from our verified inventory
+            A curated selection from our authenticated inventory
           </p>
         </div>
 
@@ -346,7 +346,7 @@ export function TrendingCarousel() {
                             color: '#FFFFFF'
                           }}
                         >
-                          Trending
+                          In Demand
                         </span>
                       </div>
 

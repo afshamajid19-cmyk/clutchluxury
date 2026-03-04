@@ -14,30 +14,7 @@ interface GuideLayoutProps {
   relatedGuides?: Array<{ slug: string; title: string; image: string }>;
 }
 
-function ImageAttribution() {
-  return (
-    <p
-      className="mt-8 text-center"
-      style={{
-        fontFamily: "'Montserrat', sans-serif",
-        fontWeight: 300,
-        fontSize: '11px',
-        color: '#928377',
-        fontStyle: 'italic',
-      }}
-    >
-      Images courtesy of{" "}
-      <a
-        href="https://legitgrails.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline transition-colors duration-300 hover:text-[#866758]"
-      >
-        LegitGrails
-      </a>
-    </p>
-  );
-}
+// Attribution removed
 
 export function GuideLayout({
   title,
@@ -160,7 +137,7 @@ export function GuideLayout({
         <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
           <div className="guide-content">{children}</div>
 
-          <ImageAttribution />
+          {/* Attribution removed */}
 
           {/* CTA */}
           <div

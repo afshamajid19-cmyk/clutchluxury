@@ -5,14 +5,14 @@ export default function HermesDateStamps() {
     <GuideLayout
       title="How to Read Hermès Date Stamps"
       description="Decode year codes, craftsman stamps, and authentication markers on your Hermès bag with this detailed guide."
-      heroImage="/images/blog/hermes-birkin-suede.jpg"
+      heroImage="/images/blog/hermes-kelly-clutch-black.jpeg"
       readTime="6 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-date-stamps"
       keywords="Hermès date stamps, Hermès year codes, blind stamp, craftsman stamp, Hermès authentication, Hermès bag year"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-birkin-suede.jpg" },
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-constance-pink.jpg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
       ]}
     >
       <p style={bodyStyle}>

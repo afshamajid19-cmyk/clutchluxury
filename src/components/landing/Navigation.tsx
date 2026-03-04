@@ -41,10 +41,14 @@ export function Navigation() {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="font-display text-xl md:text-2xl tracking-luxury uppercase"
-            style={{ color: '#6B6B6B' }}
+            className="flex items-center"
           >
-            Clutch
+            <img 
+              src="/images/clutch-logo-circular.jpeg" 
+              alt="Clutch" 
+              className="h-10 md:h-12 w-auto"
+              style={{ opacity: 0.7, filter: 'grayscale(20%)' }}
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -114,7 +118,7 @@ export function Navigation() {
             >
               <div className="flex flex-col h-full">
                 <div className="p-6" style={{ borderBottom: '1px solid rgba(134,103,88,0.15)' }}>
-                  <span className="font-display text-xl tracking-luxury uppercase" style={{ color: '#6B6B6B' }}>Clutch</span>
+                  <img src="/images/clutch-logo-circular.jpeg" alt="Clutch" className="h-10 w-auto" style={{ opacity: 0.7 }} />
                 </div>
                 <div className="flex-1 py-8 px-6">
                   <div className="flex flex-col gap-1">

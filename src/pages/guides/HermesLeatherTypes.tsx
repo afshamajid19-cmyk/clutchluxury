@@ -5,14 +5,14 @@ export default function HermesLeatherTypes() {
     <GuideLayout
       title="How to Identify Hermès Leather Types"
       description="A comprehensive guide to understanding the leathers that define Hermès craftsmanship — from Togo and Clemence to exotic Crocodile and Ostrich."
-      heroImage="/images/blog/hermes-birkin-suede.jpg"
+      heroImage="/images/blog/hermes-himalaya-birkin.jpeg"
       readTime="8 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-leather-types"
       keywords="Hermès leather types, Togo leather, Clemence leather, Epsom, Swift, Box Calf, Crocodile, luxury bags, Hermès guide"
       relatedGuides={[
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-constance-pink.jpg" },
-        { slug: "hermes-date-stamps", title: "How to Read Hermès Date Stamps", image: "/images/blog/hermes-birkin-suede.jpg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
+        { slug: "hermes-date-stamps", title: "How to Read Hermès Date Stamps", image: "/images/blog/hermes-kelly-clutch-black.jpeg" },
       ]}
     >
       <p style={bodyStyle}>
@@ -52,9 +52,11 @@ export default function HermesLeatherTypes() {
 
       <h2 style={h2Style}>Exotic Leathers</h2>
       <img
-        src="/images/blog/hermes-birkin-croc-red.jpg"
-        alt="Red Hermès Birkin in shiny Porosus Crocodile leather with palladium hardware"
+        src="/images/blog/hermes-kelly-clutch-black.jpeg"
+        alt="Hermès exotic leather — detailed view of luxury craftsmanship"
         className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
       />
       <p style={bodyStyle}>
         Hermès exotic leathers represent the pinnacle of luxury. <strong>Porosus Crocodile</strong> is the most prized, sourced from saltwater crocodiles and distinguished by its small, symmetrical scales. <strong>Niloticus Crocodile</strong> features slightly larger, more defined scales. <strong>Alligator</strong> has a wider scale pattern.

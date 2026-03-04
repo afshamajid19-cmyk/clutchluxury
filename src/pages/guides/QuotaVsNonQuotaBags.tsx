@@ -5,14 +5,14 @@ export default function QuotaVsNonQuotaBags() {
     <GuideLayout
       title="Quota Bags vs Non-Quota Bags: What You Need to Know"
       description="Understanding the Hermès purchasing system — which bags require a purchase history, the 2-bag rule, and how to source quota bags through trusted resellers."
-      heroImage="/images/blog/hermes-birkin-croc-red.jpg"
+      heroImage="/images/blog/hermes-birkin-red-article.jpeg"
       readTime="9 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="quota-vs-non-quota-bags"
       keywords="Hermès quota bags, non-quota bags, Birkin quota, Kelly quota, Hermès purchasing system, luxury bag sourcing"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-birkin-suede.jpg" },
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-constance-pink.jpg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
       ]}
     >
       <p style={bodyStyle}>
@@ -21,9 +21,11 @@ export default function QuotaVsNonQuotaBags() {
 
       <h2 style={h2Style}>What Are Quota Bags?</h2>
       <img
-        src="/images/blog/hermes-birkin-croc-red.jpg"
-        alt="Red Hermès Birkin in Porosus Crocodile — a quota bag requiring purchase history"
+        src="/images/blog/hermes-himalaya-birkin.jpeg"
+        alt="Hermès Himalaya Birkin — one of the most coveted quota bags in the world"
         className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
       />
       <p style={bodyStyle}>
         Quota bags are the iconic Hermès styles that cannot be purchased on demand — they require an established relationship with a boutique and a demonstrated purchase history. The three primary quota bags are:

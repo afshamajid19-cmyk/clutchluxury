@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "What payment methods do you accept?",
     answer:
-      "We accept bank transfers, wire transfers, and select payment methods. Payment details are provided once you confirm your order. We do not accept cryptocurrency at this time.",
+      "We accept bank transfers, wire transfers, cryptocurrency, and select payment methods. Payment details are provided once you confirm your order.",
   },
   {
     question: "Can I return or exchange items?",
