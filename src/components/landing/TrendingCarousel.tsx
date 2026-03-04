@@ -243,7 +243,7 @@ export function TrendingCarousel() {
               color: '#565250' 
             }}
           >
-            Curated selection from our verified inventory
+            A curated selection from our authenticated inventory
           </p>
         </div>
 
