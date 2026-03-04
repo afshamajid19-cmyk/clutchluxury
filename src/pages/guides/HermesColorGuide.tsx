@@ -5,7 +5,7 @@ export default function HermesColorGuide() {
     <GuideLayout
       title="Hermès Color Guide: Understanding Hermès Bag Colors"
       description="Permanent vs. seasonal colours, colour codes, resale value impact, and styling tips for Hermès bags."
-      heroImage="/images/blog/hermes-constance-pink.jpg"
+      heroImage="/images/blog/hermes-color-trends.jpeg"
       readTime="7 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-color-guide"

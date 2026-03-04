@@ -5,7 +5,7 @@ export default function HermesDateStamps() {
     <GuideLayout
       title="How to Read Hermès Date Stamps"
       description="Decode year codes, craftsman stamps, and authentication markers on your Hermès bag with this detailed guide."
-      heroImage="/images/blog/hermes-birkin-suede.jpg"
+      heroImage="/images/blog/hermes-kelly-clutch-black.jpeg"
       readTime="6 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-date-stamps"

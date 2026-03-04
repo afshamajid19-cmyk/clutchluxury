@@ -26,7 +26,7 @@ const guides = [
     slug: "quota-vs-non-quota-bags",
     title: "Quota Bags vs Non-Quota Bags: What You Need to Know",
     excerpt: "Understanding the Hermès purchasing system — which bags require a purchase history and which are freely available.",
-    image: "/images/blog/hermes-birkin-croc-red.jpg",
+    image: "/images/blog/hermes-birkin-red-article.jpeg",
     readTime: "9 min read",
   },
 ];

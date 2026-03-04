@@ -5,7 +5,7 @@ export default function QuotaVsNonQuotaBags() {
     <GuideLayout
       title="Quota Bags vs Non-Quota Bags: What You Need to Know"
       description="Understanding the Hermès purchasing system — which bags require a purchase history, the 2-bag rule, and how to source quota bags through trusted resellers."
-      heroImage="/images/blog/hermes-birkin-croc-red.jpg"
+      heroImage="/images/blog/hermes-birkin-red-article.jpeg"
       readTime="9 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="quota-vs-non-quota-bags"

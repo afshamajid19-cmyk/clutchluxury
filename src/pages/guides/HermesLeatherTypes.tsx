@@ -5,7 +5,7 @@ export default function HermesLeatherTypes() {
     <GuideLayout
       title="How to Identify Hermès Leather Types"
       description="A comprehensive guide to understanding the leathers that define Hermès craftsmanship — from Togo and Clemence to exotic Crocodile and Ostrich."
-      heroImage="/images/blog/hermes-birkin-suede.jpg"
+      heroImage="/images/blog/hermes-himalaya-birkin.jpeg"
       readTime="8 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-leather-types"
