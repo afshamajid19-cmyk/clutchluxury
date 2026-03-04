@@ -41,10 +41,14 @@ export function Navigation() {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="font-display text-xl md:text-2xl tracking-luxury uppercase"
-            style={{ color: '#6B6B6B' }}
+            className="flex items-center"
           >
-            Clutch
+            <img 
+              src="/images/clutch-logo-circular.jpeg" 
+              alt="Clutch" 
+              className="h-10 md:h-12 w-auto"
+              style={{ opacity: 0.7, filter: 'grayscale(20%)' }}
+            />
           </a>
 
           {/* Desktop Navigation */}
