@@ -11,8 +11,8 @@ export default function HermesLeatherTypes() {
       slug="hermes-leather-types"
       keywords="Hermès leather types, Togo leather, Clemence leather, Epsom, Swift, Box Calf, Crocodile, luxury bags, Hermès guide"
       relatedGuides={[
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-constance-pink.jpg" },
-        { slug: "hermes-date-stamps", title: "How to Read Hermès Date Stamps", image: "/images/blog/hermes-birkin-suede.jpg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
+        { slug: "hermes-date-stamps", title: "How to Read Hermès Date Stamps", image: "/images/blog/hermes-kelly-clutch-black.jpeg" },
       ]}
     >
       <p style={bodyStyle}>
