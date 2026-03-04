@@ -11,8 +11,8 @@ export default function HermesColorGuide() {
       slug="hermes-color-guide"
       keywords="Hermès colors, Hermès colour guide, Hermès bag colors, seasonal colors, Etoupe, Rose Sakura, luxury bags"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-birkin-suede.jpg" },
-        { slug: "quota-vs-non-quota-bags", title: "Quota vs Non-Quota Bags", image: "/images/blog/hermes-birkin-croc-red.jpg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
+        { slug: "quota-vs-non-quota-bags", title: "Quota vs Non-Quota Bags", image: "/images/blog/hermes-birkin-red-article.jpeg" },
       ]}
     >
       <p style={bodyStyle}>

@@ -52,9 +52,11 @@ export default function HermesLeatherTypes() {
 
       <h2 style={h2Style}>Exotic Leathers</h2>
       <img
-        src="/images/blog/hermes-birkin-croc-red.jpg"
-        alt="Red Hermès Birkin in shiny Porosus Crocodile leather with palladium hardware"
+        src="/images/blog/hermes-kelly-clutch-black.jpeg"
+        alt="Hermès exotic leather — detailed view of luxury craftsmanship"
         className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
       />
       <p style={bodyStyle}>
         Hermès exotic leathers represent the pinnacle of luxury. <strong>Porosus Crocodile</strong> is the most prized, sourced from saltwater crocodiles and distinguished by its small, symmetrical scales. <strong>Niloticus Crocodile</strong> features slightly larger, more defined scales. <strong>Alligator</strong> has a wider scale pattern.

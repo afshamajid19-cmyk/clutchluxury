@@ -21,9 +21,11 @@ export default function QuotaVsNonQuotaBags() {
 
       <h2 style={h2Style}>What Are Quota Bags?</h2>
       <img
-        src="/images/blog/hermes-birkin-croc-red.jpg"
-        alt="Red Hermès Birkin in Porosus Crocodile — a quota bag requiring purchase history"
+        src="/images/blog/hermes-himalaya-birkin.jpeg"
+        alt="Hermès Himalaya Birkin — one of the most coveted quota bags in the world"
         className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
       />
       <p style={bodyStyle}>
         Quota bags are the iconic Hermès styles that cannot be purchased on demand — they require an established relationship with a boutique and a demonstrated purchase history. The three primary quota bags are:

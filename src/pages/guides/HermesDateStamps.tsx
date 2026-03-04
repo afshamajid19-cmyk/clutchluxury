@@ -11,8 +11,8 @@ export default function HermesDateStamps() {
       slug="hermes-date-stamps"
       keywords="Hermès date stamps, Hermès year codes, blind stamp, craftsman stamp, Hermès authentication, Hermès bag year"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-birkin-suede.jpg" },
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-constance-pink.jpg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
       ]}
     >
       <p style={bodyStyle}>
