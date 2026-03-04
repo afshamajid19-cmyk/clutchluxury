@@ -12,7 +12,7 @@ const guides = [
     slug: "hermes-color-guide",
     title: "Hermès Color Guide: Understanding Hermès Bag Colors",
     excerpt: "Permanent vs. seasonal, color codes, and how hues affect resale value in the world of Hermès collecting.",
-    image: "/images/blog/hermes-constance-pink.jpg",
+    image: "/images/blog/hermes-color-trends.jpeg",
     readTime: "7 min read",
   },
   {
