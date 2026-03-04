@@ -134,7 +134,7 @@ export function TrendingCarousel() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-24 md:mb-28">
             <p className="section-overline mb-5">Curated Selection</p>
-            <h2 className="section-title mb-12">Available to Shop</h2>
+            <h2 className="section-title mb-12">Ready to Acquire</h2>
             <div className="section-divider" />
           </div>
           <p className="text-center" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '15px', color: '#928377' }}>
