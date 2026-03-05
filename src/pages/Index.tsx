@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Navigation } from "@/components/landing/Navigation";
+import { ScrollProgress } from "@/components/landing/ScrollProgress";
 import { Hero } from "@/components/landing/Hero";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { TrendingCarousel } from "@/components/landing/TrendingCarousel";
@@ -81,6 +82,7 @@ const Index = () => {
           })}
         </script>
       </Helmet>
+      <ScrollProgress />
       <Navigation />
       <main>
         <Hero />

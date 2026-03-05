@@ -7,21 +7,21 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
   return (
     <footer 
       ref={ref} 
-      className="py-24 md:py-28"
+      className="py-16 sm:py-24 md:py-28"
       style={{ 
         background: '#E9E4DE',
         borderTop: '1px solid rgba(134,103,88,0.2)'
       }}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-5 sm:px-6">
         <div className="max-w-[800px] mx-auto text-center">
-          {/* Logo — Cormorant Garamond */}
+          {/* Logo */}
           <div 
-            className="uppercase mb-14"
+            className="uppercase mb-10 sm:mb-14"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
-              fontSize: '28px',
+              fontSize: '24px',
               letterSpacing: '0.25em',
               background: 'linear-gradient(135deg, #928377 0%, #866758 50%, #6b5345 100%)',
               WebkitBackgroundClip: 'text',
@@ -34,7 +34,7 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
 
           {/* Disclaimer */}
           <p 
-            className="mb-14 max-w-lg mx-auto"
+            className="mb-10 sm:mb-14 max-w-lg mx-auto px-4"
             style={{ 
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 300,
@@ -48,17 +48,18 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
           </p>
 
           {/* Logo Divider */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8 sm:mb-12">
             <img 
               src="/images/clutch-logo-4c.png" 
               alt="Clutch" 
-              style={{ width: '55px', height: '55px', opacity: 0.35 }}
+              style={{ width: '50px', height: '50px', opacity: 0.35 }}
             />
           </div>
 
           {/* Privacy & Copyright */}
-          <div className="space-y-5">
+          <div className="space-y-4 sm:space-y-5">
             <p 
+              className="px-4"
               style={{ 
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 300,

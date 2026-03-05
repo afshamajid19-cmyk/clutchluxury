@@ -23,12 +23,12 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+    <section id="how-it-works" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
       {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-24 md:mb-28">
+      <div className="container mx-auto px-5 sm:px-6 relative z-10">
+        <div className="text-center mb-16 sm:mb-24 md:mb-28">
           <p className="section-overline mb-5">
             The Process
           </p>
@@ -39,20 +39,20 @@ export function HowItWorks() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-20 md:gap-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 sm:gap-14 md:gap-14">
             {steps.map((step, index) => (
               <div 
                 key={step.number} 
                 className="text-center group animate-fade-up cursor-default"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Step number — Cormorant Garamond 300 */}
+                {/* Step number */}
                 <div 
-                  className="mb-8 transition-all duration-[400ms] group-hover:scale-110"
+                  className="mb-6 sm:mb-8 transition-all duration-[400ms] group-hover:scale-110"
                   style={{ 
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: 300,
-                    fontSize: '64px',
+                    fontSize: 'clamp(56px, 8vw, 64px)',
                     color: 'rgba(134,103,88,0.3)',
                     letterSpacing: '0.05em',
                     lineHeight: 1,
@@ -60,9 +60,9 @@ export function HowItWorks() {
                 >
                   {step.number}
                 </div>
-                {/* Step title — Montserrat Medium */}
+                {/* Step title */}
                 <h3 
-                  className="mb-5 uppercase"
+                  className="mb-4 sm:mb-5 uppercase"
                   style={{ 
                     fontFamily: "'Montserrat', sans-serif",
                     fontWeight: 500,
@@ -73,13 +73,13 @@ export function HowItWorks() {
                 >
                   {step.title}
                 </h3>
-                {/* Step description — Montserrat Light */}
+                {/* Step description */}
                 <p 
                   className="max-w-[280px] mx-auto"
                   style={{ 
                     fontFamily: "'Montserrat', sans-serif",
                     fontWeight: 300,
-                    fontSize: '15px',
+                    fontSize: '14px',
                     lineHeight: 1.9,
                     color: '#565250' 
                   }}
@@ -90,9 +90,9 @@ export function HowItWorks() {
             ))}
           </div>
           
-          <div className="section-divider w-48 mt-24" />
+          <div className="section-divider w-48 mt-16 sm:mt-24" />
           <p 
-            className="text-center mt-10 uppercase"
+            className="text-center mt-8 sm:mt-10 uppercase"
             style={{ 
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 500,
