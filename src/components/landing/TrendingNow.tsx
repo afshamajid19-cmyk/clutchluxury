@@ -113,51 +113,73 @@ export function TrendingNow() {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="group flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] rounded-lg overflow-hidden transition-all duration-[400ms] hover:-translate-y-2 snap-start"
+                className="group flex-shrink-0 w-[300px] md:w-[380px] rounded-lg overflow-hidden transition-all duration-[400ms] hover:-translate-y-2 snap-start"
                 style={{
                   background: '#F5F2EE',
                   border: '1px solid rgba(134,103,88,0.15)',
+                  boxShadow: '0 16px 50px -12px rgba(41,30,21,0.1)',
                 }}
               >
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={item.image_url}
-                    alt={item.title || "Luxury item"}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
+                {/* Image — same aspect ratio & fitting as Ready to Acquire */}
+                <div className="aspect-[3/4] relative overflow-hidden">
+                  <div
+                    className="w-full h-full flex items-center justify-center"
+                    style={{
+                      padding: '24px',
+                      background: 'linear-gradient(to br, #F5F2EE, #E9E4DE)',
+                    }}
+                  >
+                    <img
+                      src={item.image_url}
+                      alt={item.title || "Luxury item"}
+                      className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Gradient overlay */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(245,242,238,0.98) 0%, rgba(245,242,238,0.7) 40%, transparent 100%)',
+                    }}
                   />
-                </div>
-                {(item.title || item.source_attribution) && (
-                  <div className="p-5">
+
+                  {/* Content positioned over gradient */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
                     {item.title && (
-                      <p
-                        style={{
-                          fontFamily: "'Montserrat', sans-serif",
-                          fontWeight: 500,
-                          fontSize: '13px',
-                          color: '#291E15',
-                          letterSpacing: '0.03em',
-                        }}
-                      >
-                        {item.title}
-                      </p>
+                      <>
+                        <div className="w-12 h-px mb-4" style={{ background: 'linear-gradient(to right, rgba(134,103,88,0.5), transparent)' }} />
+                        <h3
+                          className="mb-3 line-clamp-2"
+                          style={{
+                            fontFamily: "'Cormorant Garamond', serif",
+                            fontWeight: 300,
+                            fontSize: 'clamp(18px, 2vw, 24px)',
+                            lineHeight: 1.3,
+                            color: '#291E15',
+                          }}
+                        >
+                          {item.title}
+                        </h3>
+                      </>
                     )}
                     {item.source_attribution && (
                       <p
-                        className="mt-2"
+                        className="uppercase"
                         style={{
                           fontFamily: "'Montserrat', sans-serif",
-                          fontWeight: 300,
-                          fontSize: '11px',
+                          fontWeight: 500,
+                          fontSize: '9px',
+                          letterSpacing: '0.2em',
                           color: '#928377',
-                          fontStyle: 'italic',
                         }}
                       >
                         {item.source_attribution}
                       </p>
                     )}
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>

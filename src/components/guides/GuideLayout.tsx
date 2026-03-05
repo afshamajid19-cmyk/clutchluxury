@@ -170,8 +170,10 @@ export function GuideLayout({
             >
               Let Clutch source your dream piece — get in touch with our concierge team.
             </p>
-            <Link
-              to="/#contact"
+            <button
+              onClick={() => {
+                window.location.href = "/#contact";
+              }}
               className="inline-block rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
@@ -181,10 +183,14 @@ export function GuideLayout({
                 padding: '14px 36px',
                 background: '#6B6B6B',
                 color: '#FFFFFF',
+                border: 'none',
+                cursor: 'pointer',
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = '#4A4A4A'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = '#6B6B6B'; }}
             >
               Contact Us
-            </Link>
+            </button>
           </div>
 
           {/* Related */}
