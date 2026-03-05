@@ -106,10 +106,18 @@ export function Contact() {
                   }}
                 >
                   <div className="relative">
-                    <Icon 
-                      className="h-[52px] w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110" 
-                      style={{ color: '#866758' }}
-                    />
+                    {item.isImage ? (
+                      <img 
+                        src={item.imageSrc} 
+                        alt={item.label}
+                        className="h-[52px] w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110 rounded-full object-cover"
+                      />
+                    ) : item.Icon ? (
+                      <item.Icon 
+                        className="h-[52px] w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110" 
+                        style={{ color: '#866758' }}
+                      />
+                    ) : null}
                   </div>
                   
                   <span 
