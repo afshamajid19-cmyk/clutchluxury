@@ -18,36 +18,36 @@ export function Hero() {
       {/* Subtle spotlight effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(134,103,88,0.03),_transparent)] blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '12vh' }}>
-          {/* Main Headline — Cormorant Garamond 300, reduced size */}
+      <div className="container mx-auto px-5 sm:px-6 relative z-10">
+        <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '10vh' }}>
+          {/* Main Headline */}
           <h1 
             className="animate-scale-up uppercase font-light"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
-              fontSize: 'clamp(32px, 5.5vw, 62px)',
+              fontSize: 'clamp(28px, 5.5vw, 62px)',
               color: '#6B6B6B',
               textShadow: '0 2px 30px rgba(134, 103, 88, 0.15)',
               letterSpacing: '0.1em',
               lineHeight: 1.2,
-              marginBottom: '4rem',
+              marginBottom: '3rem',
             }}
           >
             Attaining the Unattainable
           </h1>
 
           {/* Clutch logo divider */}
-          <div className="flex justify-center mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex justify-center mb-10 md:mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <img 
               src="/images/clutch-logo-4c.png" 
               alt="Clutch logo" 
               className="block"
-              style={{ width: '55px', height: '55px', opacity: 0.35 }}
+              style={{ width: '40px', height: '40px', opacity: 0.35 }}
             />
           </div>
 
-          {/* Subheadline — Montserrat Light Italic */}
+          {/* Subheadline */}
           <p
             className="mb-6 max-w-2xl mx-auto animate-fade-up leading-relaxed"
             style={{ 
@@ -55,7 +55,7 @@ export function Hero() {
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 300,
               fontStyle: 'italic',
-              fontSize: 'clamp(18px, 2.5vw, 24px)',
+              fontSize: 'clamp(16px, 2.5vw, 24px)',
               letterSpacing: '0.05em', 
               color: '#565250' 
             }}
@@ -63,9 +63,9 @@ export function Hero() {
             Luxury personal shopping & sourcing
           </p>
 
-          {/* Supporting line — Montserrat Medium */}
+          {/* Supporting line */}
           <p
-            className="mb-24 md:mb-28 max-w-md mx-auto animate-fade-up"
+            className="mb-16 sm:mb-24 md:mb-28 max-w-md mx-auto animate-fade-up"
             style={{ 
               animationDelay: "0.4s", 
               fontFamily: "'Montserrat', sans-serif",
@@ -79,9 +79,9 @@ export function Hero() {
             Dubai-based · Worldwide delivery · Since 2017
           </p>
 
-          {/* CTAs — Montserrat Medium */}
+          {/* CTAs */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-32 md:mb-36 animate-fade-up"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-20 sm:mb-32 md:mb-36 animate-fade-up px-4 sm:px-0"
             style={{ animationDelay: "0.5s" }}
           >
             <Button
@@ -95,7 +95,7 @@ export function Hero() {
                 fontSize: '11px',
                 letterSpacing: '0.18em',
                 padding: '16px 40px',
-                height: 'auto',
+                height: '48px',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#7A7A7A';
@@ -125,7 +125,7 @@ export function Hero() {
                 fontSize: '11px',
                 letterSpacing: '0.18em',
                 padding: '16px 40px',
-                height: 'auto',
+                height: '48px',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#6B6B6B';
@@ -146,13 +146,13 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Trust Row — Montserrat Medium */}
+          {/* Trust Row */}
           <div
             className="animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
             <div 
-              className="flex flex-wrap items-center justify-center gap-4 md:gap-5 uppercase"
+              className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-5 uppercase"
               style={{ 
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 500,
@@ -162,11 +162,11 @@ export function Hero() {
               }}
             >
               <span className="hover:text-[#866758] transition-colors duration-400">The Clutch Experience</span>
-              <span style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
+              <span className="hidden sm:inline" style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
               <span className="hover:text-[#866758] transition-colors duration-400">Private Sourcing</span>
-              <span style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
+              <span className="hidden sm:inline" style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
               <span className="hover:text-[#866758] transition-colors duration-400">International delivery</span>
-              <span style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
+              <span className="hidden sm:inline" style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
               <span className="hover:text-[#866758] transition-colors duration-400">Since 2017</span>
             </div>
           </div>

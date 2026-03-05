@@ -82,6 +82,7 @@ const Index = () => {
           })}
         </script>
       </Helmet>
+      <ScrollProgress />
       <Navigation />
       <main>
         <Hero />

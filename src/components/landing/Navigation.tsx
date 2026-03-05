@@ -124,8 +124,8 @@ export function Navigation() {
               }}
             >
               <div className="flex flex-col h-full">
-                <div className="p-6" style={{ borderBottom: '1px solid rgba(134,103,88,0.15)' }}>
-                  <img src="/images/clutch-logo-text.png" alt="Clutch" className="h-8 w-auto" style={{ opacity: 0.85 }} />
+              <div className="p-6" style={{ borderBottom: '1px solid rgba(134,103,88,0.15)' }}>
+                  <span className="uppercase" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '22px', letterSpacing: '0.2em', color: '#8B7355' }}>Clutch</span>
                 </div>
                 <div className="flex-1 py-8 px-6">
                   <div className="flex flex-col gap-1">
