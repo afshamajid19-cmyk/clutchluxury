@@ -44,10 +44,10 @@ export function Navigation() {
             className="flex items-center"
           >
             <img 
-              src="/images/clutch-logo-circular.jpeg" 
+              src="/images/clutch-logo-text.png" 
               alt="Clutch" 
-              className="h-10 md:h-12 w-auto"
-              style={{ opacity: 0.7, filter: 'grayscale(20%)' }}
+              className="h-8 md:h-10 w-auto"
+              style={{ opacity: 0.85 }}
             />
           </a>
 
