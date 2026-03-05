@@ -28,10 +28,10 @@ function LinktreeIcon({ className }: { className?: string }) {
 }
 
 const contactLinks = [
-  { key: "whatsapp_link", label: "WhatsApp", Icon: MessageCircle },
-  { key: "instagram_url", label: "Instagram", Icon: Instagram },
-  { key: "threads_url", label: "Threads", Icon: "threads" as any },
-  { key: "linktree_url", label: "Linktree", Icon: ExternalLink },
+  { key: "whatsapp_link", label: "WhatsApp", Icon: MessageCircle, isImage: false },
+  { key: "instagram_url", label: "Instagram", Icon: Instagram, isImage: false },
+  { key: "threads_url", label: "Threads", Icon: null, isImage: true, imageSrc: "/images/threads-logo-brown.png" },
+  { key: "linktree_url", label: "Linktree", Icon: ExternalLink, isImage: false },
 ] as const;
 
 export function Contact() {
