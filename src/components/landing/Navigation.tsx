@@ -43,12 +43,19 @@ export function Navigation() {
             }}
             className="flex items-center"
           >
-            <img 
-              src="/images/clutch-logo-text.png" 
-              alt="Clutch" 
-              className="h-8 md:h-10 w-auto"
-              style={{ opacity: 0.85 }}
-            />
+            <span
+              className="uppercase select-none"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 400,
+                fontSize: '22px',
+                letterSpacing: '0.2em',
+                color: '#8B7355',
+                lineHeight: 1,
+              }}
+            >
+              Clutch
+            </span>
           </a>
 
           {/* Desktop Navigation */}
