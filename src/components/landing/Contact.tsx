@@ -30,7 +30,7 @@ function LinktreeIcon({ className }: { className?: string }) {
 const contactLinks = [
   { key: "whatsapp_link", label: "WhatsApp", Icon: MessageCircle },
   { key: "instagram_url", label: "Instagram", Icon: Instagram },
-  { key: "threads_url", label: "Threads", Icon: ThreadsIcon },
+  { key: "threads_url", label: "Threads", Icon: "threads" as any },
   { key: "linktree_url", label: "Linktree", Icon: ExternalLink },
 ] as const;
 

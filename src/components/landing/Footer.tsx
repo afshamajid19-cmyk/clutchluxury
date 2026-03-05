@@ -50,7 +50,7 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
           {/* Logo Divider */}
           <div className="flex justify-center mb-12">
             <img 
-              src="/images/clutch-logo-circular.jpeg" 
+              src="/images/clutch-logo-4c.png" 
               alt="Clutch" 
               style={{ width: '55px', height: '55px', opacity: 0.35 }}
             />

@@ -40,10 +40,10 @@ export function Hero() {
           {/* Clutch logo divider */}
           <div className="flex justify-center mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <img 
-              src="/images/clutch-logo-ccc.jpg" 
+              src="/images/clutch-logo-4c.png" 
               alt="Clutch logo" 
               className="block"
-              style={{ width: '55px', height: '55px', opacity: 0.35, filter: 'grayscale(20%)' }}
+              style={{ width: '55px', height: '55px', opacity: 0.35 }}
             />
           </div>
 
