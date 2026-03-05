@@ -28,10 +28,10 @@ function LinktreeIcon({ className }: { className?: string }) {
 }
 
 const contactLinks = [
-  { key: "whatsapp_link", label: "WhatsApp", Icon: MessageCircle },
-  { key: "instagram_url", label: "Instagram", Icon: Instagram },
-  { key: "threads_url", label: "Threads", Icon: ThreadsIcon },
-  { key: "linktree_url", label: "Linktree", Icon: ExternalLink },
+  { key: "whatsapp_link", label: "WhatsApp", Icon: MessageCircle, isImage: false },
+  { key: "instagram_url", label: "Instagram", Icon: Instagram, isImage: false },
+  { key: "threads_url", label: "Threads", Icon: null, isImage: true, imageSrc: "/images/threads-logo-brown.png" },
+  { key: "linktree_url", label: "Linktree", Icon: ExternalLink, isImage: false },
 ] as const;
 
 export function Contact() {
@@ -77,7 +77,8 @@ export function Contact() {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-            {contactLinks.map(({ key, label, Icon }) => {
+            {contactLinks.map((item) => {
+              const { key, label, Icon } = item;
               const url = settings?.[key as keyof typeof settings];
               if (!url) return null;
               
@@ -106,10 +107,18 @@ export function Contact() {
                   }}
                 >
                   <div className="relative">
-                    <Icon 
-                      className="h-[52px] w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110" 
-                      style={{ color: '#866758' }}
-                    />
+                    {item.isImage ? (
+                      <img 
+                        src={item.imageSrc} 
+                        alt={item.label}
+                        className="h-[52px] w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110 rounded-full object-cover"
+                      />
+                    ) : item.Icon ? (
+                      <item.Icon 
+                        className="h-[52px] w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110" 
+                        style={{ color: '#866758' }}
+                      />
+                    ) : null}
                   </div>
                   
                   <span 

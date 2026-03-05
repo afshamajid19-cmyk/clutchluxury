@@ -44,10 +44,10 @@ export function Navigation() {
             className="flex items-center"
           >
             <img 
-              src="/images/clutch-logo-circular.jpeg" 
+              src="/images/clutch-logo-text.png" 
               alt="Clutch" 
-              className="h-10 md:h-12 w-auto"
-              style={{ opacity: 0.7, filter: 'grayscale(20%)' }}
+              className="h-8 md:h-10 w-auto"
+              style={{ opacity: 0.85 }}
             />
           </a>
 
@@ -118,7 +118,7 @@ export function Navigation() {
             >
               <div className="flex flex-col h-full">
                 <div className="p-6" style={{ borderBottom: '1px solid rgba(134,103,88,0.15)' }}>
-                  <img src="/images/clutch-logo-circular.jpeg" alt="Clutch" className="h-10 w-auto" style={{ opacity: 0.7 }} />
+                  <img src="/images/clutch-logo-text.png" alt="Clutch" className="h-8 w-auto" style={{ opacity: 0.85 }} />
                 </div>
                 <div className="flex-1 py-8 px-6">
                   <div className="flex flex-col gap-1">
