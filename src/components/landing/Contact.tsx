@@ -77,7 +77,8 @@ export function Contact() {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-            {contactLinks.map(({ key, label, Icon }) => {
+            {contactLinks.map((item) => {
+              const { key, label, Icon } = item;
               const url = settings?.[key as keyof typeof settings];
               if (!url) return null;
               
