@@ -5,14 +5,14 @@ export default function HermesLeatherTypes() {
     <GuideLayout
       title="How to Identify Hermès Leather Types"
       description="A comprehensive guide to understanding the leathers that define Hermès craftsmanship — from Togo and Clemence to exotic Crocodile and Ostrich."
-      heroImage="/images/blog/hermes-himalaya-birkin.jpeg"
+      heroImage="/images/blog/bags_upper_view.jpg"
       readTime="8 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-leather-types"
       keywords="Hermès leather types, Togo leather, Clemence leather, Epsom, Swift, Box Calf, Crocodile, luxury bags, Hermès guide"
       relatedGuides={[
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
-        { slug: "hermes-date-stamps", title: "How to Read Hermès Date Stamps", image: "/images/blog/hermes-kelly-clutch-black.jpeg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/birkin_coloured_bags.jpg" },
+        { slug: "hermes-date-stamps", title: "How to Read Hermès Date Stamps", image: "/images/blog/mini_kelly_front_view.jpg" },
       ]}
     >
       <p style={bodyStyle}>
@@ -52,8 +52,8 @@ export default function HermesLeatherTypes() {
 
       <h2 style={h2Style}>Exotic Leathers</h2>
       <img
-        src="/images/blog/hermes-kelly-clutch-black.jpeg"
-        alt="Hermès exotic leather — detailed view of luxury craftsmanship"
+        src="/images/blog/birkin_with_clutch_logo.jpg"
+        alt="Hermès Birkin exotic leather authenticated by Clutch"
         className="w-full rounded-lg my-8"
         loading="lazy"
         style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
@@ -64,6 +64,23 @@ export default function HermesLeatherTypes() {
       <p style={bodyStyle}>
         <strong>Ostrich</strong> is instantly recognizable by its distinctive quill bumps and is softer than most exotic leathers. <strong>Lizard</strong> features fine, uniform scales and is typically used for smaller accessories. Exotic leathers command significantly higher prices and are considered the most exclusive offerings from Hermès.
       </p>
+
+      <img
+        src="/images/blog/mini_kelly_top_view.jpg"
+        alt="Hermès Kelly bag leather detail top view"
+        className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
+      />
+
+      <h2 style={h2Style}>Leather Detail & Finish</h2>
+      <img
+        src="/images/blog/mini_kelly_front_view.jpg"
+        alt="Hermès Mini Kelly front view showing leather quality"
+        className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
+      />
 
       <h2 style={h2Style}>Comparison Table</h2>
       <div className="overflow-x-auto my-8">

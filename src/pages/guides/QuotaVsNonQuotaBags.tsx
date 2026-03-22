@@ -5,14 +5,14 @@ export default function QuotaVsNonQuotaBags() {
     <GuideLayout
       title="Quota Bags vs Non-Quota Bags: What You Need to Know"
       description="Understanding the Hermès purchasing system — which bags require a purchase history, the 2-bag rule, and how to source quota bags through trusted resellers."
-      heroImage="/images/blog/hermes-birkin-red-article.jpeg"
+      heroImage="/images/blog/birkin_with_clutch_logo.jpg"
       readTime="9 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="quota-vs-non-quota-bags"
       keywords="Hermès quota bags, non-quota bags, Birkin quota, Kelly quota, Hermès purchasing system, luxury bag sourcing"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/bags_upper_view.jpg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/birkin_coloured_bags.jpg" },
       ]}
     >
       <p style={bodyStyle}>
@@ -21,8 +21,8 @@ export default function QuotaVsNonQuotaBags() {
 
       <h2 style={h2Style}>What Are Quota Bags?</h2>
       <img
-        src="/images/blog/hermes-himalaya-birkin.jpeg"
-        alt="Hermès Himalaya Birkin — one of the most coveted quota bags in the world"
+        src="/images/blog/birkin_coloured_bags.jpg"
+        alt="Hermès Birkin quota bags in various colors from Clutch collection"
         className="w-full rounded-lg my-8"
         loading="lazy"
         style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
@@ -61,9 +61,11 @@ export default function QuotaVsNonQuotaBags() {
         Success in obtaining quota bags often comes down to relationship-building. Visit your local boutique regularly, work with a dedicated sales associate (SA), and make genuine purchases. Be patient and express your interest without being overly aggressive. Many clients wait 6–18 months before receiving their first quota bag offer.
       </p>
       <img
-        src="/images/blog/hermes-kelly-orange.jpg"
-        alt="Orange Hermès Kelly bag — one of the coveted quota bags"
+        src="/images/blog/cute_mini_kellys.jpg"
+        alt="Hermès Kelly quota bags collection from Clutch"
         className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
       />
 
       <h2 style={h2Style}>The Alternative: Trusted Resellers</h2>
@@ -76,6 +78,24 @@ export default function QuotaVsNonQuotaBags() {
         <li className="mb-2"><strong>Authentication guaranteed</strong> — Every piece is verified for authenticity</li>
         <li className="mb-2"><strong>Global sourcing</strong> — Access to inventory from boutiques and collections worldwide</li>
       </ul>
+
+      {/* Autoplay video showcase */}
+      <div className="my-12">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/videos/bags-poster.jpg"
+          className="w-full rounded-lg"
+          style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
+        >
+          <source src="/videos/bags-collection.mp4" type="video/mp4" />
+        </video>
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '13px', color: '#928377', textAlign: 'center', marginTop: '12px', fontStyle: 'italic' }}>
+          Clutch's curated Hermès quota bag collection
+        </p>
+      </div>
 
       <h2 style={h2Style}>Market Pricing: Quota vs Non-Quota</h2>
       <p style={bodyStyle}>
