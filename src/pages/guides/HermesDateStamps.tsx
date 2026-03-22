@@ -5,14 +5,14 @@ export default function HermesDateStamps() {
     <GuideLayout
       title="How to Read Hermès Date Stamps"
       description="Decode year codes, craftsman stamps, and authentication markers on your Hermès bag with this detailed guide."
-      heroImage="/images/blog/hermes-kelly-clutch-black.jpeg"
+      heroImage="/images/blog/mini_kelly_front_view.jpg"
       readTime="6 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-date-stamps"
       keywords="Hermès date stamps, Hermès year codes, blind stamp, craftsman stamp, Hermès authentication, Hermès bag year"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
-        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/hermes-color-trends.jpeg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/bags_upper_view.jpg" },
+        { slug: "hermes-color-guide", title: "Hermès Color Guide", image: "/images/blog/birkin_coloured_bags.jpg" },
       ]}
     >
       <p style={bodyStyle}>
@@ -65,6 +65,13 @@ export default function HermesDateStamps() {
       </p>
 
       <h2 style={h2Style}>Where to Find Stamps</h2>
+      <img
+        src="/images/blog/bags_upper_view.jpg"
+        alt="Hermès bags interior view for stamp location"
+        className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
+      />
       <p style={bodyStyle}>
         On a <strong>Birkin</strong>, the blind stamps are found on the front strap, just below the hardware. On a <strong>Kelly</strong>, check the interior tab near the turn-lock. For the <strong>Constance</strong>, stamps are typically found on the interior strap. The location can vary slightly between production years, so it's important to know what to expect for the specific era of your bag.
       </p>

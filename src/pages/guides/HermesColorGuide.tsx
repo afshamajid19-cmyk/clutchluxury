@@ -5,14 +5,14 @@ export default function HermesColorGuide() {
     <GuideLayout
       title="Hermès Color Guide: Understanding Hermès Bag Colors"
       description="Permanent vs. seasonal colours, colour codes, resale value impact, and styling tips for Hermès bags."
-      heroImage="/images/blog/hermes-color-trends.jpeg"
+      heroImage="/images/blog/birkin_coloured_bags.jpg"
       readTime="7 min read"
       publishDate="2026-02-26T00:00:00Z"
       slug="hermes-color-guide"
       keywords="Hermès colors, Hermès colour guide, Hermès bag colors, seasonal colors, Etoupe, Rose Sakura, luxury bags"
       relatedGuides={[
-        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/hermes-himalaya-birkin.jpeg" },
-        { slug: "quota-vs-non-quota-bags", title: "Quota vs Non-Quota Bags", image: "/images/blog/hermes-birkin-red-article.jpeg" },
+        { slug: "hermes-leather-types", title: "How to Identify Hermès Leather Types", image: "/images/blog/bags_upper_view.jpg" },
+        { slug: "quota-vs-non-quota-bags", title: "Quota vs Non-Quota Bags", image: "/images/blog/birkin_with_clutch_logo.jpg" },
       ]}
     >
       <p style={bodyStyle}>
@@ -35,23 +35,53 @@ export default function HermesColorGuide() {
 
       <h3 style={h3Style}>Brights & Pinks</h3>
       <img
-        src="/images/blog/hermes-constance-pink.jpg"
-        alt="Pink Hermès Constance bag in Rose Confetti or Rose Lipstick colour"
+        src="/images/blog/chanel_pink_and_purple.jpg"
+        alt="Luxury bags in pink and purple colorways from Clutch collection"
         className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
       />
       <p style={bodyStyle}>
         Hermès pinks — from the iconic <strong>Rose Sakura</strong> to bold <strong>Rose Tyrien</strong> — are perennial favourites. Blues like <strong>Bleu Nuit</strong> and <strong>Bleu Électrique</strong> offer striking alternatives. <strong>Orange</strong>, the signature Hermès colour, remains a collector's staple.
       </p>
 
+      <img
+        src="/images/blog/chanel_pink.jpg"
+        alt="Pink luxury bag detail from Clutch collection"
+        className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
+      />
+
       <h3 style={h3Style}>Styling Your Hermès Colors</h3>
       <img
-        src="/images/blog/hermes-kelly-orange.jpg"
-        alt="Orange Hermès Kelly bag styled with colourful outfit"
+        src="/images/blog/cute_mini_kellys.jpg"
+        alt="Hermès Mini Kelly bags in different colors from Clutch collection"
         className="w-full rounded-lg my-8"
+        loading="lazy"
+        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
       />
       <p style={bodyStyle}>
         When styling Hermès bags, consider contrast. Neutral bags pair effortlessly with any wardrobe, while bright colours work best as statement pieces against monochromatic outfits. Many collectors recommend starting with a neutral like Etoupe or Gold before adding colour to your collection.
       </p>
+
+      {/* Autoplay video showcase */}
+      <div className="my-12">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/videos/bags-poster.jpg"
+          className="w-full rounded-lg"
+          style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
+        >
+          <source src="/videos/bags-collection.mp4" type="video/mp4" />
+        </video>
+        <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '13px', color: '#928377', textAlign: 'center', marginTop: '12px', fontStyle: 'italic' }}>
+          Clutch curated Hermès collection
+        </p>
+      </div>
 
       <h2 style={h2Style}>How to Read Hermès Colour Codes</h2>
       <p style={bodyStyle}>
