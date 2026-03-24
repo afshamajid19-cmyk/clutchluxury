@@ -181,14 +181,14 @@ export default function HermesAuthentication() {
 
 const attributionStyle: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
-  fontSize: '13px',
+  fontSize: '0.875rem',
   color: '#928377',
   lineHeight: 1.7,
-  padding: '16px 20px',
+  padding: '14px 20px',
   marginBottom: '32px',
-  border: '1px solid rgba(139,115,85,0.15)',
-  borderRadius: '2px',
-  background: 'rgba(233,228,222,0.4)',
+  borderLeft: '3px solid #b5a898',
+  borderRadius: '0',
+  background: '#f7f4f0',
 };
 
 const h2Style: React.CSSProperties = {
