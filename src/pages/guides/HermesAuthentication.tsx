@@ -194,11 +194,13 @@ const attributionStyle: React.CSSProperties = {
 const h2Style: React.CSSProperties = {
   fontFamily: "'Cormorant Garamond', serif",
   fontWeight: 300,
-  fontSize: '32px',
+  fontSize: 'clamp(1.5rem, 5vw, 2.2rem)',
   color: '#291E15',
-  letterSpacing: '0.05em',
+  letterSpacing: '0.06em',
   marginTop: '48px',
   marginBottom: '16px',
+  paddingBottom: '12px',
+  borderBottom: '1px solid #d4cdc6',
 };
 
 const bodyStyle: React.CSSProperties = {
