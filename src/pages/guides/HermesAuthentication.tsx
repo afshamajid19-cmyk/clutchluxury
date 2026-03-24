@@ -170,7 +170,7 @@ export default function HermesAuthentication() {
         </a>
       </div>
 
-      <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '13px', color: '#928377', textAlign: 'center', fontStyle: 'italic', marginTop: '48px' }}>
+      <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '0.8rem', color: '#9c9189', textAlign: 'center', fontStyle: 'italic', paddingTop: '48px' }}>
         All real vs. fake comparison images courtesy of{' '}
         <a href="https://legitgrails.com" target="_blank" rel="noopener noreferrer" style={{ color: '#866758' }}>LegitGrails.com</a>{' '}
         — a trusted platform for luxury bag authentication.
