@@ -74,17 +74,20 @@ export function GuidesInsights() {
             <Link
               key={guide.slug}
               to={`/guides/${guide.slug}`}
-              className="group rounded-lg overflow-hidden transition-all duration-[400ms] hover:-translate-y-2"
+              className="group rounded-lg overflow-hidden"
               style={{
                 background: '#FFFFFF',
                 border: '1px solid rgba(134,103,88,0.12)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.04)',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
+                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.boxShadow = '0 2px 16px rgba(0,0,0,0.06)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.04)';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
               }}
             >
               <div className="aspect-[16/10] overflow-hidden">

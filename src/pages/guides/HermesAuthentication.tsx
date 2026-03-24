@@ -158,7 +158,7 @@ export default function HermesAuthentication() {
             fontWeight: 500,
             fontSize: '11px',
             letterSpacing: '0.18em',
-            padding: '14px 36px',
+            padding: '16px 40px',
             background: '#6B6B6B',
             color: '#FFFFFF',
             textDecoration: 'none',

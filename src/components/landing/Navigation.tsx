@@ -68,10 +68,10 @@ export function Navigation() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="text-[11px] transition-colors duration-500 uppercase"
-                style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.18em' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#866758'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = '#291E15'; }}
+                className="text-[11px] uppercase"
+                style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.15em', transition: 'opacity 0.2s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.6'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
               >
                 {link.label}
               </a>
