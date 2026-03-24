@@ -97,7 +97,7 @@ export default function ChanelAuthentication() {
             alt={section.imageAlt}
             className="w-full mx-auto my-8 block"
             loading="lazy"
-            style={{ maxWidth: '900px', borderRadius: '4px', border: '1px solid #e0d9d0', boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}
+            style={{ maxWidth: '860px', borderRadius: '4px', border: '1px solid #e8e2da', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8" style={{ maxWidth: '900px', margin: '32px auto' }}>
