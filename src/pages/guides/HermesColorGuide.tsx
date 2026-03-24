@@ -34,24 +34,9 @@ export default function HermesColorGuide() {
       </p>
 
       <h3 style={h3Style}>Brights & Pinks</h3>
-      <img
-        src="/images/blog/chanel_pink_and_purple.jpg"
-        alt="Luxury bags in pink and purple colorways from Clutch collection"
-        className="w-full rounded-lg my-8"
-        loading="lazy"
-        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
-      />
       <p style={bodyStyle}>
         Hermès pinks — from the iconic <strong>Rose Sakura</strong> to bold <strong>Rose Tyrien</strong> — are perennial favourites. Blues like <strong>Bleu Nuit</strong> and <strong>Bleu Électrique</strong> offer striking alternatives. <strong>Orange</strong>, the signature Hermès colour, remains a collector's staple.
       </p>
-
-      <img
-        src="/images/blog/chanel_pink.jpg"
-        alt="Pink luxury bag detail from Clutch collection"
-        className="w-full rounded-lg my-8"
-        loading="lazy"
-        style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
-      />
 
       <h3 style={h3Style}>Styling Your Hermès Colors</h3>
       <img

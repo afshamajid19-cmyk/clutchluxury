@@ -12,6 +12,8 @@ import HermesLeatherTypes from "./pages/guides/HermesLeatherTypes";
 import HermesColorGuide from "./pages/guides/HermesColorGuide";
 import HermesDateStamps from "./pages/guides/HermesDateStamps";
 import QuotaVsNonQuotaBags from "./pages/guides/QuotaVsNonQuotaBags";
+import HermesAuthentication from "./pages/guides/HermesAuthentication";
+import ChanelAuthentication from "./pages/guides/ChanelAuthentication";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/guides/hermes-color-guide" element={<HermesColorGuide />} />
             <Route path="/guides/hermes-date-stamps" element={<HermesDateStamps />} />
             <Route path="/guides/quota-vs-non-quota-bags" element={<QuotaVsNonQuotaBags />} />
+            <Route path="/guides/hermes-authentication" element={<HermesAuthentication />} />
+            <Route path="/guides/chanel-authentication" element={<ChanelAuthentication />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -29,6 +29,20 @@ const guides = [
     image: "/images/blog/birkin_with_clutch_logo.jpg",
     readTime: "9 min read",
   },
+  {
+    slug: "hermes-authentication",
+    title: "How to Authenticate a Hermès Bag: Real vs Fake",
+    excerpt: "A definitive visual guide to spotting counterfeit Hermès bags — covering the Constance, Kelly, stamps, and hardware.",
+    image: "/images/blog/mini_kelly_fake_real.jpg",
+    readTime: "8 min read",
+  },
+  {
+    slug: "chanel-authentication",
+    title: "How to Authenticate a Chanel Bag: Real vs Fake",
+    excerpt: "Know what to look for before buying a pre-owned Chanel Classic Flap — CC hardware, quilting, and the Paris plate.",
+    image: "/images/blog/chanel_fake_real.jpg",
+    readTime: "7 min read",
+  },
 ];
 
 export function GuidesInsights() {
