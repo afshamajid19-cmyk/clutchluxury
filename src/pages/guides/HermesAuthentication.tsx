@@ -147,7 +147,7 @@ export default function HermesAuthentication() {
         Authenticating a Hermès bag requires attention to detail at every level — from the architecture of the silhouette to the depth of a screw head. When in doubt, always seek professional authentication before purchasing on the secondary market.
       </p>
 
-      <div className="text-center my-12">
+      <div className="text-center my-12 px-4">
         <a
           href="https://legitgrails.com"
           target="_blank"
