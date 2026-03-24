@@ -50,7 +50,7 @@ export function Navigation() {
                 fontWeight: 400,
                 fontSize: '22px',
                 letterSpacing: '0.2em',
-                color: '#8B7355',
+                color: '#2C2C2C',
                 lineHeight: 1,
               }}
             >
@@ -68,10 +68,10 @@ export function Navigation() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="text-[11px] transition-colors duration-500 uppercase"
-                style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.18em' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#866758'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = '#291E15'; }}
+                className="text-[11px] uppercase"
+                style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.15em', transition: 'opacity 0.2s ease' }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.6'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
               >
                 {link.label}
               </a>
@@ -125,7 +125,7 @@ export function Navigation() {
             >
               <div className="flex flex-col h-full">
               <div className="p-6" style={{ borderBottom: '1px solid rgba(134,103,88,0.15)' }}>
-                  <span className="uppercase" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '22px', letterSpacing: '0.2em', color: '#8B7355' }}>Clutch</span>
+                  <span className="uppercase" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '22px', letterSpacing: '0.2em', color: '#2C2C2C' }}>Clutch</span>
                 </div>
                 <div className="flex-1 py-8 px-6">
                   <div className="flex flex-col gap-1">

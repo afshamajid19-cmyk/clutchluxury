@@ -97,7 +97,7 @@ export default function ChanelAuthentication() {
             alt={section.imageAlt}
             className="w-full mx-auto my-8 block"
             loading="lazy"
-            style={{ maxWidth: '900px', borderRadius: '4px', border: '1px solid #e0d9d0', boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}
+            style={{ maxWidth: '860px', borderRadius: '4px', border: '1px solid #e8e2da', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8" style={{ maxWidth: '900px', margin: '32px auto' }}>
@@ -129,18 +129,18 @@ export default function ChanelAuthentication() {
         A genuine Chanel bag is the product of extraordinary craftsmanship — and that craftsmanship is visible at every scale. Trust your instincts, examine the details, and always verify before you buy.
       </p>
 
-      <div className="text-center my-12">
+      <div className="text-center my-12 px-4">
         <a
           href="https://legitgrails.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02]"
+          className="inline-block sm:inline-block w-full sm:w-auto rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02] hover:-translate-y-px text-center"
           style={{
             fontFamily: "'Montserrat', sans-serif",
             fontWeight: 500,
             fontSize: '11px',
             letterSpacing: '0.18em',
-            padding: '14px 36px',
+            padding: '16px 40px',
             background: '#6B6B6B',
             color: '#FFFFFF',
             textDecoration: 'none',
@@ -152,7 +152,7 @@ export default function ChanelAuthentication() {
         </a>
       </div>
 
-      <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '13px', color: '#928377', textAlign: 'center', fontStyle: 'italic', marginTop: '48px' }}>
+      <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '0.8rem', color: '#9c9189', textAlign: 'center', fontStyle: 'italic', paddingTop: '48px' }}>
         All real vs. fake comparison images courtesy of{' '}
         <a href="https://legitgrails.com" target="_blank" rel="noopener noreferrer" style={{ color: '#866758' }}>LegitGrails.com</a>{' '}
         — a trusted platform for luxury bag authentication.
@@ -163,24 +163,26 @@ export default function ChanelAuthentication() {
 
 const attributionStyle: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
-  fontSize: '13px',
+  fontSize: '0.875rem',
   color: '#928377',
   lineHeight: 1.7,
-  padding: '16px 20px',
+  padding: '14px 20px',
   marginBottom: '32px',
-  border: '1px solid rgba(139,115,85,0.15)',
-  borderRadius: '2px',
-  background: 'rgba(233,228,222,0.4)',
+  borderLeft: '3px solid #b5a898',
+  borderRadius: '0',
+  background: '#f7f4f0',
 };
 
 const h2Style: React.CSSProperties = {
   fontFamily: "'Cormorant Garamond', serif",
   fontWeight: 300,
-  fontSize: '32px',
+  fontSize: 'clamp(1.5rem, 5vw, 2.2rem)',
   color: '#291E15',
-  letterSpacing: '0.05em',
+  letterSpacing: '0.06em',
   marginTop: '48px',
   marginBottom: '16px',
+  paddingBottom: '12px',
+  borderBottom: '1px solid #d4cdc6',
 };
 
 const bodyStyle: React.CSSProperties = {
@@ -193,8 +195,8 @@ const bodyStyle: React.CSSProperties = {
 };
 
 const cardStyle: React.CSSProperties = {
-  background: '#F9F7F5',
-  border: '1px solid rgba(139,115,85,0.12)',
+  background: '#faf9f7',
+  border: '1px solid #e8e2da',
   borderRadius: '4px',
   padding: '24px',
 };
@@ -203,9 +205,10 @@ const authenticLabel: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
   fontWeight: 600,
   fontSize: '12px',
-  letterSpacing: '0.12em',
-  color: '#5B7A5B',
+  letterSpacing: '0.14em',
+  color: '#5a6b52',
   marginBottom: '16px',
+  fontVariant: 'small-caps',
   textTransform: 'uppercase',
 };
 
@@ -213,9 +216,10 @@ const counterfeitLabel: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
   fontWeight: 600,
   fontSize: '12px',
-  letterSpacing: '0.12em',
-  color: '#8B5A5A',
+  letterSpacing: '0.14em',
+  color: '#8b4a4a',
   marginBottom: '16px',
+  fontVariant: 'small-caps',
   textTransform: 'uppercase',
 };
 
