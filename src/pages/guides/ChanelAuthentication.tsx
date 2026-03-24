@@ -129,7 +129,7 @@ export default function ChanelAuthentication() {
         A genuine Chanel bag is the product of extraordinary craftsmanship — and that craftsmanship is visible at every scale. Trust your instincts, examine the details, and always verify before you buy.
       </p>
 
-      <div className="text-center my-12">
+      <div className="text-center my-12 px-4">
         <a
           href="https://legitgrails.com"
           target="_blank"
