@@ -213,8 +213,8 @@ const bodyStyle: React.CSSProperties = {
 };
 
 const cardStyle: React.CSSProperties = {
-  background: '#F9F7F5',
-  border: '1px solid rgba(139,115,85,0.12)',
+  background: '#faf9f7',
+  border: '1px solid #e8e2da',
   borderRadius: '4px',
   padding: '24px',
 };
@@ -223,9 +223,10 @@ const authenticLabel: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
   fontWeight: 600,
   fontSize: '12px',
-  letterSpacing: '0.12em',
-  color: '#5B7A5B',
+  letterSpacing: '0.14em',
+  color: '#5a6b52',
   marginBottom: '16px',
+  fontVariant: 'small-caps',
   textTransform: 'uppercase',
 };
 
@@ -233,9 +234,10 @@ const counterfeitLabel: React.CSSProperties = {
   fontFamily: "'Montserrat', sans-serif",
   fontWeight: 600,
   fontSize: '12px',
-  letterSpacing: '0.12em',
-  color: '#8B5A5A',
+  letterSpacing: '0.14em',
+  color: '#8b4a4a',
   marginBottom: '16px',
+  fontVariant: 'small-caps',
   textTransform: 'uppercase',
 };
 
