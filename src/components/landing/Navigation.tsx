@@ -50,7 +50,7 @@ export function Navigation() {
                 fontWeight: 400,
                 fontSize: '22px',
                 letterSpacing: '0.2em',
-                color: '#8B7355',
+                color: '#2C2C2C',
                 lineHeight: 1,
               }}
             >
