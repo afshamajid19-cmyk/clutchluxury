@@ -1,5 +1,6 @@
 import { MessageCircle, Instagram, ExternalLink } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 function LinktreeIcon({ className }: { className?: string }) {
   return (
@@ -18,43 +19,48 @@ const contactLinks = [
 
 export function Contact() {
   const { data: settings } = useSettings();
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
     <section id="contact" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
       {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
       
-      <div className="container mx-auto px-5 sm:px-6 relative z-10">
+      <div ref={ref} className="container mx-auto px-5 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="section-overline mb-5">Connect</p>
-          <h2 className="section-title mb-12">Get in Touch</h2>
-          <div className="section-divider mb-12" />
+          <div className={`scroll-reveal ${isVisible ? 'revealed' : ''}`}>
+            <p className="section-overline mb-5">Connect</p>
+            <h2 className="section-title mb-12">Get in Touch</h2>
+            <div className={`section-divider mb-12 divider-reveal ${isVisible ? 'revealed' : ''}`} />
+          </div>
           <p 
-            className="mb-5"
+            className={`mb-5 scroll-reveal ${isVisible ? 'revealed' : ''}`}
             style={{ 
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 300,
               fontSize: '15px',
               lineHeight: 1.9,
-              color: '#565250' 
+              color: '#565250',
+              transitionDelay: '0.15s',
             }}
           >
             Get in touch for sourcing requests, inquiries, or to share your wishlist
           </p>
           <p 
-            className="mb-14 sm:mb-20 uppercase"
+            className={`mb-14 sm:mb-20 uppercase scroll-reveal ${isVisible ? 'revealed' : ''}`}
             style={{ 
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 500,
               fontSize: '10px',
               letterSpacing: '0.15em',
-              color: '#928377', 
+              color: '#928377',
+              transitionDelay: '0.2s',
             }}
           >
             We typically respond within a few hours.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10">
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.3s' }}>
             {contactLinks.map((item) => {
               const { key, label, Icon } = item;
               const url = settings?.[key as keyof typeof settings];
@@ -66,7 +72,7 @@ export function Contact() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex flex-col items-center gap-4 sm:gap-6 py-8 sm:py-14 px-4 sm:px-8 rounded-lg transition-all duration-[400ms] cursor-pointer"
+                  className="group relative flex flex-col items-center gap-4 sm:gap-6 py-8 sm:py-14 px-4 sm:px-8 rounded-lg transition-all duration-[400ms] cursor-pointer reveal-child"
                   style={{
                     background: '#F5F2EE',
                     border: '1px solid rgba(134,103,88,0.2)'
@@ -117,12 +123,13 @@ export function Contact() {
           </div>
 
           <p 
-            className="mt-10 sm:mt-14"
+            className={`mt-10 sm:mt-14 scroll-reveal ${isVisible ? 'revealed' : ''}`}
             style={{ 
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 300,
               fontSize: '13px',
-              color: '#928377' 
+              color: '#928377',
+              transitionDelay: '0.5s',
             }}
           >
             We typically respond within a few hours

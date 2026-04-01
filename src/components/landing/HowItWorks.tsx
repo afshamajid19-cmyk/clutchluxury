@@ -1,4 +1,8 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 export function HowItWorks() {
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
+
   const steps = [
     {
       number: "01",
@@ -27,28 +31,27 @@ export function HowItWorks() {
       {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
       
-      <div className="container mx-auto px-5 sm:px-6 relative z-10">
-        <div className="text-center mb-16 sm:mb-24 md:mb-28">
+      <div ref={sectionRef} className="container mx-auto px-5 sm:px-6 relative z-10">
+        <div className={`text-center mb-16 sm:mb-24 md:mb-28 scroll-reveal ${isVisible ? 'revealed' : ''}`}>
           <p className="section-overline mb-5">
             The Process
           </p>
           <h2 className="section-title mb-12">
             How It Works
           </h2>
-          <div className="section-divider" />
+          <div className={`section-divider divider-reveal ${isVisible ? 'revealed' : ''}`} />
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 sm:gap-14 md:gap-14">
-            {steps.map((step, index) => (
+          <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 sm:gap-14 md:gap-14 scroll-reveal ${isVisible ? 'revealed' : ''}`}>
+            {steps.map((step) => (
               <div 
                 key={step.number} 
-                className="text-center group animate-fade-up cursor-default"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="text-center group cursor-default reveal-child"
               >
                 {/* Step number */}
                 <div 
-                  className="mb-6 sm:mb-8 transition-all duration-[400ms] group-hover:scale-110"
+                  className="mb-6 sm:mb-8 transition-all duration-[400ms] group-hover:scale-110 number-reveal"
                   style={{ 
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: 300,
@@ -90,15 +93,16 @@ export function HowItWorks() {
             ))}
           </div>
           
-          <div className="section-divider w-48 mt-16 sm:mt-24" />
+          <div className={`section-divider w-48 mt-16 sm:mt-24 divider-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.5s' }} />
           <p 
-            className="text-center mt-8 sm:mt-10 uppercase"
+            className={`text-center mt-8 sm:mt-10 uppercase scroll-reveal ${isVisible ? 'revealed' : ''}`}
             style={{ 
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 500,
               fontSize: '10px',
               letterSpacing: '0.2em', 
-              color: '#928377' 
+              color: '#928377',
+              transitionDelay: '0.6s',
             }}
           >
             Concierge-level sourcing with curated options
