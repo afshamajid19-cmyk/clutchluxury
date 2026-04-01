@@ -2,6 +2,29 @@ import { GuideLayout } from "@/components/guides/GuideLayout";
 
 const comparisonSections = [
   {
+    title: "How to Spot a Fake Hermès Birkin Bag",
+    context: "The Birkin remains the single most counterfeited Hermès bag in circulation. Its iconic status and five-figure price tag make it a prime target for high-quality replicas. Authenticating a Birkin requires a trained eye — from the silhouette and proportions to the leather grain and hardware finishing. Even the most convincing fakes reveal themselves under close scrutiny.",
+    image: "/images/blog/hermes_birkin_real_fake.jpg",
+    imageAlt: "Hermès Birkin real vs fake comparison — leather, hardware, and shape",
+    imageCaption: "Above: a genuine Hermès Birkin 35 in Gold Togo (left) beside a counterfeit replica (right). Note the differences in leather texture, handle curvature, hardware finishing, and overall proportions.",
+    authentic: [
+      "Leather grain is rich, deeply textured, and naturally irregular — each hide is unique",
+      "Handles curve symmetrically with a firm, upright posture and hand-finished edges",
+      "Gold hardware has a warm, buttery lustre — engraved 'HERMÈS-PARIS' on the front plate is sharp and precise",
+      "Sangles (straps) are perfectly even in width and sit flush against the body of the bag",
+      "Lock and clochette are weighty, with a smooth key-turn mechanism",
+      "Overall proportions are balanced — the bag's width-to-height ratio is consistent across all sizes",
+    ],
+    counterfeit: [
+      "Leather appears too uniform, overly glossy, or has a plasticky sheen under direct light",
+      "Handles may lean inward, feel hollow, or show visible seam glue along the edges",
+      "Hardware finish is often too shiny (chrome-like) or too matte — engraving is shallow or blurry",
+      "Sangles may be uneven, too thin, or slightly misaligned when closed",
+      "Lock feels lightweight, and the clochette leather is stiff or poorly cut",
+      "Proportions feel 'off' — the bag may appear too tall, too wide, or slightly asymmetrical",
+    ],
+  },
+  {
     title: "The Hermès Constance — Shape & H-Clasp Hardware",
     context: "The Constance is defined by its clean geometry and signature H-clasp. Counterfeits often fail at replicating the precision of the hardware and the structure of the silhouette.",
     image: "/images/blog/legitgrails_hermes.jpg",
@@ -117,7 +140,11 @@ export default function HermesAuthentication() {
             loading="lazy"
             style={{ maxWidth: '860px', borderRadius: '4px', border: '1px solid #e8e2da', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}
           />
-
+          {'imageCaption' in section && (section as any).imageCaption && (
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '13px', color: '#9c9189', textAlign: 'center', fontStyle: 'italic', maxWidth: '760px', margin: '0 auto 24px', lineHeight: 1.7 }}>
+              {(section as any).imageCaption}
+            </p>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8" style={{ maxWidth: '900px', margin: '32px auto' }}>
             <div style={cardStyle}>
               <h4 style={authenticLabel}>✓ AUTHENTIC</h4>
@@ -147,7 +174,19 @@ export default function HermesAuthentication() {
         Authenticating a Hermès bag requires attention to detail at every level — from the architecture of the silhouette to the depth of a screw head. When in doubt, always seek professional authentication before purchasing on the secondary market.
       </p>
 
-      <div className="text-center my-12 px-4">
+      {/* Partner Section */}
+      <div style={{ marginTop: '64px', padding: '40px 32px', background: '#f7f4f0', border: '1px solid #e8e2da', borderRadius: '4px', textAlign: 'center' }}>
+        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', color: '#291E15', letterSpacing: '0.08em', marginBottom: '16px' }}>
+          Our Authentication Partner
+        </h3>
+        <p style={{ ...bodyStyle, maxWidth: '640px', margin: '0 auto 8px', fontSize: '15px' }}>
+          Clutch proudly partners with{' '}
+          <a href="https://legitgrails.com" target="_blank" rel="noopener noreferrer" style={{ color: '#866758', textDecoration: 'underline' }}>LegitGrails</a>{' '}
+          — a globally recognised authentication service trusted by collectors, resellers, and luxury platforms worldwide. With a team of expert authenticators and industry-leading accuracy, LegitGrails provides fast, reliable verification for Hermès, Chanel, Louis Vuitton, and over 60 luxury brands.
+        </p>
+        <p style={{ ...bodyStyle, maxWidth: '640px', margin: '0 auto 24px', fontSize: '15px' }}>
+          Whether you're buying, selling, or simply want peace of mind about a piece in your private collection — professional authentication is the gold standard.
+        </p>
         <a
           href="https://legitgrails.com"
           target="_blank"
@@ -166,7 +205,7 @@ export default function HermesAuthentication() {
           onMouseEnter={(e) => { e.currentTarget.style.background = '#4A4A4A'; }}
           onMouseLeave={(e) => { e.currentTarget.style.background = '#6B6B6B'; }}
         >
-          Authenticate Your Bag with LegitGrails →
+          Authenticate Your Private Collection →
         </a>
       </div>
 
