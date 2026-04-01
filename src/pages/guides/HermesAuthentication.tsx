@@ -140,7 +140,11 @@ export default function HermesAuthentication() {
             loading="lazy"
             style={{ maxWidth: '860px', borderRadius: '4px', border: '1px solid #e8e2da', boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}
           />
-
+          {'imageCaption' in section && (section as any).imageCaption && (
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '13px', color: '#9c9189', textAlign: 'center', fontStyle: 'italic', maxWidth: '760px', margin: '0 auto 24px', lineHeight: 1.7 }}>
+              {(section as any).imageCaption}
+            </p>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8" style={{ maxWidth: '900px', margin: '32px auto' }}>
             <div style={cardStyle}>
               <h4 style={authenticLabel}>✓ AUTHENTIC</h4>
