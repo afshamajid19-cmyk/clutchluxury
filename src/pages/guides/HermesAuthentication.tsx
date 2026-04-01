@@ -2,6 +2,29 @@ import { GuideLayout } from "@/components/guides/GuideLayout";
 
 const comparisonSections = [
   {
+    title: "How to Spot a Fake Hermès Birkin Bag",
+    context: "The Birkin remains the single most counterfeited Hermès bag in circulation. Its iconic status and five-figure price tag make it a prime target for high-quality replicas. Authenticating a Birkin requires a trained eye — from the silhouette and proportions to the leather grain and hardware finishing. Even the most convincing fakes reveal themselves under close scrutiny.",
+    image: "/images/blog/hermes_birkin_real_fake.jpg",
+    imageAlt: "Hermès Birkin real vs fake comparison — leather, hardware, and shape",
+    imageCaption: "Above: a genuine Hermès Birkin 35 in Gold Togo (left) beside a counterfeit replica (right). Note the differences in leather texture, handle curvature, hardware finishing, and overall proportions.",
+    authentic: [
+      "Leather grain is rich, deeply textured, and naturally irregular — each hide is unique",
+      "Handles curve symmetrically with a firm, upright posture and hand-finished edges",
+      "Gold hardware has a warm, buttery lustre — engraved 'HERMÈS-PARIS' on the front plate is sharp and precise",
+      "Sangles (straps) are perfectly even in width and sit flush against the body of the bag",
+      "Lock and clochette are weighty, with a smooth key-turn mechanism",
+      "Overall proportions are balanced — the bag's width-to-height ratio is consistent across all sizes",
+    ],
+    counterfeit: [
+      "Leather appears too uniform, overly glossy, or has a plasticky sheen under direct light",
+      "Handles may lean inward, feel hollow, or show visible seam glue along the edges",
+      "Hardware finish is often too shiny (chrome-like) or too matte — engraving is shallow or blurry",
+      "Sangles may be uneven, too thin, or slightly misaligned when closed",
+      "Lock feels lightweight, and the clochette leather is stiff or poorly cut",
+      "Proportions feel 'off' — the bag may appear too tall, too wide, or slightly asymmetrical",
+    ],
+  },
+  {
     title: "The Hermès Constance — Shape & H-Clasp Hardware",
     context: "The Constance is defined by its clean geometry and signature H-clasp. Counterfeits often fail at replicating the precision of the hardware and the structure of the silhouette.",
     image: "/images/blog/legitgrails_hermes.jpg",
