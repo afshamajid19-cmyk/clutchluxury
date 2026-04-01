@@ -1,8 +1,10 @@
 import { forwardRef } from "react";
 import { useSettings } from "@/hooks/useSettings";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
   const { data: settings } = useSettings();
+  const { ref: revealRef, isVisible } = useScrollReveal({ threshold: 0.15 });
 
   return (
     <footer 
@@ -13,11 +15,11 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
         borderTop: '1px solid rgba(134,103,88,0.2)'
       }}
     >
-      <div className="container mx-auto px-5 sm:px-6">
+      <div ref={revealRef} className="container mx-auto px-5 sm:px-6">
         <div className="max-w-[800px] mx-auto text-center">
           {/* Logo */}
           <div 
-            className="uppercase mb-10 sm:mb-14"
+            className={`uppercase mb-10 sm:mb-14 blur-reveal ${isVisible ? 'revealed' : ''}`}
             style={{ 
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
@@ -34,13 +36,14 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
 
           {/* Disclaimer */}
           <p 
-            className="mb-10 sm:mb-14 max-w-lg mx-auto px-4"
+            className={`mb-10 sm:mb-14 max-w-lg mx-auto px-4 scroll-reveal ${isVisible ? 'revealed' : ''}`}
             style={{ 
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 300,
               fontSize: '12px',
               lineHeight: 1.8,
-              color: '#928377' 
+              color: '#928377',
+              transitionDelay: '0.15s',
             }}
           >
             {settings?.disclaimer_text ||
@@ -48,16 +51,17 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
           </p>
 
           {/* Logo Divider */}
-          <div className="flex justify-center mb-8 sm:mb-12">
+          <div className={`flex justify-center mb-8 sm:mb-12 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.25s' }}>
             <img 
               src="/images/clutch-logo-4c.png" 
               alt="Clutch" 
+              className="gentle-float"
               style={{ width: '50px', height: '50px', opacity: 0.35 }}
             />
           </div>
 
           {/* Privacy & Copyright */}
-          <div className="space-y-4 sm:space-y-5">
+          <div className={`space-y-4 sm:space-y-5 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.35s' }}>
             <p 
               className="px-4"
               style={{ 

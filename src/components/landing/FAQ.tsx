@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const faqs = [
   {
@@ -41,25 +42,27 @@ const faqs = [
 ];
 
 export function FAQ() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+
   return (
     <section id="faq" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
       {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
       
-      <div className="container mx-auto px-5 sm:px-6 relative z-10">
+      <div ref={ref} className="container mx-auto px-5 sm:px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-14 sm:mb-20">
+          <div className={`text-center mb-14 sm:mb-20 scroll-reveal ${isVisible ? 'revealed' : ''}`}>
             <p className="section-overline mb-5">Questions</p>
             <h2 className="section-title mb-12">Frequently Asked</h2>
-            <div className="section-divider" />
+            <div className={`section-divider divider-reveal ${isVisible ? 'revealed' : ''}`} />
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4 sm:space-y-5">
+          <Accordion type="single" collapsible className={`space-y-4 sm:space-y-5 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.2s' }}>
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="rounded-md overflow-hidden"
+                className="rounded-md overflow-hidden reveal-child"
                 style={{
                   background: '#F5F2EE',
                   border: '1px solid rgba(134,103,88,0.15)',

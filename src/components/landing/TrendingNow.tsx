@@ -1,12 +1,14 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export function TrendingNow() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const { data: items } = useQuery({
     queryKey: ["trending-items"],
@@ -48,11 +50,11 @@ export function TrendingNow() {
     <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
 
-      <div className="container mx-auto px-5 sm:px-6 relative z-10">
-        <div className="text-center mb-16 sm:mb-24 md:mb-28">
+      <div ref={sectionRef} className="container mx-auto px-5 sm:px-6 relative z-10">
+        <div className={`text-center mb-16 sm:mb-24 md:mb-28 scroll-reveal ${isVisible ? 'revealed' : ''}`}>
           <p className="section-overline mb-5">Curated</p>
           <h2 className="section-title mb-12">The Must-Have</h2>
-          <div className="section-divider" />
+          <div className={`section-divider divider-reveal ${isVisible ? 'revealed' : ''}`} />
           <p
             className="max-w-md mx-auto mt-8 sm:mt-10"
             style={{
@@ -68,7 +70,7 @@ export function TrendingNow() {
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className={`relative max-w-6xl mx-auto scroll-reveal-scale ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.2s' }}>
           {/* Navigation Arrows */}
           {items.length > 1 && (
             <>
@@ -139,7 +141,7 @@ export function TrendingNow() {
                     <img
                       src={item.image_url}
                       alt={item.title || "Luxury item"}
-                      className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                      className="max-w-full max-h-full object-contain transition-transform duration-[800ms] ease-out group-hover:scale-105"
                       loading="lazy"
                     />
                   </div>
