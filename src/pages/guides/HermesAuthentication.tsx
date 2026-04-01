@@ -174,7 +174,19 @@ export default function HermesAuthentication() {
         Authenticating a Hermès bag requires attention to detail at every level — from the architecture of the silhouette to the depth of a screw head. When in doubt, always seek professional authentication before purchasing on the secondary market.
       </p>
 
-      <div className="text-center my-12 px-4">
+      {/* Partner Section */}
+      <div style={{ marginTop: '64px', padding: '40px 32px', background: '#f7f4f0', border: '1px solid #e8e2da', borderRadius: '4px', textAlign: 'center' }}>
+        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', color: '#291E15', letterSpacing: '0.08em', marginBottom: '16px' }}>
+          Our Authentication Partner
+        </h3>
+        <p style={{ ...bodyStyle, maxWidth: '640px', margin: '0 auto 8px', fontSize: '15px' }}>
+          Clutch proudly partners with{' '}
+          <a href="https://legitgrails.com" target="_blank" rel="noopener noreferrer" style={{ color: '#866758', textDecoration: 'underline' }}>LegitGrails</a>{' '}
+          — a globally recognised authentication service trusted by collectors, resellers, and luxury platforms worldwide. With a team of expert authenticators and industry-leading accuracy, LegitGrails provides fast, reliable verification for Hermès, Chanel, Louis Vuitton, and over 60 luxury brands.
+        </p>
+        <p style={{ ...bodyStyle, maxWidth: '640px', margin: '0 auto 24px', fontSize: '15px' }}>
+          Whether you're buying, selling, or simply want peace of mind about a piece in your private collection — professional authentication is the gold standard.
+        </p>
         <a
           href="https://legitgrails.com"
           target="_blank"
@@ -193,7 +205,7 @@ export default function HermesAuthentication() {
           onMouseEnter={(e) => { e.currentTarget.style.background = '#4A4A4A'; }}
           onMouseLeave={(e) => { e.currentTarget.style.background = '#6B6B6B'; }}
         >
-          Authenticate Your Bag with LegitGrails →
+          Authenticate Your Private Collection →
         </a>
       </div>
 
