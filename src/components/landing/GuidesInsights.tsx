@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const guides = [
   {
@@ -46,15 +47,17 @@ const guides = [
 ];
 
 export function GuidesInsights() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.08 });
+
   return (
     <section id="guides" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
 
-      <div className="container mx-auto px-5 sm:px-6 relative z-10">
-        <div className="text-center mb-16 sm:mb-24 md:mb-28">
+      <div ref={ref} className="container mx-auto px-5 sm:px-6 relative z-10">
+        <div className={`text-center mb-16 sm:mb-24 md:mb-28 scroll-reveal ${isVisible ? 'revealed' : ''}`}>
           <p className="section-overline mb-5">Knowledge</p>
           <h2 className="section-title mb-12">Guides & Insights</h2>
-          <div className="section-divider" />
+          <div className={`section-divider divider-reveal ${isVisible ? 'revealed' : ''}`} />
           <p
             className="max-w-md mx-auto mt-8 sm:mt-10"
             style={{
@@ -69,21 +72,21 @@ export function GuidesInsights() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.15s' }}>
           {guides.map((guide) => (
             <Link
               key={guide.slug}
               to={`/guides/${guide.slug}`}
-              className="group rounded-lg overflow-hidden"
+              className="group rounded-lg overflow-hidden reveal-child"
               style={{
                 background: '#FFFFFF',
                 border: '1px solid rgba(134,103,88,0.12)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
-                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                transition: 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 2px 16px rgba(0,0,0,0.06)';
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.08)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -94,7 +97,7 @@ export function GuidesInsights() {
                 <img
                   src={guide.image}
                   alt={guide.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.06]"
                   loading="lazy"
                 />
               </div>
@@ -138,7 +141,7 @@ export function GuidesInsights() {
                   {guide.excerpt}
                 </p>
                 <span
-                  className="inline-flex items-center transition-colors duration-[400ms] group-hover:underline"
+                  className="inline-flex items-center transition-all duration-[400ms] group-hover:tracking-wider"
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
                     fontWeight: 500,
