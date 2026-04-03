@@ -26,10 +26,11 @@ export function Hero() {
             style={{ 
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
-              fontSize: 'clamp(28px, 5.5vw, 62px)',
+              fontStyle: 'italic',
+              fontSize: 'clamp(30px, 5.5vw, 64px)',
               color: '#6B6B6B',
               textShadow: '0 2px 30px rgba(134, 103, 88, 0.15)',
-              letterSpacing: '0.1em',
+              letterSpacing: '0.12em',
               lineHeight: 1.2,
               marginBottom: '3rem',
             }}
