@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center pt-20 md:pt-24 relative texture-grain vignette particles overflow-hidden"
+      className="min-h-screen flex flex-col justify-center pt-16 md:pt-20 relative texture-grain vignette particles overflow-hidden"
       style={{ background: '#E9E4DE' }}
     >
       {/* Warm light gradient background */}
@@ -26,10 +26,11 @@ export function Hero() {
             style={{ 
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
-              fontSize: 'clamp(28px, 5.5vw, 62px)',
+              fontStyle: 'italic',
+              fontSize: 'clamp(30px, 5.5vw, 64px)',
               color: '#6B6B6B',
               textShadow: '0 2px 30px rgba(134, 103, 88, 0.15)',
-              letterSpacing: '0.1em',
+              letterSpacing: '0.12em',
               lineHeight: 1.2,
               marginBottom: '3rem',
             }}
@@ -43,7 +44,7 @@ export function Hero() {
               src="/images/clutch-logo-4c.png" 
               alt="Clutch logo" 
               className="block"
-              style={{ width: '40px', height: '40px', opacity: 0.35 }}
+              style={{ width: '50px', height: '50px', opacity: 0.45 }}
             />
           </div>
 
