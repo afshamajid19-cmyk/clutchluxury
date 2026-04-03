@@ -40,10 +40,10 @@ const Index = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Clutch Concierge",
-            alternateName: "Clutch",
-            description: "Luxury personal shopping and sourcing service based in Dubai, specializing in rare Hermès bags and designer pieces",
+            "@type": "Store",
+            name: "CLUTCH",
+            alternateName: "Clutch Luxury Sourcing",
+            description: "Authenticated pre-owned luxury handbags and accessories. Specializing in Hermès Birkin, Kelly, Chanel, and more. Based in Dubai with worldwide shipping.",
             url: "https://clutchluxury.lovable.app",
             logo: "/images/clutch-logo-ccc.jpg",
             foundingDate: "2017",

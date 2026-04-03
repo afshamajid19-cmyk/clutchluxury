@@ -495,34 +495,36 @@ export function TrendingCarousel() {
           </div>
         )}
 
-        {/* Instagram Link */}
-        {settings?.instagram_url && (
-          <div className="text-center mt-18">
-            <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: '14px', color: '#565250' }}>
-              For daily updates, view the latest on{" "}
-              <a
-                href={settings.instagram_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors duration-[400ms] border-b pb-0.5"
-                style={{ 
-                  color: '#866758',
-                  borderColor: 'rgba(134,103,88,0.3)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#6b5345';
-                  e.currentTarget.style.borderColor = 'rgba(134,103,88,0.6)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#866758';
-                  e.currentTarget.style.borderColor = 'rgba(134,103,88,0.3)';
-                }}
-              >
-                Instagram
-              </a>
-            </p>
-          </div>
-        )}
+        {/* WhatsApp CTA */}
+        <div className="text-center mt-18">
+          <a
+            href="https://chat.whatsapp.com/GaCK07tezCh46tdTHEKFti"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 transition-all duration-[400ms] border-b pb-1"
+            style={{ 
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontSize: '18px',
+              color: '#866758',
+              borderColor: 'rgba(134,103,88,0.3)',
+              letterSpacing: '0.03em',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#6b5345';
+              e.currentTarget.style.borderColor = 'rgba(134,103,88,0.6)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#866758';
+              e.currentTarget.style.borderColor = 'rgba(134,103,88,0.3)';
+            }}
+            aria-label="Chat with Clutch on WhatsApp about available Hermès bags"
+          >
+            Available Hermès Bags — Chat with us on WhatsApp
+            <span style={{ fontSize: '14px' }}>→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

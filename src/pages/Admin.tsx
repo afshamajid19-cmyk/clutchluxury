@@ -11,7 +11,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-const ADMIN_PASSCODE = "clutch2024";
+const ADMIN_PASSCODE = "clutch2026";
 
 function AdminTrending() {
   const queryClient = useQueryClient();
