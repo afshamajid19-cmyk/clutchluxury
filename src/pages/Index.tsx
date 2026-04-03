@@ -27,12 +27,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Clutch – Luxury Sourcing | Dubai's Premier Personal Shopping Service</title>
-        <meta name="description" content="Attaining the unattainable. Clutch is Dubai's premier luxury personal shopping and sourcing service. Hermès, Chanel, and more. International shipping. Since 2017." />
-        <meta name="keywords" content="luxury sourcing, personal shopping, Dubai, Hermès, Chanel, Rolex, luxury bags, authenticated luxury" />
+        <title>CLUTCH | Authenticated Pre-Owned Luxury Bags | Hermès, Chanel & More – Dubai</title>
+        <meta name="description" content="Shop authenticated pre-owned Hermès, Chanel, and luxury handbags at CLUTCH. Transparent pricing, expert authentication, and curated selections for discerning buyers." />
+        <meta name="robots" content="index, follow" />
+        <meta name="keywords" content="luxury sourcing, personal shopping, Dubai, Hermès, Chanel, Rolex, luxury bags, authenticated luxury, pre-owned luxury, Birkin, Kelly" />
         <link rel="canonical" href="https://clutchluxury.lovable.app" />
-        <meta property="og:title" content="Clutch – Luxury Sourcing" />
-        <meta property="og:description" content="Attaining the unattainable. Dubai's premier luxury personal shopping and sourcing service." />
+        <meta property="og:title" content="CLUTCH | Authenticated Pre-Owned Luxury Bags | Hermès, Chanel & More" />
+        <meta property="og:description" content="Shop authenticated pre-owned Hermès, Chanel, and luxury handbags at CLUTCH. Transparent pricing, expert authentication, and curated selections for discerning buyers." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://clutchluxury.lovable.app" />
         <meta property="og:image" content="/images/clutch-logo-ccc.jpg" />
