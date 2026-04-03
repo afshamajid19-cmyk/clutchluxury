@@ -23,7 +23,32 @@ export function TrendingNow() {
     },
   });
 
-  if (!items || items.length === 0) return null;
+  if (!items || items.length === 0) {
+    return (
+      <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
+        <div className="container mx-auto px-5 sm:px-6 relative z-10">
+          <div className="text-center">
+            <p className="section-overline mb-5">Curated</p>
+            <h2 className="section-title mb-12">The Must-Have</h2>
+            <div className="section-divider" />
+            <p
+              className="max-w-md mx-auto mt-8"
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 300,
+                fontSize: '15px',
+                lineHeight: 1.9,
+                color: '#928377',
+              }}
+            >
+              Check back soon for our latest trending pieces
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;

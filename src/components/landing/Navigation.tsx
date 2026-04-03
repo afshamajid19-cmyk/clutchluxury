@@ -50,7 +50,7 @@ export function Navigation() {
                 fontWeight: 400,
                 fontSize: '22px',
                 letterSpacing: '0.2em',
-                color: '#2C2C2C',
+                color: '#928377',
                 lineHeight: 1,
               }}
             >
@@ -69,7 +69,8 @@ export function Navigation() {
                   handleNavClick(link.href);
                 }}
                 className="text-[11px] uppercase"
-                style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.15em', transition: 'opacity 0.2s ease' }}
+                aria-label={`Navigate to ${link.label} section`}
+                style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.18em', transition: 'opacity 0.2s ease' }}
                 onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.6'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
               >
@@ -125,7 +126,7 @@ export function Navigation() {
             >
               <div className="flex flex-col h-full">
               <div className="p-6" style={{ borderBottom: '1px solid rgba(134,103,88,0.15)' }}>
-                  <span className="uppercase" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '22px', letterSpacing: '0.2em', color: '#2C2C2C' }}>Clutch</span>
+                  <span className="uppercase" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '22px', letterSpacing: '0.2em', color: '#928377' }}>Clutch</span>
                 </div>
                 <div className="flex-1 py-8 px-6">
                   <div className="flex flex-col gap-1">
