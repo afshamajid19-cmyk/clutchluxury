@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center pt-20 md:pt-24 relative texture-grain vignette particles overflow-hidden"
+      className="min-h-screen flex flex-col justify-center pt-16 md:pt-20 relative texture-grain vignette particles overflow-hidden"
       style={{ background: '#E9E4DE' }}
     >
       {/* Warm light gradient background */}
