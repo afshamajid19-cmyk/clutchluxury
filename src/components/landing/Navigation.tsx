@@ -35,7 +35,8 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
       style={{ 
         background: 'rgba(233, 228, 222, 0.85)',
-        borderBottom: '1px solid rgba(134, 103, 88, 0.15)'
+        borderBottom: scrolled ? '1px solid rgba(134, 103, 88, 0.12)' : '1px solid transparent',
+        transition: 'border-color 0.3s ease',
       }}
     >
       <div className="container mx-auto px-6">
