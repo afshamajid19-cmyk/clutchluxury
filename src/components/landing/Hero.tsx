@@ -22,16 +22,16 @@ export function Hero() {
         <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '10vh' }}>
           {/* Main Headline */}
           <h1 
-            className="animate-scale-up uppercase font-light"
+            className="animate-scale-up uppercase"
             style={{ 
-            fontFamily: "'Bodoni Moda', 'Playfair Display', 'Cormorant Garamond', serif",
-              fontWeight: 400,
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 300,
               fontStyle: 'italic',
-              fontSize: 'clamp(30px, 6vw, 72px)',
+              fontSize: 'clamp(28px, 5vw, 58px)',
               color: '#6B6B6B',
-              textShadow: '0 2px 30px rgba(134, 103, 88, 0.15)',
-              letterSpacing: '0.18em',
-              lineHeight: 1.2,
+              textShadow: '0 2px 30px rgba(134, 103, 88, 0.1)',
+              letterSpacing: '0.2em',
+              lineHeight: 1.25,
               marginBottom: '3rem',
             }}
           >
