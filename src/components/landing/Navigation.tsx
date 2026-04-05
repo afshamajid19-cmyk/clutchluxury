@@ -69,7 +69,7 @@ export function Navigation() {
                   handleNavClick(link.href);
                 }}
                 className="text-[11px] uppercase"
-                aria-label={`Navigate to ${link.label} section`}
+                aria-label={`Navigate to ${link.label}`}
                 style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.18em', transition: 'opacity 0.2s ease' }}
                 onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.6'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}

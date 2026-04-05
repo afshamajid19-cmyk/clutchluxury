@@ -81,7 +81,7 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
                 fontWeight: 500,
                 fontSize: '10px',
                 color: '#928377', 
-                letterSpacing: '0.15em' 
+                letterSpacing: '0.18em' 
               }}
             >
               © {new Date().getFullYear()} Clutch Luxury Sourcing

@@ -24,13 +24,13 @@ export function Hero() {
           <h1 
             className="animate-scale-up uppercase font-light"
             style={{ 
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 300,
+            fontFamily: "'Bodoni Moda', 'Cormorant Garamond', serif",
+              fontWeight: 400,
               fontStyle: 'italic',
-              fontSize: 'clamp(30px, 5.5vw, 64px)',
+              fontSize: 'clamp(30px, 6vw, 72px)',
               color: '#6B6B6B',
               textShadow: '0 2px 30px rgba(134, 103, 88, 0.15)',
-              letterSpacing: '0.12em',
+              letterSpacing: '0.18em',
               lineHeight: 1.2,
               marginBottom: '3rem',
             }}

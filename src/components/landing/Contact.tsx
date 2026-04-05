@@ -110,18 +110,6 @@ export function Contact() {
             })}
           </div>
 
-          <p 
-            className={`mt-10 sm:mt-14 scroll-reveal ${isVisible ? 'revealed' : ''}`}
-            style={{ 
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 300,
-              fontSize: '13px',
-              color: '#928377',
-              transitionDelay: '0.5s',
-            }}
-          >
-            We typically respond within a few hours
-          </p>
         </div>
       </div>
     </section>
