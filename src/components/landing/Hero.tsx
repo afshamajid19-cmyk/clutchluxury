@@ -24,7 +24,7 @@ export function Hero() {
           <h1 
             className="animate-scale-up uppercase font-light"
             style={{ 
-            fontFamily: "'Bodoni Moda', 'Cormorant Garamond', serif",
+            fontFamily: "'Bodoni Moda', 'Playfair Display', 'Cormorant Garamond', serif",
               fontWeight: 400,
               fontStyle: 'italic',
               fontSize: 'clamp(30px, 6vw, 72px)',
