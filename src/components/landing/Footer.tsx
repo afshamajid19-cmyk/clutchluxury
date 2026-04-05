@@ -9,7 +9,7 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
   return (
     <footer 
       ref={ref} 
-      className="py-16 sm:py-24 md:py-28"
+      className="py-20 sm:py-28 md:py-32"
       style={{ 
         background: '#E9E4DE',
         borderTop: '1px solid rgba(134,103,88,0.2)'
@@ -68,8 +68,8 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 300,
                 fontSize: '12px',
-                color: '#928377', 
-                letterSpacing: '0.05em' 
+              color: '#928377', 
+              letterSpacing: '0.06em' 
               }}
             >
               We use your details only to respond to your request.
@@ -81,7 +81,7 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
                 fontWeight: 500,
                 fontSize: '10px',
                 color: '#928377', 
-                letterSpacing: '0.15em' 
+                letterSpacing: '0.18em' 
               }}
             >
               © {new Date().getFullYear()} Clutch Luxury Sourcing

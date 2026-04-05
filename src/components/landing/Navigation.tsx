@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -15,7 +15,13 @@ const navLinks = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     const element = document.querySelector(href);
@@ -29,7 +35,8 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
       style={{ 
         background: 'rgba(233, 228, 222, 0.85)',
-        borderBottom: '1px solid rgba(134, 103, 88, 0.15)'
+        borderBottom: scrolled ? '1px solid rgba(134, 103, 88, 0.12)' : '1px solid transparent',
+        transition: 'border-color 0.3s ease',
       }}
     >
       <div className="container mx-auto px-6">
@@ -69,7 +76,7 @@ export function Navigation() {
                   handleNavClick(link.href);
                 }}
                 className="text-[11px] uppercase"
-                aria-label={`Navigate to ${link.label} section`}
+                aria-label={`Navigate to ${link.label}`}
                 style={{ color: '#291E15', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.18em', transition: 'opacity 0.2s ease' }}
                 onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.6'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
