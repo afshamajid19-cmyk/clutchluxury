@@ -94,8 +94,8 @@ export function Hero() {
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 500,
                 fontSize: '11px',
-                letterSpacing: '0.18em',
-                padding: '16px 40px',
+                letterSpacing: '0.2em',
+                padding: '16px 48px',
                 height: '48px',
               }}
               onMouseEnter={(e) => {
