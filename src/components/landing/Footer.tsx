@@ -68,8 +68,8 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 300,
                 fontSize: '12px',
-                color: '#928377', 
-                letterSpacing: '0.05em' 
+              color: '#928377', 
+              letterSpacing: '0.06em' 
               }}
             >
               We use your details only to respond to your request.
