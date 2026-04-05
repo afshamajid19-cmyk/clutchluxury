@@ -46,19 +46,7 @@ export function Contact() {
           >
             Get in touch for sourcing requests, inquiries, or to share your wishlist
           </p>
-          <p 
-            className={`mb-14 sm:mb-20 uppercase scroll-reveal ${isVisible ? 'revealed' : ''}`}
-            style={{ 
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 500,
-              fontSize: '10px',
-              letterSpacing: '0.15em',
-              color: '#928377',
-              transitionDelay: '0.2s',
-            }}
-          >
-            We typically respond within a few hours.
-          </p>
+          <div className="mb-14 sm:mb-20" />
 
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.3s' }}>
             {contactLinks.map((item) => {
