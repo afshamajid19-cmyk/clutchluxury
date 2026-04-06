@@ -326,9 +326,12 @@ export function TrendingCarousel() {
                         >
                           <img
                             src={getImageUrl(item) || ''}
-                            alt={`${item.brand} ${item.item_name}`}
+                            alt={`${item.brand} ${item.item_name} - Authenticated luxury bag from CLUTCH Dubai`}
                             className="max-w-full max-h-full object-contain"
                             loading="lazy"
+                            decoding="async"
+                            width={380}
+                            height={507}
                             draggable={false}
                           />
                         </div>
