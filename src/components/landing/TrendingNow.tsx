@@ -193,10 +193,13 @@ export function TrendingNow() {
                     style={{ padding: '20px', background: '#FFFFFF' }}
                   >
                     <img
-                      src={item.image_url}
+                      src={`${item.image_url}?width=600&quality=75`}
                       alt={item.title || "Luxury item"}
                       className="max-w-full max-h-full object-contain transition-transform duration-[800ms] ease-out group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
+                      width={340}
+                      height={453}
                     />
                   </div>
                 </div>

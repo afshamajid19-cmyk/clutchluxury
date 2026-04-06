@@ -230,7 +230,7 @@ export function TrendingCarousel() {
     <section 
       id="trending" 
       className="py-40 md:py-56 overflow-hidden relative"
-      style={{ background: '#E9E4DE' }}
+      style={{ background: '#E9E4DE', minHeight: '800px' }}
     >
       {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />

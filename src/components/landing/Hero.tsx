@@ -44,6 +44,9 @@ export function Hero() {
               src="/images/clutch-logo-4c.png" 
               alt="Clutch logo" 
               className="block"
+              width={50}
+              height={50}
+              fetchPriority="high"
               style={{ width: '50px', height: '50px', opacity: 0.45 }}
             />
           </div>
