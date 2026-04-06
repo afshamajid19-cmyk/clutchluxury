@@ -1,16 +1,104 @@
-import { useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+const PLACEHOLDER_ITEMS = [0, 1, 2];
+
+function SectionHeader({ revealed }: { revealed: boolean }) {
+  return (
+    <div className={`text-center mb-16 sm:mb-24 md:mb-28 scroll-reveal ${revealed ? "revealed" : ""}`}>
+      <p className="section-overline mb-5">Curated</p>
+      <h2 className="section-title mb-12">The Must-Have</h2>
+      <div className={`section-divider divider-reveal ${revealed ? "revealed" : ""}`} />
+      <p
+        className="max-w-md mx-auto mt-8 sm:mt-10"
+        style={{
+          fontFamily: "'Montserrat', sans-serif",
+          fontWeight: 300,
+          fontSize: "15px",
+          lineHeight: 1.9,
+          color: "#928377",
+        }}
+      >
+        The most sought-after pieces of the moment
+      </p>
+    </div>
+  );
+}
+
+function SkeletonCards() {
+  return (
+    <div className="flex gap-4 sm:gap-6 max-w-6xl mx-auto px-2 sm:px-4 md:px-8">
+      {PLACEHOLDER_ITEMS.map((item) => (
+        <div
+          key={item}
+          className="flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden"
+          style={{ background: "#FFFFFF", border: "1px solid rgba(134,103,88,0.12)" }}
+        >
+          <div
+            className="aspect-[3/4]"
+            style={{
+              background:
+                "linear-gradient(110deg, rgba(134,103,88,0.06) 30%, rgba(134,103,88,0.12) 50%, rgba(134,103,88,0.06) 70%)",
+              backgroundSize: "200% 100%",
+              animation: "shimmer 1.5s infinite",
+            }}
+          />
+          <div className="p-5 sm:p-6" style={{ borderTop: "1px solid rgba(134,103,88,0.1)" }}>
+            <div className="h-5 w-3/4 rounded mb-2" style={{ background: "rgba(134,103,88,0.08)" }} />
+            <div className="h-3 w-1/2 rounded" style={{ background: "rgba(134,103,88,0.06)" }} />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function EmptyCards() {
+  return (
+    <div className="flex gap-4 sm:gap-6 max-w-6xl mx-auto px-2 sm:px-4 md:px-8">
+      {PLACEHOLDER_ITEMS.map((item) => (
+        <div
+          key={item}
+          className="flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden flex items-center justify-center aspect-[3/4]"
+          style={{
+            background: "rgba(245,242,238,0.95)",
+            border: "1px solid rgba(134,103,88,0.12)",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 500,
+              fontSize: "11px",
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "#928377",
+            }}
+          >
+            Coming Soon
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function TrendingNow() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [forceVisible, setForceVisible] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
 
-  const { data: items } = useQuery({
+  useEffect(() => {
+    const timeout = window.setTimeout(() => setForceVisible(true), 250);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
+  const { data: items = [], isLoading, error } = useQuery({
     queryKey: ["trending-items"],
     queryFn: async () => {
       const { data, error } = await supabase
@@ -19,65 +107,14 @@ export function TrendingNow() {
         .eq("is_active", true)
         .order("display_order", { ascending: true });
       if (error) throw error;
-      return data;
+      return data ?? [];
     },
+    staleTime: 60_000,
+    retry: 1,
   });
 
-  const isLoading = !items;
-
-  if (isLoading) {
-    return (
-      <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE', minHeight: '600px' }}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
-        <div className="container mx-auto px-5 sm:px-6 relative z-10">
-          <div className="text-center mb-16 sm:mb-24 md:mb-28">
-            <p className="section-overline mb-5">Curated</p>
-            <h2 className="section-title mb-12">The Must-Have</h2>
-            <div className="section-divider" />
-          </div>
-          <div className="flex gap-4 sm:gap-6 max-w-6xl mx-auto px-2 sm:px-4 md:px-8">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.12)' }}>
-                <div className="aspect-[3/4] animate-pulse" style={{ background: 'linear-gradient(110deg, rgba(134,103,88,0.06) 30%, rgba(134,103,88,0.12) 50%, rgba(134,103,88,0.06) 70%)', backgroundSize: '200% 100%', animation: 'shimmer 1.5s infinite' }} />
-                <div className="p-5 sm:p-6" style={{ borderTop: '1px solid rgba(134,103,88,0.1)' }}>
-                  <div className="h-5 w-3/4 rounded animate-pulse mb-2" style={{ background: 'rgba(134,103,88,0.08)' }} />
-                  <div className="h-3 w-1/2 rounded animate-pulse" style={{ background: 'rgba(134,103,88,0.06)' }} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <style>{`@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }`}</style>
-      </section>
-    );
-  }
-
-  if (items.length === 0) {
-    return (
-      <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
-        <div className="container mx-auto px-5 sm:px-6 relative z-10">
-          <div className="text-center">
-            <p className="section-overline mb-5">Curated</p>
-            <h2 className="section-title mb-12">The Must-Have</h2>
-            <div className="section-divider" />
-            <p
-              className="max-w-md mx-auto mt-8"
-              style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 300,
-                fontSize: '15px',
-                lineHeight: 1.9,
-                color: '#928377',
-              }}
-            >
-              Check back soon for our latest trending pieces
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const hasItems = items.length > 0;
+  const isRevealed = isVisible || forceVisible;
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -101,30 +138,18 @@ export function TrendingNow() {
     : true;
 
   return (
-    <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+    <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE', minHeight: '600px' }}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
 
       <div ref={sectionRef} className="container mx-auto px-5 sm:px-6 relative z-10">
-        <div className={`text-center mb-16 sm:mb-24 md:mb-28 scroll-reveal ${isVisible ? 'revealed' : ''}`}>
-          <p className="section-overline mb-5">Curated</p>
-          <h2 className="section-title mb-12">The Must-Have</h2>
-          <div className={`section-divider divider-reveal ${isVisible ? 'revealed' : ''}`} />
-          <p
-            className="max-w-md mx-auto mt-8 sm:mt-10"
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 300,
-              fontSize: '15px',
-              lineHeight: 1.9,
-              color: '#928377',
-            }}
-          >
-            The most sought-after pieces of the moment
-          </p>
-        </div>
+        <SectionHeader revealed={isRevealed} />
 
-        {/* Carousel */}
-        <div className={`relative max-w-6xl mx-auto scroll-reveal-scale ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.2s' }}>
+        {isLoading ? (
+          <SkeletonCards />
+        ) : !hasItems || error ? (
+          <EmptyCards />
+        ) : (
+        <div className={`relative max-w-6xl mx-auto scroll-reveal-scale ${isRevealed ? 'revealed' : ''}`} style={{ transitionDelay: '0.2s' }}>
           {/* Navigation Arrows */}
           {items.length > 1 && (
             <>
@@ -166,7 +191,7 @@ export function TrendingNow() {
           <div
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-4 sm:gap-6 overflow-x-auto px-2 sm:px-4 md:px-8 snap-x snap-mandatory"
+            className="trending-scroll flex gap-4 sm:gap-6 overflow-x-auto px-2 sm:px-4 md:px-8 snap-x snap-mandatory"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
           >
             <style>{`.trending-scroll::-webkit-scrollbar { display: none; }`}</style>
@@ -239,7 +264,9 @@ export function TrendingNow() {
             ))}
           </div>
         </div>
+        )}
       </div>
+      <style>{`@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }`}</style>
     </section>
   );
 }

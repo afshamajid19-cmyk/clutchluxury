@@ -60,6 +60,7 @@ function AdminTrending() {
       setTitle("");
       setAttribution("");
       queryClient.invalidateQueries({ queryKey: ["admin-trending-items"] });
+      queryClient.invalidateQueries({ queryKey: ["trending-items"] });
     } catch (e: any) {
       toast.error(e.message);
     } finally {
@@ -72,7 +73,10 @@ function AdminTrending() {
       const { error } = await supabase.from("trending_items").update({ is_active }).eq("id", id);
       if (error) throw error;
     },
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-trending-items"] }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-trending-items"] });
+      queryClient.invalidateQueries({ queryKey: ["trending-items"] });
+    },
   });
 
   const deleteItem = useMutation({
@@ -83,6 +87,7 @@ function AdminTrending() {
     onSuccess: () => {
       toast.success("Item deleted");
       queryClient.invalidateQueries({ queryKey: ["admin-trending-items"] });
+      queryClient.invalidateQueries({ queryKey: ["trending-items"] });
     },
   });
 
