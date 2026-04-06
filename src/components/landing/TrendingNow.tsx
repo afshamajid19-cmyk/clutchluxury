@@ -23,7 +23,36 @@ export function TrendingNow() {
     },
   });
 
-  if (!items || items.length === 0) {
+  const isLoading = !items;
+
+  if (isLoading) {
+    return (
+      <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE', minHeight: '600px' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
+        <div className="container mx-auto px-5 sm:px-6 relative z-10">
+          <div className="text-center mb-16 sm:mb-24 md:mb-28">
+            <p className="section-overline mb-5">Curated</p>
+            <h2 className="section-title mb-12">The Must-Have</h2>
+            <div className="section-divider" />
+          </div>
+          <div className="flex gap-4 sm:gap-6 max-w-6xl mx-auto px-2 sm:px-4 md:px-8">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden" style={{ background: '#FFFFFF', border: '1px solid rgba(134,103,88,0.12)' }}>
+                <div className="aspect-[3/4] animate-pulse" style={{ background: 'linear-gradient(110deg, rgba(134,103,88,0.06) 30%, rgba(134,103,88,0.12) 50%, rgba(134,103,88,0.06) 70%)', backgroundSize: '200% 100%', animation: 'shimmer 1.5s infinite' }} />
+                <div className="p-5 sm:p-6" style={{ borderTop: '1px solid rgba(134,103,88,0.1)' }}>
+                  <div className="h-5 w-3/4 rounded animate-pulse mb-2" style={{ background: 'rgba(134,103,88,0.08)' }} />
+                  <div className="h-3 w-1/2 rounded animate-pulse" style={{ background: 'rgba(134,103,88,0.06)' }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <style>{`@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }`}</style>
+      </section>
+    );
+  }
+
+  if (items.length === 0) {
     return (
       <section id="trending-now" className="py-24 sm:py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
@@ -164,10 +193,13 @@ export function TrendingNow() {
                     style={{ padding: '20px', background: '#FFFFFF' }}
                   >
                     <img
-                      src={item.image_url}
+                      src={`${item.image_url}?width=600&quality=75`}
                       alt={item.title || "Luxury item"}
                       className="max-w-full max-h-full object-contain transition-transform duration-[800ms] ease-out group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
+                      width={340}
+                      height={453}
                     />
                   </div>
                 </div>

@@ -117,12 +117,33 @@ export function TrendingCarousel() {
 
   if (zohoLoading) {
     return (
-      <section id="trending" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE' }}>
+      <section id="trending" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE', minHeight: '800px' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
         <div className="container mx-auto px-6">
-          <div className="text-center">
-            <p className="text-sm" style={{ color: '#928377' }}>Loading items...</p>
+          <div className="text-center mb-24 md:mb-28">
+            <p className="section-overline mb-5">Curated Selection</p>
+            <h2 className="section-title mb-12">Ready to Acquire</h2>
+            <div className="section-divider" />
+          </div>
+          <div className="relative max-w-6xl mx-auto h-[520px] md:h-[640px] flex items-center justify-center">
+            <div className="flex gap-6 items-center">
+              {[0, 1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="w-[260px] md:w-[340px] rounded-lg overflow-hidden"
+                  style={{
+                    background: 'rgba(134,103,88,0.06)',
+                    transform: i === 1 ? 'scale(1.05)' : 'scale(0.85)',
+                    opacity: i === 1 ? 1 : 0.4,
+                  }}
+                >
+                  <div className="aspect-[3/4] animate-pulse" style={{ background: 'linear-gradient(110deg, rgba(134,103,88,0.06) 30%, rgba(134,103,88,0.12) 50%, rgba(134,103,88,0.06) 70%)', backgroundSize: '200% 100%', animation: 'shimmer 1.5s infinite' }} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+        <style>{`@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }`}</style>
       </section>
     );
   }
@@ -209,7 +230,7 @@ export function TrendingCarousel() {
     <section 
       id="trending" 
       className="py-40 md:py-56 overflow-hidden relative"
-      style={{ background: '#E9E4DE' }}
+      style={{ background: '#E9E4DE', minHeight: '800px' }}
     >
       {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
@@ -305,9 +326,12 @@ export function TrendingCarousel() {
                         >
                           <img
                             src={getImageUrl(item) || ''}
-                            alt={`${item.brand} ${item.item_name}`}
+                            alt={`${item.brand} ${item.item_name} - Authenticated luxury bag from CLUTCH Dubai`}
                             className="max-w-full max-h-full object-contain"
                             loading="lazy"
+                            decoding="async"
+                            width={380}
+                            height={507}
                             draggable={false}
                           />
                         </div>
