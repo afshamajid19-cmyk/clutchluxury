@@ -47,7 +47,7 @@ export function Hero() {
               width={80}
               height={80}
               fetchPriority="high"
-              style={{ width: '80px', height: '80px', objectFit: 'contain', background: 'transparent', opacity: 0.35, mixBlendMode: 'multiply' }}
+              style={{ width: '110px', height: '110px', objectFit: 'contain', background: 'transparent', opacity: 0.35, mixBlendMode: 'multiply' }}
             />
           </div>
 
