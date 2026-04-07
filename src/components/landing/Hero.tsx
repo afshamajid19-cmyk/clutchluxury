@@ -40,15 +40,14 @@ export function Hero() {
 
           {/* Clutch logo divider */}
           <div className="flex justify-center mb-10 md:mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <img 
-              src="/images/clutch-ornament.png" 
-              alt="Clutch ornament" 
-              className="block"
-              width={160}
-              height={160}
-              fetchPriority="high"
-              style={{ width: '160px', height: '160px', objectFit: 'contain', background: 'transparent', opacity: 0.85 }}
-            />
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style={{ width: '150px', height: '150px', display: 'block', margin: '0 auto', background: 'transparent' }}>
+              <g fill="none" stroke="#9a8f82" strokeWidth="5.5" strokeLinecap="round">
+                <path d="M100,44 A56,56 0 1,1 99,44" />
+                <path d="M100,156 A56,56 0 1,0 101,156" />
+                <path d="M44,100 A56,56 0 1,0 44,101" />
+                <path d="M156,100 A56,56 0 1,1 156,99" />
+              </g>
+            </svg>
           </div>
 
           {/* Subheadline */}
