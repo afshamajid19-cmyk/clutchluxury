@@ -41,13 +41,13 @@ export function Hero() {
           {/* Clutch logo divider */}
           <div className="flex justify-center mb-10 md:mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <img 
-              src="/images/clutch-logo-4c.png" 
-              alt="Clutch logo" 
+              src="/images/clutch-ornament.png" 
+              alt="Clutch ornament" 
               className="block"
               width={50}
               height={50}
               fetchPriority="high"
-              style={{ width: '50px', height: '50px', opacity: 0.45 }}
+              style={{ width: '50px', height: '50px', opacity: 0.45, background: 'transparent', mixBlendMode: 'multiply' }}
             />
           </div>
 
