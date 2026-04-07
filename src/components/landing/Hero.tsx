@@ -44,10 +44,10 @@ export function Hero() {
               src="/images/clutch-ornament.png" 
               alt="Clutch ornament" 
               className="block"
-              width={50}
-              height={50}
+              width={160}
+              height={160}
               fetchPriority="high"
-              style={{ width: '50px', height: '50px', opacity: 0.45, background: 'transparent', mixBlendMode: 'multiply' }}
+              style={{ width: '160px', height: '160px', objectFit: 'contain', background: 'transparent', opacity: 0.85 }}
             />
           </div>
 
