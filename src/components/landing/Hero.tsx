@@ -14,16 +14,16 @@ export function Hero() {
       {/* Warm light gradient background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_40%,_rgba(134,103,88,0.06),_#E9E4DE)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,_rgba(134,103,88,0.04),_transparent)] pointer-events-none" />
-      
+
       {/* Subtle spotlight effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(134,103,88,0.03),_transparent)] blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-5 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '10vh' }}>
           {/* Main Headline */}
-          <h1 
+          <h1
             className="animate-scale-up uppercase"
-            style={{ 
+            style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
               fontStyle: 'italic',
@@ -38,30 +38,35 @@ export function Hero() {
             Attaining the Unattainable
           </h1>
 
-          {/* Clutch logo divider */}
-          <div className="flex justify-center mb-10 md:mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <img 
-              src="/images/clutch-ornament.png" 
-              alt="Clutch ornament" 
-              className="block"
-              width={80}
-              height={80}
-              fetchPriority="high"
-              style={{ width: '110px', height: '110px', objectFit: 'contain', background: 'transparent', opacity: 0.55, mixBlendMode: 'multiply' }}
+          {/* Clutch logo */}
+          <div
+            className="flex justify-center mb-10 md:mb-14 animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <img
+              src="/Clutch2.png"
+              alt="Clutch"
+              style={{
+                width: 'auto',
+                height: 'clamp(90px, 12vw, 140px)',
+              
+                mixBlendMode: 'multiply',
+                display: 'block',
+              }}
             />
           </div>
 
           {/* Subheadline */}
           <p
             className="mb-6 max-w-2xl mx-auto animate-fade-up leading-relaxed"
-            style={{ 
-              animationDelay: "0.3s", 
+            style={{
+              animationDelay: "0.3s",
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 300,
               fontStyle: 'italic',
               fontSize: 'clamp(16px, 2.5vw, 24px)',
-              letterSpacing: '0.05em', 
-              color: '#565250' 
+              letterSpacing: '0.05em',
+              color: '#565250'
             }}
           >
             Luxury personal shopping & sourcing
@@ -70,8 +75,8 @@ export function Hero() {
           {/* Supporting line */}
           <p
             className="mb-16 sm:mb-24 md:mb-28 max-w-md mx-auto animate-fade-up"
-            style={{ 
-              animationDelay: "0.4s", 
+            style={{
+              animationDelay: "0.4s",
               fontFamily: "'Montserrat', sans-serif",
               fontWeight: 500,
               fontSize: '10px',
@@ -155,14 +160,14 @@ export function Hero() {
             className="animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            <div 
+            <div
               className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-5 uppercase"
-              style={{ 
+              style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 500,
                 fontSize: '10px',
-                letterSpacing: '0.2em', 
-                color: '#928377' 
+                letterSpacing: '0.2em',
+                color: '#928377'
               }}
             >
               <span className="hover:text-[#866758] transition-colors duration-400">The Clutch Experience</span>
