@@ -39,15 +39,45 @@ export function Hero() {
           </h1>
 
           {/* Clutch logo divider */}
-          <div className="flex justify-center mb-10 md:mb-14 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <img 
-              src="/images/clutch-ornament.png" 
-              alt="Clutch ornament" 
+          <div
+            className="flex flex-col items-center justify-center mb-12 md:mb-16 animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            {/* Top hairline */}
+            <div
+              aria-hidden
+              style={{
+                width: '120px',
+                height: '1px',
+                background: 'linear-gradient(to right, transparent, rgba(134,103,88,0.35), transparent)',
+                marginBottom: '28px',
+              }}
+            />
+            <img
+              src="/images/clutch-ornament-v2.png"
+              alt="Clutch four-ring monogram"
               className="block"
-              width={80}
-              height={80}
+              width={150}
+              height={150}
               fetchPriority="high"
-              style={{ width: '110px', height: '110px', objectFit: 'contain', background: 'transparent', opacity: 0.55, mixBlendMode: 'multiply' }}
+              style={{
+                width: '150px',
+                height: '150px',
+                objectFit: 'contain',
+                background: 'transparent',
+                opacity: 0.85,
+                filter: 'drop-shadow(0 4px 18px rgba(134,103,88,0.18))',
+              }}
+            />
+            {/* Bottom hairline */}
+            <div
+              aria-hidden
+              style={{
+                width: '120px',
+                height: '1px',
+                background: 'linear-gradient(to right, transparent, rgba(134,103,88,0.35), transparent)',
+                marginTop: '28px',
+              }}
             />
           </div>
 
