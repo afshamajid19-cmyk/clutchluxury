@@ -49,16 +49,19 @@ export function Navigation() {
               handleNavClick("#home");
             }}
             className="flex items-center"
+            aria-label="Clutch home"
           >
             <span
               className="uppercase select-none"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 400,
-                fontSize: '22px',
-                letterSpacing: '0.2em',
-                color: '#928377',
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: 'clamp(24px, 2vw, 30px)',
+                letterSpacing: '0.24em',
+                color: '#777574',
                 lineHeight: 1,
+                textShadow: '0 2px 18px rgba(134, 103, 88, 0.08)',
               }}
             >
               Clutch
@@ -133,7 +136,20 @@ export function Navigation() {
             >
               <div className="flex flex-col h-full">
               <div className="p-6" style={{ borderBottom: '1px solid rgba(134,103,88,0.15)' }}>
-                  <span className="uppercase" style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '22px', letterSpacing: '0.2em', color: '#928377' }}>Clutch</span>
+                  <span
+                    className="uppercase select-none"
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontWeight: 300,
+                      fontStyle: 'italic',
+                      fontSize: '28px',
+                      letterSpacing: '0.22em',
+                      color: '#777574',
+                      lineHeight: 1,
+                    }}
+                  >
+                    Clutch
+                  </span>
                 </div>
                 <div className="flex-1 py-8 px-6">
                   <div className="flex flex-col gap-1">
