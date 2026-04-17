@@ -54,19 +54,19 @@ export function Hero() {
               }}
             />
             <img
-              src="/images/clutch-ornament-v2.png"
+              src="/images/clutch-ornament-3d.png"
               alt="Clutch four-ring monogram"
               className="block"
-              width={220}
-              height={220}
+              width={240}
+              height={240}
               fetchPriority="high"
               style={{
-                width: '220px',
-                height: '220px',
+                width: '240px',
+                height: '240px',
                 objectFit: 'contain',
                 background: 'transparent',
-                opacity: 0.9,
-                filter: 'drop-shadow(0 6px 22px rgba(134,103,88,0.2))',
+                opacity: 1,
+                filter: 'drop-shadow(0 14px 28px rgba(76,55,42,0.22)) drop-shadow(0 4px 8px rgba(76,55,42,0.18))',
               }}
             />
             {/* Bottom hairline */}
