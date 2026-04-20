@@ -75,15 +75,27 @@ export function GuideLayout({
           <div className="absolute top-6 left-6 z-10">
             <Link
               to="/#guides"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-sm transition-all duration-300"
+              className="inline-flex items-center gap-2 rounded-sm border transition-all duration-300 hover:-translate-y-px"
               style={{
-                background: 'rgba(255,255,255,0.15)',
-                backdropFilter: 'blur(10px)',
+                padding: '10px 16px',
+                background: 'rgba(22, 18, 16, 0.14)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                borderColor: 'rgba(255,255,255,0.28)',
+                boxShadow: '0 10px 24px rgba(0,0,0,0.12)',
                 color: '#FFFFFF',
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 500,
                 fontSize: '11px',
                 letterSpacing: '0.1em',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(22, 18, 16, 0.24)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.42)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(22, 18, 16, 0.14)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.28)';
               }}
             >
               <ArrowLeft className="h-4 w-4" />
