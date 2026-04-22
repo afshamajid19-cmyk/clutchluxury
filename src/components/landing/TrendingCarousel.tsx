@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useSettings } from "@/hooks/useSettings";
 import { useZohoTrendingItems } from "@/hooks/useZohoTrendingItems";
+import { openWhatsAppChat } from "@/lib/whatsapp";
 
 function getImageUrl(item: { hero_image_url: string | null; id: string }): string | null {
   const url = item.hero_image_url;
@@ -57,7 +57,6 @@ export function TrendingCarousel() {
   const [startX, setStartX] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { data: settings } = useSettings();
 
   // Fetch trending items from Zoho API only
   const { data: zohoItems, isLoading: zohoLoading } = useZohoTrendingItems();
@@ -214,16 +213,9 @@ export function TrendingCarousel() {
   };
 
   const handleEnquire = (item: typeof items[0]) => {
-    const message = encodeURIComponent(`Hi, I'm interested in ${item.brand} ${item.item_name}`);
-    if (settings?.whatsapp_link) {
-      // Append pre-filled message to existing WhatsApp link
-      const baseUrl = settings.whatsapp_link.split('?')[0];
-      window.open(`${baseUrl}?text=${message}`, "_blank");
-    } else {
-      // Fallback: scroll to contact section
-      const element = document.querySelector("#contact");
-      if (element) element.scrollIntoView({ behavior: "smooth" });
-    }
+    openWhatsAppChat(
+      `Hi, I'm interested in ${item.brand} ${item.item_name}. Please share the details.`
+    );
   };
 
   return (
