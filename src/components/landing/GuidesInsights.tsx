@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import Image from "next/image";
+import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const guides = [
@@ -76,7 +77,7 @@ export function GuidesInsights() {
           {guides.map((guide) => (
             <Link
               key={guide.slug}
-              to={`/guides/${guide.slug}`}
+              href={`/guides/${guide.slug}`}
               className="group rounded-lg overflow-hidden reveal-child"
               style={{
                 background: '#FFFFFF',
@@ -94,11 +95,12 @@ export function GuidesInsights() {
               }}
             >
               <div className="aspect-[16/10] overflow-hidden">
-                <img
+                <Image
                   src={guide.image}
                   alt={guide.title}
+                  width={640}
+                  height={400}
                   className="w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.06]"
-                  loading="lazy"
                 />
               </div>
               <div className="p-6 sm:p-8">

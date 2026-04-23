@@ -1,6 +1,7 @@
 import { MessageCircle, Instagram, ExternalLink } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import type { HomepageSettings } from "@/lib/server/homepage";
 
 function LinktreeIcon({ className }: { className?: string }) {
   return (
@@ -17,8 +18,13 @@ const contactLinks = [
   { key: "linktree_url", label: "Linktree", Icon: ExternalLink, isImage: false },
 ] as const;
 
-export function Contact() {
-  const { data: settings } = useSettings();
+export function Contact({
+  settings: initialSettings,
+}: {
+  settings?: HomepageSettings | null;
+}) {
+  const { data: settingsFromQuery } = useSettings();
+  const settings = initialSettings ?? settingsFromQuery;
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (

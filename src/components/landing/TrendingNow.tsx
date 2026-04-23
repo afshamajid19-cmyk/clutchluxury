@@ -1,9 +1,11 @@
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import type { HomepageTrendingItem } from "@/lib/server/homepage";
 
 const PLACEHOLDER_ITEMS = [0, 1, 2];
 
@@ -87,7 +89,11 @@ function EmptyCards() {
   );
 }
 
-export function TrendingNow() {
+export function TrendingNow({
+  initialItems,
+}: {
+  initialItems?: HomepageTrendingItem[];
+}) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [forceVisible, setForceVisible] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -109,6 +115,7 @@ export function TrendingNow() {
       if (error) throw error;
       return data ?? [];
     },
+    initialData: initialItems,
     staleTime: 60_000,
     retry: 1,
   });
@@ -217,14 +224,13 @@ export function TrendingNow() {
                     className="w-full h-full flex items-center justify-center"
                     style={{ padding: '20px', background: '#FFFFFF' }}
                   >
-                    <img
+                    <Image
                       src={`${item.image_url}?width=600&quality=75`}
                       alt={item.title || "Luxury item"}
                       className="max-w-full max-h-full object-contain transition-transform duration-[800ms] ease-out group-hover:scale-105"
-                      loading="lazy"
-                      decoding="async"
                       width={340}
                       height={453}
+                      unoptimized
                     />
                   </div>
                 </div>

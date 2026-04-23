@@ -1,8 +1,11 @@
+import Image from "next/image";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useZohoTrendingItems } from "@/hooks/useZohoTrendingItems";
+import { SUPABASE_URL } from "@/lib/env";
 import { openWhatsAppChat } from "@/lib/whatsapp";
+import type { HomepageZohoItem } from "@/lib/server/homepage";
 
 function getImageUrl(item: { hero_image_url: string | null; id: string }): string | null {
   const url = item.hero_image_url;
@@ -11,7 +14,7 @@ function getImageUrl(item: { hero_image_url: string | null; id: string }): strin
   if (url.includes("zohoapis.com")) {
     const match = url.match(/items\/(\d+)\/image/);
     const itemId = match ? match[1] : item.id;
-    return `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/zoho-item-image?item_id=${itemId}`;
+    return `${SUPABASE_URL}/functions/v1/zoho-item-image?item_id=${itemId}`;
   }
   return url;
 }
@@ -51,7 +54,11 @@ function getImageUrl(item: { hero_image_url: string | null; id: string }): strin
 // No fallback items - only Zoho API data
 // ====================
 
-export function TrendingCarousel() {
+export function TrendingCarousel({
+  initialItems,
+}: {
+  initialItems?: HomepageZohoItem[];
+}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -61,7 +68,7 @@ export function TrendingCarousel() {
   // Fetch trending items from Zoho API only
   const { data: zohoItems, isLoading: zohoLoading } = useZohoTrendingItems();
   
-  const items = zohoItems || [];
+  const items = initialItems ?? zohoItems ?? [];
 
   const itemCount = items.length;
 
@@ -114,7 +121,7 @@ export function TrendingCarousel() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeIndex, itemCount]);
 
-  if (zohoLoading) {
+  if (!initialItems && zohoLoading) {
     return (
       <section id="trending" className="py-40 md:py-56 relative" style={{ background: '#E9E4DE', minHeight: '800px' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-4xl h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(146,131,119,0.25), transparent)' }} />
@@ -316,14 +323,13 @@ export function TrendingCarousel() {
                             background: 'linear-gradient(to br, #F5F2EE, #E9E4DE)' 
                           }}
                         >
-                          <img
+                          <Image
                             src={getImageUrl(item) || ''}
                             alt={`${item.brand} ${item.item_name} - Authenticated luxury bag from CLUTCH Dubai`}
                             className="max-w-full max-h-full object-contain"
-                            loading="lazy"
-                            decoding="async"
                             width={380}
                             height={507}
+                            unoptimized
                             draggable={false}
                           />
                         </div>

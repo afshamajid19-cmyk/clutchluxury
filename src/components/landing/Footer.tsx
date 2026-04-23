@@ -1,9 +1,13 @@
+import Image from "next/image";
 import { forwardRef } from "react";
 import { useSettings } from "@/hooks/useSettings";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import type { HomepageSettings } from "@/lib/server/homepage";
 
-export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
-  const { data: settings } = useSettings();
+export const Footer = forwardRef<HTMLElement, { settings?: HomepageSettings | null }>(
+function Footer({ settings: initialSettings }, ref) {
+  const { data: settingsFromQuery } = useSettings();
+  const settings = initialSettings ?? settingsFromQuery;
   const { ref: revealRef, isVisible } = useScrollReveal({ threshold: 0.15 });
 
   return (
@@ -52,9 +56,11 @@ export const Footer = forwardRef<HTMLElement>(function Footer(_, ref) {
 
           {/* Logo Divider */}
           <div className={`flex justify-center mb-8 sm:mb-12 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.25s' }}>
-            <img 
+            <Image 
               src="/images/clutch-logo-4c.png" 
               alt="Clutch" 
+              width={50}
+              height={50}
               className="gentle-float"
               style={{ width: '50px', height: '50px', opacity: 0.35 }}
             />

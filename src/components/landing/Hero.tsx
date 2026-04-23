@@ -1,9 +1,16 @@
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSettings } from "@/hooks/useSettings";
+import type { HomepageSettings } from "@/lib/server/homepage";
 
-export function Hero() {
-  const { data: settings } = useSettings();
+type HeroProps = {
+  settings?: HomepageSettings | null;
+};
+
+export function Hero({ settings: initialSettings }: HeroProps) {
+  const { data: settingsFromQuery } = useSettings();
+  const settings = initialSettings ?? settingsFromQuery;
 
   return (
     <section
@@ -24,7 +31,7 @@ export function Hero() {
           <h1
             className="animate-scale-up uppercase"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-heading), serif",
               fontWeight: 300,
               fontStyle: 'italic',
               fontSize: 'clamp(28px, 5vw, 58px)',
@@ -43,9 +50,12 @@ export function Hero() {
             className="flex justify-center mb-10 md:mb-14 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <img
+            <Image
               src="/Clutch2.png"
               alt="Clutch"
+              width={320}
+              height={140}
+              priority
               style={{
                 width: 'auto',
                 height: 'clamp(90px, 12vw, 140px)',
@@ -61,7 +71,7 @@ export function Hero() {
             className="mb-6 max-w-2xl mx-auto animate-fade-up leading-relaxed"
             style={{
               animationDelay: "0.3s",
-              fontFamily: "'Montserrat', sans-serif",
+              fontFamily: "var(--font-body), sans-serif",
               fontWeight: 300,
               fontStyle: 'italic',
               fontSize: 'clamp(16px, 2.5vw, 24px)',
@@ -77,7 +87,7 @@ export function Hero() {
             className="mb-16 sm:mb-24 md:mb-28 max-w-md mx-auto animate-fade-up"
             style={{
               animationDelay: "0.4s",
-              fontFamily: "'Montserrat', sans-serif",
+              fontFamily: "var(--font-body), sans-serif",
               fontWeight: 500,
               fontSize: '10px',
               letterSpacing: '0.2em',
@@ -99,7 +109,7 @@ export function Hero() {
               style={{
                 background: '#9B9B9B',
                 color: '#FFFFFF',
-                fontFamily: "'Montserrat', sans-serif",
+                fontFamily: "var(--font-body), sans-serif",
                 fontWeight: 500,
                 fontSize: '11px',
                 letterSpacing: '0.2em',
@@ -129,7 +139,7 @@ export function Hero() {
                 border: '2px solid #6B6B6B',
                 background: 'transparent',
                 color: '#6B6B6B',
-                fontFamily: "'Montserrat', sans-serif",
+                fontFamily: "var(--font-body), sans-serif",
                 fontWeight: 500,
                 fontSize: '11px',
                 letterSpacing: '0.2em',
@@ -163,7 +173,7 @@ export function Hero() {
             <div
               className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-5 uppercase"
               style={{
-                fontFamily: "'Montserrat', sans-serif",
+                fontFamily: "var(--font-body), sans-serif",
                 fontWeight: 500,
                 fontSize: '10px',
                 letterSpacing: '0.2em',

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -10,9 +12,7 @@ const ADMIN_PASSWORD = "clutch2026";
 const STORAGE_KEY = "clutch_trending_auth";
 
 export default function TrendingUpload() {
-  const [authenticated, setAuthenticated] = useState(() => {
-    return localStorage.getItem(STORAGE_KEY) === "true";
-  });
+  const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [dragOver, setDragOver] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
@@ -22,6 +22,12 @@ export default function TrendingUpload() {
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setAuthenticated(localStorage.getItem(STORAGE_KEY) === "true");
+    }
+  }, []);
 
   const handleLogin = () => {
     if (password === ADMIN_PASSWORD) {

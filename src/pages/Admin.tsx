@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { Lock, ArrowLeft, Upload, Trash2, GripVertical, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -165,7 +167,7 @@ export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passcode, setPasscode] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     const auth = sessionStorage.getItem("clutch_admin_auth");
@@ -204,7 +206,7 @@ export default function Admin() {
             {error && <p className="text-sm text-destructive text-center">{error}</p>}
             <Button type="submit" className="w-full h-11">Access Dashboard</Button>
           </form>
-          <Button variant="ghost" className="w-full mt-4 text-muted-foreground" onClick={() => navigate("/")}>
+          <Button variant="ghost" className="w-full mt-4 text-muted-foreground" onClick={() => router.push("/")}>
             <ArrowLeft className="h-4 w-4 mr-2" />Back to site
           </Button>
         </div>
@@ -222,7 +224,7 @@ export default function Admin() {
               <span className="text-[10px] tracking-editorial uppercase text-muted-foreground bg-secondary px-2.5 py-1 rounded-sm">Admin</span>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="ghost" size="sm" onClick={() => navigate("/")} className="text-muted-foreground">View Site</Button>
+              <Button variant="ghost" size="sm" onClick={() => router.push("/")} className="text-muted-foreground">View Site</Button>
               <Button variant="outline" size="sm" onClick={handleLogout}>Logout</Button>
             </div>
           </div>

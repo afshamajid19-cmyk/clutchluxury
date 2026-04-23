@@ -1,6 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 
 interface GuideLayoutProps {
   title: string;
@@ -27,25 +29,12 @@ export function GuideLayout({
   children,
   relatedGuides,
 }: GuideLayoutProps) {
-  const canonicalUrl = `https://clutchluxury.lovable.app/guides/${slug}`;
-
   return (
-    <>
-      <Helmet>
-        <title>{title} | Clutch Luxury Guides</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords} />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={heroImage} />
-        <meta property="article:published_time" content={publishDate} />
-        <meta property="article:author" content="Clutch Concierge" />
-        <meta property="article:section" content="Luxury Guides" />
-        <script type="application/ld+json">
-          {JSON.stringify({
+    <article className="min-h-screen" style={{ background: '#F9F7F5' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: title,
@@ -59,22 +48,19 @@ export function GuideLayout({
               logo: { "@type": "ImageObject", url: "/images/clutch-logo-ccc.jpg" },
             },
             description,
-            mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-          })}
-        </script>
-      </Helmet>
-
-      <article className="min-h-screen" style={{ background: '#F9F7F5' }}>
+          }),
+        }}
+      />
         {/* Hero */}
         <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-          <img src={heroImage} alt={title} className="w-full h-full object-cover" />
+          <Image src={heroImage} alt={title} fill className="object-cover" priority />
           <div
             className="absolute inset-0"
             style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent 60%)' }}
           />
           <div className="absolute top-6 left-6 z-10">
             <Link
-              to="/#guides"
+              href="/#guides"
               className="inline-flex items-center gap-2 rounded-sm border transition-all duration-300 hover:-translate-y-px"
               style={{
                 padding: '10px 16px',
@@ -225,7 +211,7 @@ export function GuideLayout({
                 {relatedGuides.map((g) => (
                   <Link
                     key={g.slug}
-                    to={`/guides/${g.slug}`}
+                    href={`/guides/${g.slug}`}
                     className="group rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1"
                     style={{
                       background: '#F5F2EE',
@@ -233,9 +219,11 @@ export function GuideLayout({
                     }}
                   >
                     <div className="aspect-[16/9] overflow-hidden">
-                      <img
+                      <Image
                         src={g.image}
                         alt={g.title}
+                        width={640}
+                        height={360}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
@@ -257,7 +245,6 @@ export function GuideLayout({
             </div>
           )}
         </div>
-      </article>
-    </>
+    </article>
   );
 }
