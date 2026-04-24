@@ -66,7 +66,7 @@ export function Contact({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex flex-col items-center gap-4 sm:gap-6 py-8 sm:py-14 px-4 sm:px-8 rounded-lg transition-all duration-[400ms] cursor-pointer reveal-child"
+                  className="group relative flex flex-col items-center gap-4 sm:gap-6 py-8 sm:py-14 px-4 sm:px-8 rounded-lg transition-all duration-300 cursor-pointer reveal-child"
                   style={{
                     background: '#F5F2EE',
                     border: '1px solid rgba(134,103,88,0.2)'
@@ -89,18 +89,18 @@ export function Contact({
                       <img 
                         src={item.imageSrc} 
                         alt={item.label}
-                        className="h-10 w-10 sm:h-[52px] sm:w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110 rounded-full object-cover"
+                        className="h-10 w-10 sm:h-[52px] sm:w-[52px] transition-all duration-300 relative z-10 group-hover:scale-110 rounded-full object-cover"
                       />
                     ) : item.Icon ? (
                       <item.Icon 
-                        className="h-10 w-10 sm:h-[52px] sm:w-[52px] transition-all duration-[400ms] relative z-10 group-hover:scale-110 group-hover:-translate-y-1" 
+                        className="h-10 w-10 sm:h-[52px] sm:w-[52px] transition-all duration-300 relative z-10 group-hover:scale-110 group-hover:-translate-y-1" 
                         style={{ color: '#866758' }}
                       />
                     ) : null}
                   </div>
                   
                   <span 
-                    className="uppercase transition-colors duration-[400ms]"
+                    className="uppercase transition-colors duration-300"
                     style={{ 
                       fontFamily: "'Montserrat', sans-serif",
                       fontWeight: 500,

@@ -105,7 +105,7 @@ export function Hero({ settings: initialSettings }: HeroProps) {
           >
             <Button
               size="lg"
-              className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-[400ms] hover:-translate-y-1 hover:scale-[1.02] border-0"
+              className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] border-0"
               style={{
                 background: '#9B9B9B',
                 color: '#FFFFFF',
@@ -134,7 +134,7 @@ export function Hero({ settings: initialSettings }: HeroProps) {
             <Button
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02]"
+              className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-300 hover:scale-[1.02]"
               style={{
                 border: '2px solid #6B6B6B',
                 background: 'transparent',

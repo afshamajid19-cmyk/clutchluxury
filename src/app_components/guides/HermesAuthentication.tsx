@@ -191,7 +191,7 @@ export default function HermesAuthentication() {
           href="https://legitgrails.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block sm:inline-block w-full sm:w-auto rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02] hover:-translate-y-px text-center"
+          className="inline-block sm:inline-block w-full sm:w-auto rounded-[2px] uppercase transition-all duration-300 hover:scale-[1.02] hover:-translate-y-px text-center"
           style={{
             fontFamily: "'Montserrat', sans-serif",
             fontWeight: 500,

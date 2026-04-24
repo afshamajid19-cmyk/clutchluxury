@@ -70,7 +70,7 @@ export function FAQ() {
                 }}
               >
                 <AccordionTrigger 
-                  className="py-5 sm:py-7 px-5 sm:px-8 hover:no-underline text-left transition-colors duration-[400ms]"
+                  className="py-5 sm:py-7 px-5 sm:px-8 hover:no-underline text-left transition-colors duration-300"
                   style={{ 
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: 400,

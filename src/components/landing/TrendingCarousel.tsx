@@ -418,7 +418,7 @@ export function TrendingCarousel({
                               e.stopPropagation();
                               handleEnquire(item);
                             }}
-                            className="inline-flex items-center rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02]"
+                            className="inline-flex items-center rounded-[2px] uppercase transition-all duration-300 hover:scale-[1.02]"
                             style={{
                               fontFamily: "'Montserrat', sans-serif",
                               fontWeight: 500,
@@ -523,7 +523,7 @@ export function TrendingCarousel({
             href="https://chat.whatsapp.com/GaCK07tezCh46tdTHEKFti"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 transition-all duration-[400ms] border-b pb-1"
+            className="inline-flex items-center gap-3 transition-all duration-300 border-b pb-1"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 400,

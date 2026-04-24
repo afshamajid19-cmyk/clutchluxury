@@ -51,7 +51,7 @@ export function HowItWorks() {
               >
                 {/* Step number */}
                 <div 
-                  className="mb-6 sm:mb-8 transition-all duration-[400ms] group-hover:scale-110 number-reveal"
+                  className="mb-6 sm:mb-8 transition-all duration-300 group-hover:scale-110 number-reveal"
                   style={{ 
                     fontFamily: "'Cormorant Garamond', serif",
                     fontWeight: 300,

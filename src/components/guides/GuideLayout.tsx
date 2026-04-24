@@ -172,7 +172,7 @@ export function GuideLayout({
               onClick={() => {
                 window.location.href = "/#contact";
               }}
-              className="inline-block rounded-[2px] uppercase transition-all duration-[400ms] hover:scale-[1.02]"
+              className="inline-block rounded-[2px] uppercase transition-all duration-300 hover:scale-[1.02]"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 500,
