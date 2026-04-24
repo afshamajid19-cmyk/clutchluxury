@@ -205,7 +205,7 @@ export function TrendingNow({
             {items.map((item) => (
               <div
                 key={item.id}
-                className="group flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden transition-all duration-[400ms] hover:-translate-y-2 snap-start"
+                className="group flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 snap-start"
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid rgba(134,103,88,0.12)',
@@ -227,7 +227,7 @@ export function TrendingNow({
                     <Image
                       src={`${item.image_url}?width=600&quality=75`}
                       alt={item.title || "Luxury item"}
-                      className="max-w-full max-h-full object-contain transition-transform duration-[800ms] ease-out group-hover:scale-105"
+                      className="max-w-full max-h-full object-contain transition-transform duration-700 ease-out group-hover:scale-105"
                       width={340}
                       height={453}
                       unoptimized

@@ -100,7 +100,7 @@ export function GuidesInsights() {
                   alt={guide.title}
                   width={640}
                   height={400}
-                  className="w-full h-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.06]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                 />
               </div>
               <div className="p-6 sm:p-8">
@@ -143,7 +143,7 @@ export function GuidesInsights() {
                   {guide.excerpt}
                 </p>
                 <span
-                  className="inline-flex items-center transition-all duration-[400ms] group-hover:tracking-wider"
+                  className="inline-flex items-center transition-all duration-300 group-hover:tracking-wider"
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
                     fontWeight: 500,
