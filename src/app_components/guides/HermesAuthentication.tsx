@@ -1,3 +1,5 @@
+"use client";
+
 import { GuideLayout } from "@/components/guides/GuideLayout";
 
 const comparisonSections = [

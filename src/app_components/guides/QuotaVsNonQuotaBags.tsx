@@ -1,3 +1,5 @@
+"use client";
+
 import { GuideLayout } from "@/components/guides/GuideLayout";
 
 export default function QuotaVsNonQuotaBags() {
@@ -126,3 +128,4 @@ const bodyStyle: React.CSSProperties = {
   color: '#565250',
   marginBottom: '20px',
 };
+
