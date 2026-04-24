@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import QuotaVsNonQuotaBags from "@/pages/guides/QuotaVsNonQuotaBags";
+import QuotaVsNonQuotaBags from "@/app_components/guides/QuotaVsNonQuotaBags";
 
 export const metadata: Metadata = {
   title: "Quota Bags vs Non-Quota Bags",

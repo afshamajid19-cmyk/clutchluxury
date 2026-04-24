@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HermesColorGuide from "@/pages/guides/HermesColorGuide";
+import HermesColorGuide from "@/app_components/guides/HermesColorGuide";
 
 export const metadata: Metadata = {
   title: "Hermes Color Guide",

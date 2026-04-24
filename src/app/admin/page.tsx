@@ -1,4 +1,4 @@
-import Admin from "@/pages/Admin";
+import Admin from "@/app_components/Admin";
 
 export const dynamic = "force-dynamic";
 

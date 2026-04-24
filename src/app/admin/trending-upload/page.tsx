@@ -1,4 +1,4 @@
-import TrendingUpload from "@/pages/TrendingUpload";
+import TrendingUpload from "@/app_components/TrendingUpload";
 
 export const dynamic = "force-dynamic";
 

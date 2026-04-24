@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HermesAuthentication from "@/pages/guides/HermesAuthentication";
+import HermesAuthentication from "@/app_components/guides/HermesAuthentication";
 
 export const metadata: Metadata = {
   title: "How to Authenticate a Hermes Bag",

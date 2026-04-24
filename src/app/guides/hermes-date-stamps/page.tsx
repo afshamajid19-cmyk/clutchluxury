@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HermesDateStamps from "@/pages/guides/HermesDateStamps";
+import HermesDateStamps from "@/app_components/guides/HermesDateStamps";
 
 export const metadata: Metadata = {
   title: "How to Read Hermes Date Stamps",

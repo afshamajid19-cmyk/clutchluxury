@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HermesLeatherTypes from "@/pages/guides/HermesLeatherTypes";
+import HermesLeatherTypes from "@/app_components/guides/HermesLeatherTypes";
 
 export const metadata: Metadata = {
   title: "How to Identify Hermes Leather Types",

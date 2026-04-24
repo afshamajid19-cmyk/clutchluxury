@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ChanelAuthentication from "@/pages/guides/ChanelAuthentication";
+import ChanelAuthentication from "@/app_components/guides/ChanelAuthentication";
 
 export const metadata: Metadata = {
   title: "How to Authenticate a Chanel Bag",
