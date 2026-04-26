@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AE",
   },
+  icons: {
+    icon: "/clutch.png",
+  },
 };
 
 export default function RootLayout({
