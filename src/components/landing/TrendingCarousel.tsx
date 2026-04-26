@@ -356,7 +356,7 @@ export function TrendingCarousel({
                       />
                       
                       {/* Trending Badge */}
-                      <div className="absolute top-5 left-5 z-10">
+                      {/* <div className="absolute top-5 left-5 z-10">
                         <span 
                           className="inline-block px-5 py-2.5 rounded-[2px] uppercase"
                           style={{ 
@@ -370,7 +370,7 @@ export function TrendingCarousel({
                         >
                           In Demand
                         </span>
-                      </div>
+                      </div> */}
 
                       {/* Content positioned over gradient */}
                       <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
