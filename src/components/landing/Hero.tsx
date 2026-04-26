@@ -15,15 +15,24 @@ export function Hero({ settings: initialSettings }: HeroProps) {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center pt-16 md:pt-20 relative texture-grain vignette particles overflow-hidden"
-      style={{ background: '#E9E4DE' }}
+      className="min-h-[100dvh] flex flex-col justify-center pt-20 pb-12 relative texture-grain vignette particles overflow-hidden bg-[#1A1A1A]"
     >
-      {/* Warm light gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_40%,_rgba(134,103,88,0.06),_#E9E4DE)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,_rgba(134,103,88,0.04),_transparent)] pointer-events-none" />
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/HeorImage1.jpeg"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover object-center opacity-80"
+          quality={100}
+        />
+        {/* Dark overlay for depth and readability */}
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
-      {/* Subtle spotlight effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(134,103,88,0.03),_transparent)] blur-3xl pointer-events-none" />
+      {/* Subtle light effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_60%_at_50%_40%,_rgba(255,255,255,0.05),_transparent)] pointer-events-none" />
 
       <div className="container mx-auto px-5 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '10vh' }}>
@@ -34,12 +43,12 @@ export function Hero({ settings: initialSettings }: HeroProps) {
               fontFamily: "var(--font-heading), serif",
               fontWeight: 300,
               fontStyle: 'italic',
-              fontSize: 'clamp(28px, 5vw, 58px)',
-              color: '#6B6B6B',
-              textShadow: '0 2px 30px rgba(134, 103, 88, 0.1)',
+              fontSize: 'clamp(24px, 6vw, 58px)',
+              color: '#FFFFFF',
+              textShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
               letterSpacing: '0.2em',
-              lineHeight: 1.25,
-              marginBottom: '3rem',
+              lineHeight: 1.2,
+              marginBottom: '2.5rem',
             }}
           >
             Attaining the Unattainable
@@ -47,7 +56,7 @@ export function Hero({ settings: initialSettings }: HeroProps) {
 
           {/* Clutch logo */}
           <div
-            className="flex justify-center mb-10 md:mb-14 animate-fade-up"
+            className="flex justify-center mx-auto mb-8 md:mb-12 animate-fade-up w-full max-w-[180px] md:max-w-[240px]"
             style={{ animationDelay: "0.2s" }}
           >
             <Image
@@ -57,10 +66,9 @@ export function Hero({ settings: initialSettings }: HeroProps) {
               height={140}
               priority
               style={{
-                width: 'auto',
-                height: 'clamp(90px, 12vw, 140px)',
-              
-                mixBlendMode: 'multiply',
+                width: '100%',
+                height: 'auto',
+                filter: 'brightness(0) invert(1)',
                 display: 'block',
               }}
             />
@@ -74,9 +82,10 @@ export function Hero({ settings: initialSettings }: HeroProps) {
               fontFamily: "var(--font-body), sans-serif",
               fontWeight: 300,
               fontStyle: 'italic',
-              fontSize: 'clamp(16px, 2.5vw, 24px)',
+              fontSize: 'clamp(15px, 3vw, 22px)',
               letterSpacing: '0.05em',
-              color: '#565250'
+              color: 'rgba(255, 255, 255, 0.95)',
+              textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)'
             }}
           >
             Luxury personal shopping & sourcing
@@ -89,9 +98,9 @@ export function Hero({ settings: initialSettings }: HeroProps) {
               animationDelay: "0.4s",
               fontFamily: "var(--font-body), sans-serif",
               fontWeight: 500,
-              fontSize: '10px',
+              fontSize: '9px',
               letterSpacing: '0.2em',
-              color: '#928377',
+              color: 'rgba(255, 255, 255, 0.5)',
               textTransform: 'uppercase',
             }}
           >
@@ -107,21 +116,21 @@ export function Hero({ settings: initialSettings }: HeroProps) {
               size="lg"
               className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] border-0"
               style={{
-                background: '#9B9B9B',
-                color: '#FFFFFF',
+                background: '#FFFFFF',
+                color: '#000000',
                 fontFamily: "var(--font-body), sans-serif",
                 fontWeight: 500,
                 fontSize: '11px',
                 letterSpacing: '0.2em',
-                padding: '16px 48px',
+                padding: '14px 40px',
                 height: '48px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#7A7A7A';
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(107,107,107,0.3)';
+                e.currentTarget.style.background = '#F0F0F0';
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,255,255,0.2)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#9B9B9B';
+                e.currentTarget.style.background = '#FFFFFF';
                 e.currentTarget.style.boxShadow = 'none';
               }}
               onClick={() => {
@@ -136,23 +145,23 @@ export function Hero({ settings: initialSettings }: HeroProps) {
               size="lg"
               className="w-full sm:w-auto min-w-[240px] rounded-[2px] uppercase transition-all duration-300 hover:scale-[1.02]"
               style={{
-                border: '2px solid #6B6B6B',
+                border: '2px solid rgba(255,255,255,0.8)',
                 background: 'transparent',
-                color: '#6B6B6B',
+                color: '#FFFFFF',
                 fontFamily: "var(--font-body), sans-serif",
                 fontWeight: 500,
                 fontSize: '11px',
                 letterSpacing: '0.2em',
-                padding: '16px 48px',
+                padding: '14px 40px',
                 height: '48px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#6B6B6B';
-                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.background = '#FFFFFF';
+                e.currentTarget.style.color = '#000000';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = '#6B6B6B';
+                e.currentTarget.style.color = '#FFFFFF';
               }}
               onClick={() => {
                 if (settings?.whatsapp_link) {
@@ -175,18 +184,18 @@ export function Hero({ settings: initialSettings }: HeroProps) {
               style={{
                 fontFamily: "var(--font-body), sans-serif",
                 fontWeight: 500,
-                fontSize: '10px',
+                fontSize: '9px',
                 letterSpacing: '0.2em',
-                color: '#928377'
+                color: 'rgba(255, 255, 255, 0.4)'
               }}
             >
-              <span className="hover:text-[#866758] transition-colors duration-400">The Clutch Experience</span>
-              <span className="hidden sm:inline" style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
-              <span className="hover:text-[#866758] transition-colors duration-400">Private Sourcing</span>
-              <span className="hidden sm:inline" style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
-              <span className="hover:text-[#866758] transition-colors duration-400">International delivery</span>
-              <span className="hidden sm:inline" style={{ color: 'rgba(134,103,88,0.4)' }}>·</span>
-              <span className="hover:text-[#866758] transition-colors duration-400">Since 2017</span>
+              <span className="hover:text-white transition-colors duration-400">The Clutch Experience</span>
+              <span className="hidden sm:inline" style={{ color: 'rgba(255,255,255,0.15)' }}>·</span>
+              <span className="hover:text-white transition-colors duration-400">Private Sourcing</span>
+              <span className="hidden sm:inline" style={{ color: 'rgba(255,255,255,0.15)' }}>·</span>
+              <span className="hover:text-white transition-colors duration-400">International delivery</span>
+              <span className="hidden sm:inline" style={{ color: 'rgba(255,255,255,0.15)' }}>·</span>
+              <span className="hover:text-white transition-colors duration-400">Since 2017</span>
             </div>
           </div>
         </div>
