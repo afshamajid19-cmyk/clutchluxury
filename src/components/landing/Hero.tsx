@@ -20,7 +20,7 @@ export function Hero({ settings: initialSettings }: HeroProps) {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/HeorImage1.jpeg"
+          src="/HeroImageNew.jpeg"
           alt="Hero Background"
           fill
           priority
