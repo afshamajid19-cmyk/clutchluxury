@@ -143,6 +143,10 @@ export default {
           "0%": { width: "0" },
           "100%": { width: "6rem" },
         },
+        "grow-v": {
+          "0%": { height: "0", opacity: "0" },
+          "100%": { height: "100%", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -153,6 +157,7 @@ export default {
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "width-grow": "width-grow 1s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "grow-v": "grow-v 2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
     },
   },
