@@ -15,6 +15,7 @@ import type {
   HomepageTrendingItem,
   HomepageZohoItem,
 } from "@/lib/server/homepage";
+import { SplashVideo } from "@/components/landing/SplashVideo";
 
 const TrendingCarousel = dynamic(
   () =>
@@ -61,6 +62,7 @@ export function HomePageShell({
 }: HomePageShellProps) {
   return (
     <div className="min-h-screen bg-background">
+      <SplashVideo />
       <ScrollProgress />
       <Navigation />
       <main>
