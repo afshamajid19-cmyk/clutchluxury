@@ -75,14 +75,7 @@ export function Contact({
 
           {/* Elegant Divider */}
           <div className={`my-16 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.25s' }}>
-            <div className="relative h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(134,103,88,0.3), transparent)' }}>
-              <div 
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-serif text-[10px] tracking-[0.2em] px-4"
-                style={{ background: '#E9E4DE', color: '#866758' }}
-              >
-                ◆
-              </div>
-            </div>
+            <div className="h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(134,103,88,0.3), transparent)' }} />
           </div>
 
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.3s' }}>
