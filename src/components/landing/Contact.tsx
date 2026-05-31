@@ -54,6 +54,37 @@ export function Contact({
           </p>
           <div className="mb-14 sm:mb-20" />
 
+          {/* JotForm Sourcing Request Form */}
+          <div 
+            className={`w-full overflow-hidden scroll-reveal ${isVisible ? 'revealed' : ''}`} 
+            style={{ 
+              transitionDelay: '0.2s',
+              border: 'none',
+              boxShadow: 'none'
+            }}
+          >
+            <iframe
+              id="clutch-sourcing-form"
+              title="Clutch Sourcing Request"
+              src="https://form.jotform.com/261504428051045"
+              width="100%"
+              style={{ border: 'none', minHeight: '1450px', background: 'transparent', boxShadow: 'none' }}
+              scrolling="auto"
+            />
+          </div>
+
+          {/* Elegant Divider */}
+          <div className={`my-16 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.25s' }}>
+            <div className="relative h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(134,103,88,0.3), transparent)' }}>
+              <div 
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-serif text-[10px] tracking-[0.2em] px-4"
+                style={{ background: '#E9E4DE', color: '#866758' }}
+              >
+                ◆
+              </div>
+            </div>
+          </div>
+
           <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-10 scroll-reveal ${isVisible ? 'revealed' : ''}`} style={{ transitionDelay: '0.3s' }}>
             {contactLinks.map((item) => {
               const { key, label, Icon } = item;

@@ -134,6 +134,14 @@
     }
   }
 
+  /* Prevent third-party toast/notification sections from inheriting layout padding */
+  section[aria-live],
+  section[aria-label*="Notifications"] {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    position: static !important;
+  }
+
   /* Refined input focus states */
   input:focus, textarea:focus, select:focus {
     outline: none;
