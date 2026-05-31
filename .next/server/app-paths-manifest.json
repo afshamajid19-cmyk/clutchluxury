@@ -1,3 +1,14 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/guides/chanel-authentication/page": "app/guides/chanel-authentication/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/trending-upload/page": "app/admin/trending-upload/page.js",
+  "/guides/hermes-authentication/page": "app/guides/hermes-authentication/page.js",
+  "/guides/hermes-date-stamps/page": "app/guides/hermes-date-stamps/page.js",
+  "/guides/quota-vs-non-quota-bags/page": "app/guides/quota-vs-non-quota-bags/page.js",
+  "/guides/hermes-leather-types/page": "app/guides/hermes-leather-types/page.js",
+  "/guides/hermes-color-guide/page": "app/guides/hermes-color-guide/page.js",
   "/page": "app/page.js"
 }

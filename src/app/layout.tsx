@@ -22,11 +22,12 @@ const bodyFont = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Clutch Luxury Fashion Sourcing | Dubai",
+    default:
+      "Clutch Concierge | Luxury Sourcing Dubai — Brand New Items, Worldwide Delivery",
     template: "%s | CLUTCH",
   },
   description:
-    "Luxury fashion sourcing in Dubai for authenticated Hermes, Chanel, and designer handbags with worldwide delivery.",
+    "Clutch is a luxury concierge that sources brand-new Hermes, Chanel, and Rolex for buyers worldwide. Submit a sourcing request. Ships from Dubai.",
   alternates: {
     canonical: "/",
   },

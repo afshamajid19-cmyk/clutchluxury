@@ -5,9 +5,10 @@ import { getHomepageData } from "@/lib/server/homepage";
 
 export const dynamic = "force-dynamic";
 
-const homepageTitle = "Clutch Luxury Fashion Sourcing | Dubai";
+const homepageTitle =
+  "Clutch Concierge | Luxury Sourcing Dubai — Brand New Items, Worldwide Delivery";
 const homepageDescription =
-  "Luxury fashion sourcing in Dubai for authenticated Hermes, Chanel, and designer handbags with worldwide delivery.";
+  "Clutch is a luxury concierge that sources brand-new Hermes, Chanel, and Rolex for buyers worldwide. Submit a sourcing request. Ships from Dubai.";
 
 export const metadata: Metadata = {
   title: homepageTitle,
@@ -35,14 +36,6 @@ export const metadata: Metadata = {
     description: homepageDescription,
     images: [`${SITE_URL}/images/clutch-logo-ccc.jpg`],
   },
-  keywords: [
-    "pre-owned Hermes Dubai",
-    "pre-owned Chanel Dubai",
-    "luxury bags Dubai",
-    "authenticated luxury handbags",
-    "Birkin Dubai",
-    "Kelly Dubai",
-  ],
 };
 
 export default async function HomePage() {

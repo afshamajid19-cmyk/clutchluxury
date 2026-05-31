@@ -29,27 +29,26 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>CLUTCH | Pre-Owned Hermès & Luxury Bags | Dubai</title>
-        <meta name="description" content="Dubai's most trusted source for authenticated pre-owned Hermès, Chanel & luxury handbags. Personal shopping, global sourcing, and worldwide delivery since 2017." />
+        <title>Clutch Concierge | Luxury Sourcing Dubai — Brand New Items, Worldwide Delivery</title>
+        <meta name="description" content="Clutch is a luxury concierge that sources brand-new Hermes, Chanel, and Rolex for buyers worldwide. Submit a sourcing request. Ships from Dubai." />
         <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="luxury sourcing, personal shopping, Dubai, Hermès, Chanel, Rolex, luxury bags, authenticated luxury, pre-owned luxury, Birkin, Kelly" />
         <meta name="geo.region" content="AE-DU" />
         <meta name="geo.placename" content="Dubai" />
-        <link rel="canonical" href="https://clutchluxury.lovable.app" />
-        <meta property="og:title" content="CLUTCH | Pre-Owned Hermès & Luxury Bags | Dubai" />
-        <meta property="og:description" content="Dubai's most trusted source for authenticated pre-owned Hermès, Chanel & luxury handbags. Personal shopping, global sourcing, and worldwide delivery since 2017." />
+        <link rel="canonical" href="https://www.clutchluxurysourcing.com/" />
+        <meta property="og:title" content="Clutch Concierge | Luxury Sourcing Dubai — Brand New Items, Worldwide Delivery" />
+        <meta property="og:description" content="Clutch is a luxury concierge that sources brand-new Hermes, Chanel, and Rolex for buyers worldwide. Submit a sourcing request. Ships from Dubai." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://clutchluxury.lovable.app" />
-        <meta property="og:image" content="/images/clutch-logo-ccc.jpg" />
+        <meta property="og:url" content="https://www.clutchluxurysourcing.com/" />
+        <meta property="og:image" content="https://www.clutchluxurysourcing.com/images/clutch-logo-ccc.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Store",
             name: "CLUTCH",
             alternateName: "Clutch Luxury Sourcing",
-            description: "Authenticated pre-owned luxury handbags. Personal shopping and sourcing service based in Dubai.",
-            url: "https://clutchluxury.lovable.app",
-            logo: "/images/clutch-logo-ccc.jpg",
+            description: "Clutch is a luxury concierge that sources brand-new Hermes, Chanel, and Rolex for buyers worldwide. Submit a sourcing request. Ships from Dubai.",
+            url: "https://www.clutchluxurysourcing.com",
+            logo: "https://www.clutchluxurysourcing.com/images/clutch-logo-ccc.jpg",
             foundingDate: "2017",
             address: { "@type": "PostalAddress", addressRegion: "Dubai", addressCountry: "AE" },
             areaServed: { "@type": "Place", name: "Worldwide" },

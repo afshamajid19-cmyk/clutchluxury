@@ -1,5 +1,5 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://clutchluxury.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.clutchluxurysourcing.com";
 
 export const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL ||

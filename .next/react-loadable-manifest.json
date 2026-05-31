@@ -1,20 +1,26 @@
 {
-  "..\\node_modules\\next\\dist\\client\\dev\\hot-reloader\\app\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts": {
-    "id": "..\\node_modules\\next\\dist\\client\\dev\\hot-reloader\\app\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts",
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
+    "id": 5139,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_next_dist_client_dev_noop-turbopack-hmr_js.js"
+      "static/chunks/139.e8e07991ffedd534.js"
+    ]
+  },
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": 1646,
+    "files": [
+      "static/chunks/265.4dcceddb494d9966.js"
     ]
   },
   "components\\landing\\HomePageShell.tsx -> @/components/landing/TrendingCarousel": {
-    "id": "components\\landing\\HomePageShell.tsx -> @/components/landing/TrendingCarousel",
+    "id": 5789,
     "files": [
-      "static/chunks/_app-pages-browser_src_components_landing_TrendingCarousel_tsx.js"
+      "static/chunks/789.4841b3e90fce3386.js"
     ]
   },
   "components\\landing\\HomePageShell.tsx -> @/components/landing/TrendingNow": {
-    "id": "components\\landing\\HomePageShell.tsx -> @/components/landing/TrendingNow",
+    "id": 658,
     "files": [
-      "static/chunks/_app-pages-browser_src_components_landing_TrendingNow_tsx.js"
+      "static/chunks/658.022b0bb1df847738.js"
     ]
   }
 }
