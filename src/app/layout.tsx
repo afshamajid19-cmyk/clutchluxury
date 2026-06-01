@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Clutch Concierge | Luxury Sourcing Dubai — Brand New Items, Worldwide Delivery",
+      "Clutch | Luxury Sourcing Concierge Dubai - Hermès, Chanel & Rolex, New & Pre-Owned",
     template: "%s | CLUTCH",
   },
   description:
-    "Clutch is a luxury concierge that sources brand-new Hermes, Chanel, and Rolex for buyers worldwide. Submit a sourcing request. Ships from Dubai.",
+    "Clutch is Dubai’s luxury sourcing concierge - we source authenticated Hermès, Chanel, Rolex and more, new and pre-owned, for buyers worldwide. Submit a request today.",
   alternates: {
     canonical: "/",
   },

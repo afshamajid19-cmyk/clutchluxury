@@ -6,9 +6,9 @@ import { getHomepageData } from "@/lib/server/homepage";
 export const dynamic = "force-dynamic";
 
 const homepageTitle =
-  "Clutch Concierge | Luxury Sourcing Dubai — Brand New Items, Worldwide Delivery";
+  "Clutch | Luxury Sourcing Concierge Dubai - Hermès, Chanel & Rolex, New & Pre-Owned";
 const homepageDescription =
-  "Clutch is a luxury concierge that sources brand-new Hermes, Chanel, and Rolex for buyers worldwide. Submit a sourcing request. Ships from Dubai.";
+  "Clutch is Dubai’s luxury sourcing concierge - we source authenticated Hermès, Chanel, Rolex and more, new and pre-owned, for buyers worldwide. Submit a request today.";
 
 export const metadata: Metadata = {
   title: homepageTitle,
