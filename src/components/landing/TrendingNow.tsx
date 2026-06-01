@@ -37,7 +37,7 @@ function SkeletonCards() {
       {PLACEHOLDER_ITEMS.map((item) => (
         <div
           key={item}
-          className="flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden"
+          className="flex-shrink-0 w-[85vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden"
           style={{ background: "#FFFFFF", border: "1px solid rgba(134,103,88,0.12)" }}
         >
           <div
@@ -65,7 +65,7 @@ function EmptyCards() {
       {PLACEHOLDER_ITEMS.map((item) => (
         <div
           key={item}
-          className="flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden flex items-center justify-center aspect-[3/4]"
+          className="flex-shrink-0 w-[85vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden flex items-center justify-center aspect-[3/4]"
           style={{
             background: "rgba(245,242,238,0.95)",
             border: "1px solid rgba(134,103,88,0.12)",
@@ -163,34 +163,32 @@ export function TrendingNow({
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute -left-2 sm:-left-4 md:left-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-14 sm:w-14 rounded-full transition-all duration-500"
+                className="absolute left-0 sm:-left-4 md:left-0 top-1/2 -translate-y-1/2 z-20 h-[56px] w-[56px] sm:h-14 sm:w-14 rounded-full transition-all duration-500 shadow-lg"
                 style={{
-                  background: 'rgba(255,255,255,0.9)',
+                  background: 'rgba(41,30,21,0.85)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(134,103,88,0.2)',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  border: '1px solid rgba(255,255,255,0.1)',
                   opacity: canScrollLeft ? 1 : 0.3,
                 }}
                 onClick={() => scroll("left")}
                 disabled={!canScrollLeft}
               >
-                <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" style={{ color: '#866758' }} />
+                <ChevronLeft className="h-6 w-6 sm:h-6 sm:w-6" style={{ color: '#FFFFFF' }} />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute -right-2 sm:-right-4 md:right-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-14 sm:w-14 rounded-full transition-all duration-500"
+                className="absolute right-0 sm:-right-4 md:right-0 top-1/2 -translate-y-1/2 z-20 h-[56px] w-[56px] sm:h-14 sm:w-14 rounded-full transition-all duration-500 shadow-lg"
                 style={{
-                  background: 'rgba(255,255,255,0.9)',
+                  background: 'rgba(41,30,21,0.85)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(134,103,88,0.2)',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  border: '1px solid rgba(255,255,255,0.1)',
                   opacity: canScrollRight ? 1 : 0.3,
                 }}
                 onClick={() => scroll("right")}
                 disabled={!canScrollRight}
               >
-                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" style={{ color: '#866758' }} />
+                <ChevronRight className="h-6 w-6 sm:h-6 sm:w-6" style={{ color: '#FFFFFF' }} />
               </Button>
             </>
           )}
@@ -205,7 +203,7 @@ export function TrendingNow({
             {items.map((item) => (
               <div
                 key={item.id}
-                className="group flex-shrink-0 w-[80vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 snap-start"
+                className="group flex-shrink-0 w-[85vw] sm:w-[300px] md:w-[320px] lg:w-[340px] rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 snap-start"
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid rgba(134,103,88,0.12)',

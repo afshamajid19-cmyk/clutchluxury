@@ -193,7 +193,7 @@ export function TrendingCarousel({
     } else if (absD === 1) {
       scale = 0.75;
       rotateY = diff > 0 ? -20 : 20;
-      translateXVal = diff > 0 ? 70 : -70;
+      translateXVal = diff > 0 ? 80 : -80;
       zIndex = 20;
       opacity = 0.35;
       blur = 3;
@@ -453,44 +453,44 @@ export function TrendingCarousel({
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-4 md:left-20 top-1/2 -translate-y-1/2 z-40 h-[72px] w-[72px] rounded-full transition-all duration-500 group"
+                className="absolute left-2 md:left-20 top-1/2 -translate-y-1/2 z-40 h-[56px] w-[56px] md:h-[72px] md:w-[72px] rounded-full transition-all duration-500 group shadow-lg"
                 style={{
-                  background: 'rgba(245,242,238,0.9)',
+                  background: 'rgba(41,30,21,0.85)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(134,103,88,0.2)'
+                  border: '1px solid rgba(255,255,255,0.1)'
                 }}
                 onClick={handlePrev}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(134,103,88,0.1)';
+                  e.currentTarget.style.background = 'rgba(41,30,21,1)';
                   e.currentTarget.style.transform = 'translateY(-50%) translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(245,242,238,0.9)';
+                  e.currentTarget.style.background = 'rgba(41,30,21,0.85)';
                   e.currentTarget.style.transform = 'translateY(-50%)';
                 }}
               >
-                <ChevronLeft className="h-6 w-6 transition-colors" style={{ color: '#866758' }} />
+                <ChevronLeft className="h-6 w-6 md:h-8 md:w-8 transition-colors" style={{ color: '#FFFFFF' }} />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-4 md:right-20 top-1/2 -translate-y-1/2 z-40 h-[72px] w-[72px] rounded-full transition-all duration-500 group"
+                className="absolute right-2 md:right-20 top-1/2 -translate-y-1/2 z-40 h-[56px] w-[56px] md:h-[72px] md:w-[72px] rounded-full transition-all duration-500 group shadow-lg"
                 style={{
-                  background: 'rgba(245,242,238,0.9)',
+                  background: 'rgba(41,30,21,0.85)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(134,103,88,0.2)'
+                  border: '1px solid rgba(255,255,255,0.1)'
                 }}
                 onClick={handleNext}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(134,103,88,0.1)';
+                  e.currentTarget.style.background = 'rgba(41,30,21,1)';
                   e.currentTarget.style.transform = 'translateY(-50%) translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(245,242,238,0.9)';
+                  e.currentTarget.style.background = 'rgba(41,30,21,0.85)';
                   e.currentTarget.style.transform = 'translateY(-50%)';
                 }}
               >
-                <ChevronRight className="h-6 w-6 transition-colors" style={{ color: '#866758' }} />
+                <ChevronRight className="h-6 w-6 md:h-8 md:w-8 transition-colors" style={{ color: '#FFFFFF' }} />
               </Button>
             </>
           )}

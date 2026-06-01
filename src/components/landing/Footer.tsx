@@ -13,7 +13,7 @@ function Footer({ settings: initialSettings }, ref) {
   return (
     <footer 
       ref={ref} 
-      className="py-20 sm:py-28 md:py-32"
+      className="pt-20 pb-8 sm:py-28 md:py-32"
       style={{ 
         background: '#E9E4DE',
         borderTop: '1px solid rgba(134,103,88,0.2)'

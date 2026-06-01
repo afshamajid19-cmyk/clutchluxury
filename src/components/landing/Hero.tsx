@@ -17,16 +17,17 @@ export function Hero({ settings: initialSettings }: HeroProps) {
       id="home"
       className="min-h-[100dvh] flex flex-col justify-center pt-20 pb-12 relative texture-grain vignette particles overflow-hidden bg-[#1A1A1A]"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/HeroImageNew.jpeg"
-          alt="Hero Background"
-          fill
-          priority
-          className="object-cover object-center opacity-80"
-          quality={100}
-        />
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-80"
+        >
+          <source src="/HomePage.mp4" type="video/mp4" />
+        </video>
         {/* Dark overlay for depth and readability */}
         <div className="absolute inset-0 bg-black/40" />
       </div>
@@ -36,9 +37,9 @@ export function Hero({ settings: initialSettings }: HeroProps) {
 
       <div className="container mx-auto px-5 sm:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center" style={{ paddingTop: '10vh' }}>
-          {/* Main Headline */}
+          {/* Main Headline with mobile overlay for readability */}
           <h1
-            className="animate-scale-up uppercase"
+            className="animate-scale-up uppercase relative inline-block px-4 py-2 bg-black/40 sm:bg-transparent sm:px-0 sm:py-0 rounded-[4px]"
             style={{
               fontFamily: "var(--font-heading), serif",
               fontWeight: 300,
